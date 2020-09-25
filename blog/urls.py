@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from posts.views import index, blog, post, search, category_filter
+from posts.views import index, blog, post, search, category_filter, apiTest
 from marketing.views import signup_newsletter
 
 urlpatterns = [
@@ -13,11 +13,13 @@ urlpatterns = [
     path('search/', search, name='search'),
     path('category/<str:title>/', category_filter, name='category-filter'),
 
-    
+
     path('signup-newsletter/', signup_newsletter),
     path('admin/', admin.site.urls),
 
-    path('tinymce/', include('tinymce.urls'))
+    path('tinymce/', include('tinymce.urls')),
+
+    path('api/', apiTest)
 ]
 
 if settings.DEBUG:

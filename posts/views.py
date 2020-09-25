@@ -1,7 +1,7 @@
 from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponseBadRequest, HttpResponse
+from django.http import HttpResponseBadRequest, HttpResponse, JsonResponse
 
 from django.urls import reverse
 
@@ -101,3 +101,7 @@ def post(request, id):
         'previous_post': previous_post,
     }
     return render(request, 'post.html', context)
+
+
+def apiTest(request):
+    return JsonResponse({'name': 'mohamed', 'job': 'software engineer'})
