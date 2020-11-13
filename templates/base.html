@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html class="no-js js-priorityNav" lang="ar" dir="rtl" prefix="og: http://ogp.me/ns#">
+{% include 'head.html' %}
 
-{% include "head.html" %}
+<body class="ar">
 
-<body>
-  {% include "header.html" %}
+  <div class="page-wrapper">
+    <!--[if IE]>
+      <div role="alert" class="alert alert-warning fade in not-support-floating">
+        <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span
+                class="sr-only">Close</span>
+        </button>
+        <i class="fa fa-warning"></i>
+        عذرًا المتصفح الخاص بك لا يدعم جميع خصائص هذا الموقع<br/>
+        نرجو تحديث المتصفح الخاص بك إلى إصدار إنترنت إكسبلورر 10 او 11 حتى يدعم جميع الخصائص 
+      </div>
+    <![endif]-->
 
-  {% block content %}
-  {% endblock content %}
+    {% include 'header.html' %}
 
-  {% include "footer.html" %}
-  {% include "scripts.html" %}
+
+
+    {% block content %}
+    <h1>BODY NOT FOUND</h1>
+    {% endblock content %}
+
+
+
+    {% include 'footer.html' %}
+  </div>
+
+  {% include 'form-models.html' %}
+  {% include 'script.html' %}
 </body>
 
 </html>

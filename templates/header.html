@@ -1,57 +1,149 @@
-<header class="header">
-  <!-- Main Navbar-->
-  <nav class="navbar navbar-expand-lg">
-    <div class="search-area">
-      <div class="search-area-inner d-flex align-items-center justify-content-center">
-        <div class="close-btn"><i class="icon-close"></i></div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-8">
-            <form action="{% url 'search' %}" method="GET">
-              <div class="form-group">
-                <input type="search" name="q" id="search" placeholder="بتدور علي ايه ؟">
-                <button type="submit" class="submit"><i class="icon-search-1"></i></button>
-              </div>
-            </form>
+<header class="main-header fixed-header">
+
+  <a class="nav-trigger">
+    Menu <span></span>
+  </a>
+
+
+  <div class="header-upper">
+    <div class="auto-container">
+      <div class="flex" style="justify-content: space-between;">
+        <div class="logo-outer ">
+          <div class="logo">
+            <a href="https://ajel.sa/">
+              <embed id="logo-img" src="https://ajel.sa/ajel/images/logo.png" alt="ajel">
+            </a>
           </div>
+        </div>
+        <div class="search-block" style="min-width: 400px;">
+          <div class="container-search">
+
+            <div class="search-input" style="width: 100%">
+              <div class="form-container">
+                <form class="dev-search-form" method="get" action="https://ajel.sa/search-results">
+                  <div class="form-group">
+                    <input type="search" name="term" value="" placeholder="ابحث هنا" data-rule-minlength="3"
+                      data-rule-maxlength="150">
+                    <button type="submit" class="search-btn"><span class="fas fa-search"></span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="error-search">
+          </div> -->
+        </div>
+        <div class=" upper-right clearfix">
+          <ul class="icon-nav mega">
+            <li>
+              <a href="https://ajel.sa/#" data-url="https://ajel.sa/set-theme-mode" class="theme-mode">
+                <i class="flaticon-moon"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="container">
-      <!-- Navbar Brand -->
-      <div class="navbar-header d-flex align-items-center justify-content-between">
-        <!-- Navbar Brand -->
-        <a href="/" class="navbar-brand">
-          <!-- Bootstrap Blog -->
-          البلوج العربية المتحدة
-        </a>
-        <!-- Toggle Button-->
-        <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse"
-          aria-expanded="false" aria-label="Toggle navigation"
-          class="navbar-toggler"><span></span><span></span><span></span></button>
-      </div>
-      <!-- Navbar Menu -->
-      <div id="navbarcollapse" class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a href="/" class="nav-link active ">
-              <!-- Home -->
-              الرئيسية
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/blog" class="nav-link ">
-              <!-- Blog -->
-              المقالات
-            </a>
-          </li>
-          <!-- <li class="nav-item"><a href="/post" class="nav-link ">Post</a>
-          </li> -->
-          <!-- <li class="nav-item"><a href="#" class="nav-link ">Contact</a>
-          </li> -->
-        </ul>
-        <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
-        <!-- <ul class="langs navbar-text"><a href="#" class="active">EN</a><span> </span><a href="#">ES</a></ul> -->
+  </div>
+
+
+  <input type="hidden" name="breakingNewsUrl" id="breakingNewsUrl" value="https://ajel.sa/main/breaking-news">
+  <div id="breakingNews">
+
+
+
+  </div>
+
+
+  <div class="header-lower">
+    <div class="auto-container">
+      <div class="nav-outer clearfix ">
+
+        <nav class="main-menu">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="wrapper--big">
+            <div class="navbar-collapse collapse clearfix" id="bs-example-navbar-collapse-1">
+              <div class="resize-drag nav-wrapper priority-nav priority-nav-has-dropdown" instance="0">
+                <ul class="navigation clearfix nav-ul">
+                  <li class="mainCatHOME current"> <a href="https://ajel.sa/">
+                      <i id="mainCatHOME" class="flaticon-pause-bars main-category-icon"></i>
+                      الصفحة الرئيسية
+                    </a>
+                  </li>
+                  <li class="mainCat5bb20db1c581b17f17037954" data-slug="local"> <a href="https://ajel.sa/local/">
+                      <i id="mainCat5bb20db1c581b17f17037954" class="flaticon-saudi-arabia main-category-icon"></i>
+                      المحليات
+                    </a>
+                  </li>
+                  <li class="mainCat5bb20db1c581b17f17037953" data-slug="economy"> <a
+                      href="https://ajel.sa/economy/">
+                      <i id="mainCat5bb20db1c581b17f17037953" class="fas fa-money-bill-alt main-category-icon"></i>
+                      الاقتصاد
+                    </a>
+                  </li>
+                  <li class="mainCat5bb20db1c581b17f17037952" data-slug="sports"> <a href="https://ajel.sa/sports/">
+                      <i id="mainCat5bb20db1c581b17f17037952"
+                        class="flaticon-runer-silhouette-running-fast main-category-icon"></i>
+                      رياضة
+                    </a>
+                  </li>
+                  <li class="mainCat5bb20db1c581b17f17037955" data-slug="entertainment"> <a
+                      href="https://ajel.sa/all-entertainment/">
+                      <i id="mainCat5bb20db1c581b17f17037955" class="flaticon-rocket main-category-icon"></i>
+                      الترفيه
+                    </a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     </div>
-  </nav>
+  </div>
+
 </header>
+
+
+<nav class="nav-container" id="navigation">
+  <ul id="main-menu" class="tendina">
+    <li class="mainCat"> <a href="https://ajel.sa/local/">
+        المحليات
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://ajel.sa/economy/">
+        الاقتصاد
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://ajel.sa/sports/">
+        رياضة
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://ajel.sa/International/">
+        مدارات عالمية
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://ajel.sa/jobs/">
+        وظائف
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://twitter.com/ajlnews">
+        تويتر عاجل
+      </a>
+    </li>
+    <li class="mainCat"> <a href="https://www.snapchat.com/add/ajelco">
+        سناب عاجل
+      </a>
+    </li>
+  </ul>
+</nav>
