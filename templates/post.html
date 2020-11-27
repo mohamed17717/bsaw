@@ -3,6 +3,15 @@
 
 
 {% block content %}
+<style>
+  #chartbeat .title-bg .flaticon-pause-bars::before{
+    color: white;
+  }
+
+  #chartbeat .title-bg .icon-Weather-Icons-16::before, #section-five .title-bg .icon-Weather-Icons-16::before {
+    color: #ec1c3f;
+  }
+</style>
 
 <div class="hide">
   <div itemscope="" itemtype="http://schema.org/NewsArticle">
@@ -26,7 +35,7 @@
       <meta itemprop="url"
         content="https://ajel.sa/uploads/material-file/5f90d92c6ebbe972e643ac18/5f90da04613b4.jpg">
       <img src="{% static 'assets/5f9073b3454a0(1).jpg' %}"
-        alt="المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار بترامب">
+        alt="{{ post.title }}">
     </div>
     <meta itemprop="mainEntityOfPage" content="https://ajel.sa/568LBF/">
     <meta itemprop="url" content="https://ajel.sa/568LBF/">
@@ -41,61 +50,53 @@
     </div>
   </div>
 </div>
+
 <section id="single-news">
   <div class="auto-container">
     <div class="row">
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item "><a href="https://ajel.sa/"><span>الصفحة الرئيسية</span></a></li>
-        <li class="breadcrumb-item active"><a href="https://ajel.sa/International/"><span>مدارات عالمية</span></a>
+        <li class="breadcrumb-item "><a href="/"><span>الصفحة الرئيسية</span></a></li>
+        <li class="breadcrumb-item active">
+          <a href="{{ post.categories.first.get_absolute_url }}">
+            <span>{{ post.categories.first.title }}</span>
+          </a>
         </li>
       </ol>
 
       <div class="col-md-8 col-sm-12 col-xs-12">
         <div>
           <div class="news-titles">
-            <h1 style="font-size: 30px;">المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار بترامب</h1>
-            <h2>تُجرى في الثالث من نوفمبر</h2>
+            <h1 style="font-size: 30px;">{{ post.title }}</h1>
           </div>
           
           <div class="main-img categoryColor">
-            <a href="https://ajel.sa/International/" class="flaticon-internet-1 top-image"></a>
-            <img src="{% static 'assets/5f9073b3454a0(1).jpg' %}"
-              alt="المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار بترامب"
-              title="المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار بترامب"
+            <a href="{{ post.categories.first.get_absolute_url }}" class="{{ post.categories.first.css_icon_class }} top-image"></a>
+            <img src="{{ post.thumbnailURL }}"
+              alt="{{ post.title }}"
+              title="{{ post.title }}"
               pinger-seen="true">
             <ul class="main-icon">
               <li>
-                <span id="viewsCount">78</span>
+                <span id="viewsCount">{{ post.seen_count }}</span>
                 <span class="flaticon-view"></span>
-                <input id="update-views" data-type="Material" data-id="5f90d92c6ebbe972e643ac18" hidden="">
               </li>
 
-              
               <script src="{% static 'assets/js/accounting.min.js' %}"></script>
-
-
             </ul>
           </div>
+
           <div class="main-bar">
             <div class="team-photo">
-              <a href="https://ajel.sa/staff/ajelsa">
-                <img src="{% static 'assets/5be5b7cac1c8f.webp' %}" class="clip-polygon" alt="فريق التحرير"
-                  title="فريق التحرير" pinger-seen="true">
-              </a>
+
               <div>
-                <div class="h4">
-                  <a href="https://ajel.sa/city/Riyadh">الرياض</a>
-                  | <a href="https://ajel.sa/staff/ajelsa">فريق التحرير</a>
-                </div>
+                
+                {% if post.date %}
                 <span class="h5">
-                  5 ربيع الأول 1442&nbsp;/&nbsp;
-                  22&nbsp;
-                  أكتوبر&nbsp;
-                  2020&nbsp;&nbsp;
-                  06:30
-                  ص
+                  {{ post.date }}
                 </span>
+                {% endif %}
+                  
               </div>
             </div>
             <div class="tool-bar hidden-sm hidden-xs">
@@ -106,22 +107,18 @@
                     style="cursor: pointer;"><i class="icon-text"></i></a></li>
                 <li class="icon-strock-popup"><a class="jfontsize-button" id="jfontsize-m2"
                     style="cursor: pointer;"><i class="icon-text-minus"></i></a></li>
-                <li class="icon-strock-popup"><a href="https://ajel.sa/material/print-material/568LBF"
-                    class="btnPrint"><i class="icon-print"></i></a></li>
+                
+                <!-- <li class="icon-strock-popup">
+                  <a href="https://ajel.sa/material/print-material/568LBF" class="btnPrint">
+                    <i class="icon-print"></i>
+                  </a>
+                </li> -->
               </ul>
             </div>
           </div>
+
           <div class="p-block" id="dev-content">
-            <p style="font-size: 19px;"></p>
-            <p style="font-size: 19px;">قال مدير الاستخبارات الوطنية الأمريكية جون راتكليف، إنَّ روسيا وإيران حصلتا
-              على معلومات تتعلّق بسجلّات الناخبين في الولايات المتّحدة. لافتًا إلى أنَّ الدولتين باشرتا إجراءات تهدف
-              للتأثير على الرأي العام الأمريكي في انتخابات الثالث من نوفمبر.</p>
-
-            <p style="font-size: 19px;">وأضاف راتكليف، مساء أمس الأربعاء، أنَّ إيران على وجه التحديد أرسلت عبر
-              البريد الإلكتروني إلى ناخبين في الولايات المتّحدة رسائل مخادعة تهدف إلى تخويف الناخبين والتحريض على
-              اضطرابات اجتماعية والإضرار بالرئيس دونالد ترمب.</p>
-            <p style="font-size: 19px;"></p>
-
+            {{ post.content|safe }}
           </div>
           <div id="news-video">
           </div>
@@ -129,52 +126,53 @@
             <span class=" icon-Weather-Icons-16"></span>
             <span class="flaticon-hashtag"></span>
             <div class="row">
-              <input id="tags-link" value="/ajax/followed-tags"
-                data-tags="[{&quot;id&quot;:&quot;5dae34d36b42ff07362a89a5&quot;,&quot;slug&quot;:&quot;\u0627\u0644\u0627\u0646\u062a\u062e\u0627\u0628\u0627\u062a-\u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629&quot;,&quot;name&quot;:&quot;\u0627\u0644\u0627\u0646\u062a\u062e\u0627\u0628\u0627\u062a \u0627\u0644\u0623\u0645\u0631\u064a\u0643\u064a\u0629&quot;,&quot;count&quot;:0},{&quot;id&quot;:&quot;5e59aae9f87ae406b246ee54&quot;,&quot;slug&quot;:&quot;\u062c\u0648\u0646-\u0631\u0627\u062a\u0643\u0644\u064a\u0641&quot;,&quot;name&quot;:&quot;\u062c\u0648\u0646 \u0631\u0627\u062a\u0643\u0644\u064a\u0641&quot;,&quot;count&quot;:0},{&quot;id&quot;:&quot;5ccf8f06741201af218b4efe&quot;,&quot;slug&quot;:&quot;\u062a\u0631\u0627\u0645\u0628&quot;,&quot;name&quot;:&quot;\u062a\u0631\u0627\u0645\u0628&quot;,&quot;count&quot;:0}]"
-                hidden="">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="header-title mT-5 gray">الكلمات المفتاحية</div>
               </div>
             </div>
           </div>
-          <div class="tags-news ">
+
+          
+          {% if post.tags.all|length > 0 %}
+          <div class="tags-news">
             <div class="tag-check">
-              <a data-id="5dae34d36b42ff07362a89a5" class="tag-anchor "
-                href="https://ajel.sa/tag/%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9">
-                الانتخابات الأمريكية
-                #
+
+              {% for tag in post.tags.all %}
+              <a class="tag-anchor" href="{{ tag.get_absolute_url }}">
+                {{ tag.title }}
               </a>
-              <a data-id="5e59aae9f87ae406b246ee54" class="tag-anchor "
-                href="https://ajel.sa/tag/%D8%AC%D9%88%D9%86-%D8%B1%D8%A7%D8%AA%D9%83%D9%84%D9%8A%D9%81">
-                جون راتكليف
-                #
-              </a>
-              <a data-id="5ccf8f06741201af218b4efe" class="tag-anchor "
-                href="https://ajel.sa/tag/%D8%AA%D8%B1%D8%A7%D9%85%D8%A8">
-                ترامب
-                #
-              </a>
+              {% endfor %}
+
             </div>
           </div>
+          {% endif %}
+            
 
           <div class="nav-news hidden-sm hidden-xs">
+            
+            {% if previous_post %}  
             <div class="news-prev">
-              <a href="https://ajel.sa/JTHVYg/">
-                <div class="thumb-img"><img src="{% static 'assets/5f9073b3454a0(1).jpg' %}" alt="previous" pinger-seen="true">
-                </div>
+              <a href="{{ previous_post.get_absolute_url }}">
+                <div class="thumb-img"><img src="{{ previous_post.thumbnailURL }}" alt="previous" pinger-seen="true"></div>
                 <i class="flaticon-right-arrow"></i>
-                <div class="h4">أردوغان يُطالب مواطنيه با...</div>
+                <div class="h4">{{ previous_post.title }}</div>
               </a>
             </div>
+            {% endif %}
+              
+            
+            {% if next_post %}
             <div class="news-next">
-              <a href="https://ajel.sa/XdjVqf/">
-                <div class="h4">تريساكو يُشيد بمستوى الحك...</div>
+              <a href="{{ next_post.get_absolute_url }}">
+                <div class="h4">{{ next_post.title }}</div>
                 <i class="flaticon-arrows"></i>
                 <div class="thumb-img">
-                  <img src="{% static 'assets/5f9073b3454a0(1).jpg' %}" alt="next" pinger-seen="true">
+                  <img src="{{ next_post.thumbnailURL }}" alt="next" pinger-seen="true">
                 </div>
               </a>
             </div>
+            {% endif %}
+              
           </div>
 
           <section class="tags">
@@ -200,32 +198,7 @@
 
       </div>
 
-      <div class="col-md-4 col-sm-12 col-xs-12 hidden-sm hidden-xs">
-
-        <div class="most-related">
-          <div class="title-bg">
-            <span class="icon-Weather-Icons-16"></span>
-            <span class="flaticon-pause-bars"></span>
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="mT-5 header-title red"> أخبار ذات صلة</div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 col-sm-6">
-              <div class="q-block" id="polls-block">
-                <div class="flex-question">
-                  <div class="no-question ">
-                    <div class="h4">نأسف, لا توجد نتائج</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      {% include 'sidebar.html' %}
     </div>
   </div>
 </section>

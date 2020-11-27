@@ -3,23 +3,26 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from posts.views import index, blog, post, search, category_filter, apiTest
-from marketing.views import signup_newsletter
+from posts.views import (
+    index,
+    post,
+    create_post,
+    listPosts,
+)
 
 urlpatterns = [
     path('', index),
-    path('blog/', blog, name="post-list"),
     path('post/<int:id>/', post, name="post-detail"),
-    path('search/', search, name='search'),
-    path('category/<str:title>/', category_filter, name='category-filter'),
 
+    path('search/<str:query>/', listPosts('search_posts'), name='search'),
+    path('category/<str:title>/', listPosts('category_posts'), name='category-filter'),
+    path('tag/<str:title>/', listPosts('tag_posts'), name='tag-filter'),
+    path('latest/posts/', listPosts('latest_posts'), name='latest-posts'),
 
-    path('signup-newsletter/', signup_newsletter),
+    path('create/post/', create_post, name='create-post'),
+
     path('admin/', admin.site.urls),
-
     path('tinymce/', include('tinymce.urls')),
-
-    path('api/', apiTest)
 ]
 
 if settings.DEBUG:

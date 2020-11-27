@@ -1,0 +1,125 @@
+<div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-xs hidden-sm">
+  <div id="chartbeat">
+    <div class="title-bg">
+      <span class="icon-Weather-Icons-16"></span>
+      <span class="flaticon-pause-bars"></span>
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-8">
+          <div class="header-title red">
+            قراؤنا يتصفحون الآن </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 select-city">
+        </div>
+      </div>
+    </div>
+
+    <div class="chartbeat-items">
+      <div class="scroll-block">
+        <div class="chartbeat-items scrollbar" id="style-scroll">
+          <div class="force-overflow">
+            <ul class="list-group">
+
+
+              {% for post in most_viewed_posts %}
+              <li class="list-group-item">
+                <span class="label label-default pull-left"></span>
+                <a href="{{ post.get_absolute_url }}" style="color: #0e1131; font-size: 18px;">
+                  {{ post.title }}
+                </a>
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <style>
+    .sidebar-category-icon {
+      position: absolute;
+      top: 11px;
+      right: 12px;
+      color: #fff;
+    }
+
+    .sidebar-category-icon::before {
+      color: white;
+    }
+  </style>
+
+  {% for category in sidebar_categories %}
+  <div id="sports">
+    <div class="title-bg">
+      <span class="icon-Weather-Icons-16"></span>
+      <span class="sidebar-category-icon {{ category.css_icon_class }}"></span>
+
+      <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-8">
+          <a href="https://ajel.sa/sports/" class="header-title orange"> {{ category.title }}</a>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-4 select-city" style="margin-top: 5px !important;">
+          <a href="{{ category.get_absolute_url }}" class="more-arrow">
+            المزيد <i class="flaticon-arrows"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="scroll-block">
+      <div class="sport-item scrollbar" id="style-scroll">
+
+        <div class="force-overflow">
+
+
+          {% for post in category.post_category.all|slice:"0:10" %}
+          <div class="sport-block">
+            <div class="sport-image">
+              <a class="icon-white" href="{{ category.get_absolute_url }}">
+                <i class="{{ category.css_icon_class }}"></i>
+              </a>
+
+              <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.thumbnailURL }}" loading="lazy" alt="{{ post.title }}" pinger-seen="true">
+              </a>
+            </div>
+
+
+            <div class="sport-details">
+              <h2>
+                <a href="{{ post.get_absolute_url }}">
+                  {{ post.title }}
+                </a>
+              </h2>
+            </div>
+
+            <div class="sport-li">
+              <ul class="post-meta ">
+                <li>
+                  <span class="flaticon-clock-circular-outline"></span>
+                  منذ يومين
+                  <!-- {{ post.date }} -->
+                </li>
+                <li>{{ post.seen_count }}<span class="flaticon-view"></span></li>
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+  </div>
+  {% endfor %}
+
+
+
+</div>

@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load filters %}
 
 {% block content %}
 
 <div id="category-news">
-
   <section id="lastest-news">
     <div class="auto-container">
       <div class="row">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item "><a href="https://ajel.sa/"><span>الصفحة الرئيسية</span></a></li>
-          <li class="breadcrumb-item active"><a href="https://ajel.sa/latest-news"><span>اّخر الأخبار</span></a>
+          <li class="breadcrumb-item "><a href="/"><span>الصفحة الرئيسية</span></a></li>
+          <li class="breadcrumb-item active">
+            <a href="{{ dir_url }}">
+              <span>{{ dir_name }}</span>
+            </a>
           </li>
         </ol>
 
@@ -21,149 +23,58 @@
             <span class="flaticon-pause-bars"></span>
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="header-title mT-5 red">اّخر الأخبار</div>
+                <div class="header-title mT-5 red">{{ dir_name }} ({{ posts_length }})</div>
               </div>
             </div>
           </div>
-
+          
+          {% if posts %}
+          {% for post in posts %}
           <div class="news-item">
             <div class="new-image triangle-International">
-              <a class="icon-white" href="https://ajel.sa/International/"><i class=" flaticon-internet-1"></i></a>
-              <a href="https://ajel.sa/JTHVYg/"><img src="{% static 'assets/5f9073b3454a0(1).jpg' %}"
-                  alt="أردوغان يُطالب مواطنيه بالتقشف.. ويزيد راتبه ثلاثة أضعاف الحد الأدنى للأجور"></a>
+              <a class="icon-white" href="{{ post.categories.first.get_absolute_url }}"><i class="{{ post.categories.first.css_icon_class }}"></i></a>
+              <a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnailURL }}" loading="lazy" alt="{{ post.title }}"></a>
             </div>
             <div class="news-details">
-              <div class="h4"><a href="https://ajel.sa/JTHVYg/">مُتجاهلًا الأوضاع الاقتصادية المتردية لبلاده</a>
-              </div>
-              <h2><a href="https://ajel.sa/JTHVYg/">أردوغان يُطالب مواطنيه بالتقشف.. ويزيد راتبه ثلاثة أضعاف الحد
-                  الأدنى للأجور</a></h2>
+              <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
               <p>
-                طالب الرئيس التركي رجب طيب أردوغان مواطني بلاده بالصبر على البلاء في مواجهة الأوضاع الاقتصادية
-                السيئة، وفي الوقت ذاته رفع أردوغان راتبه بنسب...
+                {{ post.content|html2text|slice:":200" }}...
               </p>
               <div class="flex">
                 <ul class="post-meta ">
-                  <li><span class="flaticon-clock-circular-outline"></span>منذ 35 دقيقة</li>
-                  <li>163<span class="flaticon-view"></span></li>
-                  <li>0<span class="flaticon-note"></span> </li>
+                  <li><span class="flaticon-clock-circular-outline"></span>{{ post.created|since_when }}</li>
+                  <li>{{ post.seen_count }}<span class="flaticon-view"></span></li>
                 </ul>
                 <ul class="news-btn">
-                  <li>
-                    <div class="btn-group">
-                      <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"><span class="flaticon-share"></span></a>
-                      <ul class="dropdown-menu ">
-                        <li><a href="https://ajel.sa/#" data-url="https://ajel.sa/JTHVYg/"
-                            class="fab fa-facebook-f shareTo-fb"></a></li>
-                        <li><a href="https://ajel.sa/#" data-url="https://ajel.sa/JTHVYg/"
-                            class=" fab fa-twitter shareTo-tw"></a></li>
-                        <li><a href="https://ajel.sa/#" style="font-size: 19px;" data-url="https://ajel.sa/JTHVYg/"
-                            class="fab fa-google-plus-g shareTo-gp"> </a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><a href="https://ajel.sa/JTHVYg/">
+                  <li><a href="{{ post.get_absolute_url }}">
                       اقرأ المزيد ... </a></li>
                 </ul>
               </div>
             </div>
           </div>
-
-          <div class="news-item">
-            <div class="new-image triangle-International">
-              <a class="icon-white" href="https://ajel.sa/International/"><i class=" flaticon-internet-1"></i></a>
-              <a href="https://ajel.sa/568LBF/"><img src="{% static 'assets/5f9073b3454a0(1).jpg' %}"
-                  alt="المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار بترامب"></a>
-            </div>
-            <div class="news-details">
-              <div class="h4"><a href="https://ajel.sa/568LBF/">تُجرى في الثالث من نوفمبر</a></div>
-              <h2><a href="https://ajel.sa/568LBF/">المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل
-                  بالانتخابات والإضرار بترامب</a></h2>
-              <p>
-                قال مدير الاستخبارات الوطنية الأمريكية جون راتكليف، إنَّ روسيا وإيران حصلتا على معلومات تتعلّق
-                بسجلّات الناخبين في الولايات المتّحدة. لافتًا...
-              </p>
-              <div class="flex">
-                <ul class="post-meta ">
-                  <li><span class="flaticon-clock-circular-outline"></span>منذ 1 ساعة</li>
-                  <li>72<span class="flaticon-view"></span></li>
-                  <li>0<span class="flaticon-note"></span> </li>
-                </ul>
-                <ul class="news-btn">
-                  <li>
-                    <div class="btn-group">
-                      <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false"><span class="flaticon-share"></span></a>
-                      <ul class="dropdown-menu ">
-                        <li><a href="https://ajel.sa/#" data-url="https://ajel.sa/568LBF/"
-                            class="fab fa-facebook-f shareTo-fb"></a></li>
-                        <li><a href="https://ajel.sa/#" data-url="https://ajel.sa/568LBF/"
-                            class=" fab fa-twitter shareTo-tw"></a></li>
-                        <li><a href="https://ajel.sa/#" style="font-size: 19px;" data-url="https://ajel.sa/568LBF/"
-                            class="fab fa-google-plus-g shareTo-gp"> </a></li>
-                      </ul>
-                    </div>
-                  </li>
-                  <li><a href="https://ajel.sa/568LBF/">
-                      اقرأ المزيد ... </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
           <div>
             <img src="./list_files/load.gif" style="display:none;margin: 0 auto;" id="loader_gif_2" width="50"
               height="50" class="img-responsive loader_gif mx-auto" alt="loader">
             <div class="pagination" style="display: block;padding:0; width:100%">
               <div class="text-center">
-                <a data-url="/latest-news?page=2" class="more-result">
+                <a href="{{ dir_url }}?page={{ next_page }}" class="more-result">
                   <span>المزيد</span>
                 </a>
               </div>
             </div>
           </div>
+          {% else %}
+          <div style="text-align: center;font-size: 30px;color: #818181;">
+            لا توجد نتائج
+          </div>
+          {% endif %}
+            
+          
         </div>
         
-        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12">
-
-          <div id="question">
-            <div class="title-bg">
-              <span class="icon-Weather-Icons-16"></span>
-              <span class="flaticon-question"></span>
-              <div class="row">
-                <div class="col-md-8 col-sm-8 col-xs-8">
-                  <a href="https://ajel.sa/poll" class="header-title red">
-                    استفتاء </a>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 select-city">
-                  <a href="https://ajel.sa/poll" class="more-arrow"> المزيد <i class="flaticon-arrows"></i></a>
-                </div>
-              </div>
-            </div>
-            <input id="polls-link" value="/poll/ajax/poll-not-cached-data-view" hidden="">
-            <div class="q-block" id="polls-block">
-              <div class="flex-question">
-                <div class="no-question ">
-                  <div class="h4">
-                    عذرًا ,لا يوجد تصويتات حالية </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-icon social-icon-left">
-            <a rel="nofollow noopener" href="https://www.facebook.com/ajelco"
-              class="fab fa-facebook-f facebook"></a>
-            <a rel="nofollow noopener" href="https://www.instagram.com/ajelco/"
-              class="fab fa-instagram instagram"></a>
-            <a rel="nofollow noopener" href="https://www.snapchat.com/add/ajelco"
-              class="fab fa-snapchat-ghost snapchat"></a>
-            <a rel="nofollow noopener" href="https://www.twitter.com/ajlnews" class="fab fa-twitter twitter"></a>
-            <a rel="nofollow noopener" href="https://www.youtube.com/ajelco" class="fab fa-youtube youtube"></a>
-          </div>
-
-
-        </div>
+        {% include 'sidebar.html' %}
       </div>
     </div>
   </section>

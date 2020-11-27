@@ -10,7 +10,7 @@
       <div class="flex" style="justify-content: space-between;">
         <div class="logo-outer ">
           <div class="logo">
-            <a href="https://ajel.sa/">
+            <a href="/">
               <embed id="logo-img" src="https://ajel.sa/ajel/images/logo.png" alt="ajel">
             </a>
           </div>
@@ -20,14 +20,23 @@
 
             <div class="search-input" style="width: 100%">
               <div class="form-container">
-                <form class="dev-search-form" method="get" action="https://ajel.sa/search-results">
+                
+                <form id="search-form" class="dev-search-form">
                   <div class="form-group">
-                    <input type="search" name="term" value="" placeholder="ابحث هنا" data-rule-minlength="3"
+                    <input type="search" name="q" value="" placeholder="ابحث هنا" data-rule-minlength="3"
                       data-rule-maxlength="150">
                     <button type="submit" class="search-btn"><span class="fas fa-search"></span>
                     </button>
                   </div>
                 </form>
+                <script>
+                  const searchForm = document.querySelector('#search-form');
+                  searchForm.addEventListener('submit', e => {
+                    e.preventDefault()
+                    window.location.href = `/search/${e.target.q.value}/`
+                  })
+                  
+                </script>
               </div>
             </div>
           </div>
@@ -79,29 +88,16 @@
                       الصفحة الرئيسية
                     </a>
                   </li>
-                  <li class="mainCat5bb20db1c581b17f17037954" data-slug="local"> <a href="https://ajel.sa/local/">
-                      <i id="mainCat5bb20db1c581b17f17037954" class="flaticon-saudi-arabia main-category-icon"></i>
-                      المحليات
+                  
+                  {% for category in nav_categories %}  
+                  <li class="mainCat5bb20db1c581b17f17037954"> 
+                    <a href="{{ category.get_absolute_url }}">
+                      <i class="{{ category.css_icon_class }} main-category-icon"></i>
+                      {{ category.title }}
                     </a>
                   </li>
-                  <li class="mainCat5bb20db1c581b17f17037953" data-slug="economy"> <a
-                      href="https://ajel.sa/economy/">
-                      <i id="mainCat5bb20db1c581b17f17037953" class="fas fa-money-bill-alt main-category-icon"></i>
-                      الاقتصاد
-                    </a>
-                  </li>
-                  <li class="mainCat5bb20db1c581b17f17037952" data-slug="sports"> <a href="https://ajel.sa/sports/">
-                      <i id="mainCat5bb20db1c581b17f17037952"
-                        class="flaticon-runer-silhouette-running-fast main-category-icon"></i>
-                      رياضة
-                    </a>
-                  </li>
-                  <li class="mainCat5bb20db1c581b17f17037955" data-slug="entertainment"> <a
-                      href="https://ajel.sa/all-entertainment/">
-                      <i id="mainCat5bb20db1c581b17f17037955" class="flaticon-rocket main-category-icon"></i>
-                      الترفيه
-                    </a>
-                  </li>
+                  {% endfor %}
+                    
                 </ul>
 
               </div>
@@ -117,33 +113,14 @@
 
 <nav class="nav-container" id="navigation">
   <ul id="main-menu" class="tendina">
-    <li class="mainCat"> <a href="https://ajel.sa/local/">
-        المحليات
+    
+    {% for category in nav_categories %}
+    <li class="mainCat"> 
+      <a href="{{ category.get_absolute_url }}">
+        {{ category.title }}
       </a>
     </li>
-    <li class="mainCat"> <a href="https://ajel.sa/economy/">
-        الاقتصاد
-      </a>
-    </li>
-    <li class="mainCat"> <a href="https://ajel.sa/sports/">
-        رياضة
-      </a>
-    </li>
-    <li class="mainCat"> <a href="https://ajel.sa/International/">
-        مدارات عالمية
-      </a>
-    </li>
-    <li class="mainCat"> <a href="https://ajel.sa/jobs/">
-        وظائف
-      </a>
-    </li>
-    <li class="mainCat"> <a href="https://twitter.com/ajlnews">
-        تويتر عاجل
-      </a>
-    </li>
-    <li class="mainCat"> <a href="https://www.snapchat.com/add/ajelco">
-        سناب عاجل
-      </a>
-    </li>
+    {% endfor %}
+
   </ul>
 </nav>

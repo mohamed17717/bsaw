@@ -12,54 +12,39 @@
                   <li><a href="https://ajel.sa/contactmessage/send">اتصل بنا</a></li>
                   <li><a href="https://ajel.sa/PrivacyPolicy">سياسة الخصوصية</a></li>
                 </ul>
-                <ul>
-                  <li class="social-icon">
-                    <a rel="nofollow noopener" href="https://www.facebook.com/ajelco" class="fab fa-facebook-f"></a>
-                    <a rel="nofollow noopener" href="https://www.instagram.com/ajelco/" class="fab fa-instagram"></a>
-                    <a rel="nofollow noopener" href="https://www.snapchat.com/add/ajelco"
-                      class="fab fa-snapchat-ghost"></a>
-                    <a rel="nofollow noopener" href="https://www.twitter.com/ajlnews" class="fab fa-twitter"></a>
-                    <a rel="nofollow noopener" href="https://www.youtube.com/ajelco" class="fab fa-youtube"></a>
-                  </li>
-                </ul>
               </div>
             </div>
             <div class="col-lg-5  col-lg-offset-1 col-md-4  col-sm-6 col-12">
               <div class="title-height h3">صحيفة عاجل الإلكترونية</div>
               <div class="ul-flex">
                 <ul>
-                  <li><a href="https://ajel.sa/local" class="">
-                      <span style="background-color: #4eb96f;opacity: 0.65;"></span>المحليات
-                    </a></li>
-                  <li><a href="https://ajel.sa/economy" class="">
-                      <span style="background-color: #14612a;opacity: 0.65;"></span>الاقتصاد
-                    </a></li>
-                  <li><a href="https://ajel.sa/sports" class="">
-                      <span style="background-color: #ee7f1f;opacity: 0.65;"></span>رياضة
-                    </a></li>
-                  <li><a href="https://ajel.sa/all-entertainment/" class="">
-                      <span style="background-color: #945ba4;opacity: 0.65;"></span>الترفيه
-                    </a></li>
+
+                  {% for category in footer_categories|slice:":4" %}
+                  <li>
+                    <a href="{{ category.get_absolute_url }}">
+                      <span style="background-color: {{ category.css_icon_color }};opacity: 0.65;"></span>
+                      {{ category.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
                 </ul>
                 <ul>
-                  <li><a href="https://ajel.sa/International" class="">
-                      <span style="background-color: #3b97d2;opacity: 0.65;"></span>مدارات عالمية
-                    </a></li>
-                  <li><a href="https://ajel.sa/jobs" class="">
-                      <span style="background-color: #1b824d;opacity: 0.65;"></span>وظائف
-                    </a></li>
-                  <li><a href="https://ajel.sa/tourism" class="">
-                      <span style="background-color: #253e90;opacity: 0.65;"></span>سياحة وسفر
-                    </a></li>
-                  <li><a href="https://ajel.sa/misc" class="">
-                      <span style="background-color: #945ba4;opacity: 0.65;"></span>منوعات
-                    </a></li>
+
+                  {% for category in footer_categories|slice:"5:8" %}
+                  <li>
+                    <a href="{{ category.get_absolute_url }}">
+                      <span style="background-color: {{ category.css_icon_color }};opacity: 0.65;"></span>
+                      {{ category.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="lower-footer">
         <div class="auto-container">
           <div class="row">
@@ -75,4 +60,5 @@
           </div>
         </div>
       </div>
+
     </footer>

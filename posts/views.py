@@ -5,103 +5,138 @@ from django.http import HttpResponseBadRequest, HttpResponse, JsonResponse
 
 from django.urls import reverse
 
-from .models import Post, Category
-from marketing.models import Signup
+from .models import Post, Category, Tag
+
+from datetime import datetime, timedelta
+
+import json
+from decorators import require_http_methods, require_fields, allow_fields, check_unique_fields
+
+from pprint import pprint
 
 
-def get_category_count():
-    qs = Post\
-        .objects\
-        .values('categories__title')\
-        .annotate(Count('categories__title'))
-    return qs
-
-
-def search(request):
-    query = request.GET.get('q')
-
-    qs = []
-    if query:
-        qs = Post.objects.all()
-        qs = qs.filter(
-            Q(title__icontains=query) |
-            Q(overview__icontains=query),
-        ).distinct()
-
-    context = {'posts': qs[:40]}
-
-    return render(request, 'search_result.html', context)
-
-
-def category_filter(request, title):
-    qs = Post.objects.all()
-    qs = qs.filter(categories__title=title)
-
-    context = {'posts': qs[:40]}
-    return render(request, 'search_result.html', context)
-
-
+@require_http_methods(['GET'])
 def index(request):
-    if request.method == 'POST':
-        email = request.POST.get('email', None)
-        if not email:
-            return HttpResponseBadRequest()
-
-        elm = Signup(email=email)
-        elm.save()
-
     featured_posts = Post.objects.filter(featured=True)[:10]
-    latest_posts = Post.objects.all().order_by('-timestamp')[:6]
-    context = {
-        'featured_posts': featured_posts,
-        'latest_posts': latest_posts
-    }
-    return render(request, 'index.html', context)
-
-
-def blog(request):
-    requestedPageVar = 'page'
-    page = int(request.GET.get(requestedPageVar, 1))
-
-    posts = Post.objects.all().order_by('-timestamp')
-    paginator = Paginator(posts, 10)
-    try:
-        paginated_qs = paginator.page(page)
-    except PageNotAnInteger:
-        paginated_qs = paginator.page(1)
-    except EmptyPage:
-        paginated_qs = paginator.page(paginator.num_pages)
 
     context = {
-        'posts': paginated_qs,
-        'requested_page_var': requestedPageVar,
-        'categories': get_category_count(),
-        'latest_posts': posts[:6]
+        'nav_categories': Category.get_nav_categories(5),
+        'featured_posts': Post.get_most_viewed_posts_in_last_days(3)[:6],
+        'popular_tags': Tag.get_popular_tags(),
+        'latest_posts': Post.get_latest_posts(8),
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
+        'sidebar_categories': Category.get_sidebar_categories(),
+        'footer_categories': Category.get_top_categories(10)
     }
 
-    return render(request, 'blog.html', context)
+    return render(request, 'home.html', context)
 
 
 def post(request, id):
-    posts = Post.objects.all().order_by('-timestamp')
-
     post = get_object_or_404(Post, id=id)
 
     post.seen_count += 1
     post.save()
 
-    next_post = posts.filter(id=id+1).first()
-    previous_post = posts.filter(id=id-1).first()
+    next_post = Post.objects.filter(id=id+1).first()
+    previous_post = Post.objects.filter(id=id-1).first()
 
     context = {
+        'nav_categories': Category.get_nav_categories(5),
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
+        'sidebar_categories': Category.get_sidebar_categories(),
+        'footer_categories': Category.get_top_categories(10),
+
         'post': post,
-        'categories': get_category_count(),
-        'latest_posts': posts[:6],
         'next_post': next_post,
         'previous_post': previous_post,
     }
+
     return render(request, 'post.html', context)
 
 
-def apiTest(request):
-    return JsonResponse({'name': 'mohamed', 'job': 'software engineer'})
+def paginatePosts(qs, page):
+    paginator = Paginator(qs, 12)
+    try:posts = paginator.page(page)
+    except:posts = []
+    return posts
+
+def listPosts(view_name):
+    views = {
+        'latest_posts': {
+            'qs': lambda *args, **kwargs: Post.objects.all().order_by('-created'),
+            'dir_name': lambda *args, **kwargs: 'اّخر الأخبار',
+            'dir_url': lambda *args, **kwargs: '/latest/posts/',
+        },
+
+        'tag_posts': {
+            'qs': lambda title,  *args, **kwargs: Post.objects.filter(tags__title=title).order_by('-created'),
+            'dir_name': lambda title, *args, **kwargs: title,
+            'dir_url': lambda title, *args, **kwargs: reverse('tag-filter', kwargs={'title':title}),
+        },
+
+        'category_posts': {
+            'qs': lambda title,  *args, **kwargs: Post.objects.filter(categories__title=title).order_by('-created'),
+            'dir_name': lambda title, *args, **kwargs: title,
+            'dir_url': lambda title, *args, **kwargs: reverse('category-filter', kwargs={'title':title}),
+        },
+
+        'search_posts': {
+            'qs': lambda query,  *args, **kwargs: Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__title__icontains=query) | Q(categories__title__icontains=query),).distinct(),
+            'dir_name': lambda query, *args, **kwargs: query,
+            'dir_url': lambda query, *args, **kwargs: reverse('search', kwargs={'query':query}),
+        },
+    }
+
+    def view(request, *args, **kwargs):
+        page = request.GET.get('page', 1)
+        try: page = int(page)
+        except: page = 1
+
+        view_obj = views.get(view_name)
+
+        posts_qs = view_obj['qs'](*args, **kwargs)
+
+        context = {
+            'posts': paginatePosts(posts_qs, page),
+            'dir_name': view_obj['dir_name'](*args, **kwargs),
+            'dir_url': view_obj['dir_url'](*args, **kwargs),
+            'posts_length': len(posts_qs),
+
+            'next_page': page + 1,
+
+            'nav_categories': Category.get_nav_categories(5),
+            'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
+            'sidebar_categories': Category.get_sidebar_categories(),
+            'footer_categories': Category.get_top_categories(10)
+        }
+
+        return render(request, 'list.html', context)
+    return view
+
+
+
+@require_http_methods(['POST'])
+@require_fields(['url', 'title', 'thumbnailURL', 'content'])
+@allow_fields(['url', 'title', 'thumbnailURL', 'content', 'categories', 'tags', 'date', 'small_summery', 'overview'])
+@check_unique_fields(Post, ['url'])
+def create_post(request):
+    data = json.loads(request.body.decode('utf-8'))  # .dict()
+
+    print(data)
+
+    categories = data.pop('categories', [])
+    tags = data.pop('tags', [])
+
+    categoriesObjects = [Category.get_category_by_name(
+        category, forced=True) for category in categories]
+    tagsObjects = [Tag.get_tag_by_name(
+        tag, forced=True) for tag in tags]
+
+    post = Post.objects.create(**data)
+    print('\n\n POST: ', post.title, '\n\n')
+
+    post.set_categories(categoriesObjects)
+    post.set_tags(tagsObjects)
+
+    return HttpResponse(status=200)
