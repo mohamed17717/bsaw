@@ -1,5 +1,5 @@
 
-from time import time
+import time
 from datetime import datetime
 from html2text import HTML2Text
 from django.template import Library, Node, TemplateSyntaxError
@@ -19,8 +19,11 @@ def since_when(value):
 
     This would show the hours in my_datetime without showing the minutes or seconds.
     """
+    if not value: return value
 
-    secondsSince = datetime.now().timestamp() - datetime.timestamp(value)
+    # secondsSince = datetime.now().timestamp() - value.timestamp() # datetime.timestamp(value)
+    secondsSince = datetime.now().timestamp() - time.mktime(datetime.strptime(str(value), "%Y-%m-%d %H:%M:%S.%f%z").timetuple())
+
 
     units = (
         ('second', 1, ('ثانية', 'ثانيتين', 'ثواني')),
