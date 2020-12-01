@@ -6,7 +6,7 @@ from django.urls import reverse
 from tinymce import HTMLField
 
 from datetime import datetime, timedelta
-
+import random
 
 User = get_user_model()
 
@@ -120,6 +120,7 @@ class Post(models.Model):
     # default fields
     created = models.DateTimeField(auto_now_add=True)
     seen_count = models.IntegerField(default=0)
+    fake_seen_count = models.IntegerField(default=0)
     featured = models.BooleanField(default=False)
 
     # not used now
@@ -128,6 +129,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if not self.pk: # created
+            if not self.seen_count:
+                fake_seens = random.randint(100, 500)
+                self.seen_count = fake_seens
+                self.fake_seen_count = fake_seens
+
+        return super(Post, self).save(*args, **kwargs) 
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={'id': self.id})

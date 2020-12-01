@@ -10,8 +10,17 @@ from posts.views import (
     listPosts,
 )
 
+from django.contrib.sitemaps.views import sitemap
+from posts.sitemaps import Static_Sitemap
+from posts.sitemaps import Post_Sitemap
+
+sitemaps = {
+    'article': Post_Sitemap(),
+    'static': Static_Sitemap(),
+}
+
 urlpatterns = [
-    path('', index),
+    path('', index, name='home'),
     path('post/<int:id>/', post, name="post-detail"),
 
     path('search/<str:query>/', listPosts('search_posts'), name='search'),
@@ -20,6 +29,8 @@ urlpatterns = [
     path('latest/posts/', listPosts('latest_posts'), name='latest-posts'),
 
     path('create/post/', create_post, name='create-post'),
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),

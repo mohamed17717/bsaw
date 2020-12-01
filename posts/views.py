@@ -21,7 +21,7 @@ def index(request):
 
     context = {
         'nav_categories': Category.get_nav_categories(5),
-        'featured_posts': Post.get_most_viewed_posts_in_last_days(3)[:6],
+        'featured_posts': Post.get_most_viewed_posts_in_last_days(7)[:6],
         'popular_tags': Tag.get_popular_tags(),
         'latest_posts': Post.get_latest_posts(8),
         'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
