@@ -123,6 +123,8 @@ class Post(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.CASCADE, null=True, blank=True)
 
+    creator = models.CharField(max_length=16, default='bot')
+
     def __str__(self):
         return self.title
 
@@ -158,3 +160,11 @@ class Post(models.Model):
     def get_most_viewed_posts_in_last_days(days=3):
         qs = Post.get_posts_in_last_days(days).annotate(visits=F('seen_count') - F('fake_seen_count')).order_by('-visits')
         return qs
+
+    @staticmethod
+    def get_featured_posts(count, force_count=False):
+        qs = Post.objects.filter(featured=True)
+        if force_count and len(qs) < count:
+            more_qs = Post.get_most_viewed_posts_in_last_days(3)[:count - len(qs)]
+
+        return [*qs, *more_qs]

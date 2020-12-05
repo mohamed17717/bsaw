@@ -4,5 +4,9 @@ from .models import Author, Category, Post, Tag
 
 admin.site.register(Author)
 admin.site.register(Category)
-admin.site.register(Post)
-admin.site.register(Tag)
+admin.site.register(Tag) 
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+  exclude = ('creator', 'author', 'seen_count')
+
