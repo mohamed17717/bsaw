@@ -18,26 +18,30 @@
               border: 0;
             }
           </style>
+
+          {% for post in featured_posts|slice:"0:1"  %}
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="{{ featured_posts.first.thumbnailURL }}" style="height: 306.91px;"
-                alt="{{ featured_posts.first.title }}"
+              <img src="{{ post.thumbnailURL }}" style="height: 306.91px;"
+                alt="{{ post.title }}"
                 pinger-seen="true">
               <div class="overlay">
                 <div class="carousel-caption">
                   <div class="slide-content local">
                     <div class=" without-opacity " style="opacity: 1 !important;">
-                      <p><a href="{{ featured_posts.first.get_absolute_url }}">{{ featured_posts.first.title }}</a></p>
+                      <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
                     </div>
                   </div>
                   <ul class="post-meta">
-                    <li><span class="flaticon-clock-circular-outline"></span>{{ featured_posts.first.created|since_when }}</li>
-                    <li>{{ featured_posts.first.seen_count }}<span class="flaticon-view"></span></li>
+                    <li><span class="flaticon-clock-circular-outline"></span>{{ post.created|since_when }}</li>
+                    <li>{{ post.seen_count }}<span class="flaticon-view"></span></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
+          {% endfor %}
+            
 
         </div>
       </div>
