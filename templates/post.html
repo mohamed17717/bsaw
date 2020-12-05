@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load filters %}
 
 {% block content %}
 <style>
@@ -15,38 +15,29 @@
 
 <div class="hide">
   <div itemscope="" itemtype="http://schema.org/NewsArticle">
-    <span itemprop="headline">المخابرات الأمريكية ترصد محاولات روسية إيرانية للتدخل بالانتخابات والإضرار
-      بترامب</span>
+    <span itemprop="headline">{{ post.title }}</span>
     <span itemprop="articleBody">
-      <p>قال مدير الاستخبارات الوطنية الأمريكية جون راتكليف، إنَّ روسيا وإيران حصلتا على معلومات تتعلّق بسجلّات
-        الناخبين في الولايات المتّحدة. لافتًا إلى أنَّ الدولتين باشرتا إجراءات تهدف للتأثير على الرأي العام الأمريكي
-        في انتخابات الثالث من نوفمبر.</p>
-      <p>وأضاف راتكليف، مساء أمس الأربعاء، أنَّ إيران على وجه التحديد أرسلت عبر البريد الإلكتروني إلى ناخبين في
-        الولايات المتّحدة رسائل مخادعة تهدف إلى تخويف الناخبين والتحريض على اضطرابات اجتماعية والإضرار بالرئيس
-        دونالد ترمب.</p>
+      {{ post.content|safe }}
     </span>
-    <span itemprop="datePublished" content="2020-10-22T06:30:02+03:00">2020-10-22T06:30:02+03:00</span>
-    <span itemprop="dateModified" content="2020-10-22T07:39:27+03:00">2020-10-22T07:39:27+03:00</span>
-    <span itemprop="description"><strong>قال مدير الاستخبارات الوطنية الأمريكية جون راتكليف، إنَّ روسيا وإيران حصلتا
-        على معلومات تتعلّق بسجلّات الناخبين في الولايات المتّحدة. لافتًا إلى أنَّ الدولتين ب</strong></span>
+    <span itemprop="datePublished" content="{{ post.created }}">{{ post.created }}</span>
+    <span itemprop="dateModified" content="{{ post.created }}">{{ post.created }}</span>
+    <span itemprop="description"><strong>{{ post.content|html2text|slice:":200" }}...</strong></span>
     <div itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject">
       <meta itemprop="height" content="720">
       <meta itemprop="width" content="1280">
-      <meta itemprop="url"
-        content="https://ajel.sa/uploads/material-file/5f90d92c6ebbe972e643ac18/5f90da04613b4.jpg">
-      <img src="{% static 'assets/5f9073b3454a0(1).jpg' %}"
-        alt="{{ post.title }}">
+      <meta itemprop="url" content="{{ post.thumbnailURL }}">
+      <img src="{% static '/assets/5f9073b3454a0(1).jpg' %}"  alt="{{ post.title }}">
     </div>
-    <meta itemprop="mainEntityOfPage" content="https://ajel.sa/568LBF/">
-    <meta itemprop="url" content="https://ajel.sa/568LBF/">
-    <link itemprop="sameAs" href="https://ajel.sa/">
+    <meta itemprop="mainEntityOfPage" content="{{ post.get_absolute_url }}">
+    <meta itemprop="url" content="{{ post.get_absolute_url }}">
+    <link itemprop="sameAs" href="https://sanews.pythonanywhere.com/">
     <span itemprop="author">فريق التحرير</span>
     <div itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
       <div itemprop="logo" itemscope="" itemtype="http://schema.org/ImageObject">
-        <meta itemprop="url" content="https://ajel.sa/default-cover-photo/logoamp.png">
-        <img src="{% static 'assets/logoamp.webp' %}" alt="صحيفة عاجل">
+        <meta itemprop="url" content="{% static '/assets/logoamp.webp' %}">
+        <img src="{% static '/assets/logoamp.webp' %}" alt="صحيفة السعودية نيوز">
       </div>
-      <span itemprop="name">صحيفة عاجل</span>
+      <span itemprop="name">صحيفة السعودية نيوز</span>
     </div>
   </div>
 </div>
@@ -82,7 +73,7 @@
                 <span class="flaticon-view"></span>
               </li>
 
-              <script src="{% static 'assets/js/accounting.min.js' %}"></script>
+              <script src="{% static '/assets/js/accounting.min.js' %}"></script>
             </ul>
           </div>
 
@@ -107,12 +98,6 @@
                     style="cursor: pointer;"><i class="icon-text"></i></a></li>
                 <li class="icon-strock-popup"><a class="jfontsize-button" id="jfontsize-m2"
                     style="cursor: pointer;"><i class="icon-text-minus"></i></a></li>
-                
-                <!-- <li class="icon-strock-popup">
-                  <a href="https://ajel.sa/material/print-material/568LBF" class="btnPrint">
-                    <i class="icon-print"></i>
-                  </a>
-                </li> -->
               </ul>
             </div>
           </div>
@@ -178,8 +163,10 @@
           <section class="tags">
             <div class="title-red">
               <div class="title-bg">
-                <span class="icon-Weather-Icons-16"></span>
-                <span class="flaticon-pause-bars"></span>
+                <!-- <span class="icon-Weather-Icons-16"></span>
+                <span class="flaticon-pause-bars"></span> -->
+                <img class="icon-Weather-Icons-16" src="{% static '/assets/images/tab.png' %}" alt="">
+
                 <div class="row">
                   <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="header-title mT-5 red">مواضيع قد تعجبك</div>

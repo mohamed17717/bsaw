@@ -1,18 +1,31 @@
+{% load static %}
+
 <head>
   {% include 'meta.html' %}
 
-  <title>صحيفة عاجل</title>
+  <title>صحيفة السعودية نيوز</title>
 
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static '/assets/favicon/apple-icon-57x57.png' %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static '/assets/favicon/apple-icon-60x60.png' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static '/assets/favicon/apple-icon-72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static '/assets/favicon/apple-icon-76x76.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static '/assets/favicon/apple-icon-114x114.png' %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static '/assets/favicon/apple-icon-120x120.png' %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static '/assets/favicon/apple-icon-144x144.png' %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static '/assets/favicon/apple-icon-152x152.png' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/assets/favicon/apple-icon-180x180.png' %}">
+  <link rel="icon" type="image/png" sizes="192x192"  href="{% static '/assets/favicon/android-icon-192x192.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/assets/favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static '/assets/favicon/favicon-96x96.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/assets/favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '/assets/favicon/manifest.json' %}">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="{% static '/assets/favicon/ms-icon-144x144.png' %}">
+  <meta name="theme-color" content="#ffffff">
 
-  <!-- apple setup -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://ajel.sa/ajel/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://ajel.sa/ajel/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://ajel.sa/ajel/favicon-16x16.png">
-  <link rel="shortcut icon" href="https://ajel.sa/favicon.ico" type="image/x-icon">
-
-  <link rel="amphtml" href="https://ajel.sa/568LBF/amp/">
-  <link rel="canonical" href="https://ajel.sa/568LBF/">
-  <link rel="alternate" type="application/rss+xml" title="" href="https://ajel.sa/rss">
+  <link rel="alternate" type="application/rss+xml" title="" href="https://sanews.pythonanywhere.com/sitemap.xml">
 
   {% include 'style.html' %}
+
+  <meta name="google-site-verification" content="CpF5pZC3rocqytcYFwJxWdYzvuh6ogOPwrNWHnTkaeM" />
 </head>

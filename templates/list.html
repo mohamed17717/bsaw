@@ -19,8 +19,10 @@
 
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="results-div">
           <div class="title-bg">
-            <span class="icon-Weather-Icons-16"></span>
-            <span class="flaticon-pause-bars"></span>
+            <!-- <span class="icon-Weather-Icons-16"></span>
+            <span class="flaticon-pause-bars"></span> -->
+            <img class="icon-Weather-Icons-16" src="{% static '/assets/images/tab.png' %}" alt="">
+
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="header-title mT-5 red">{{ dir_name }} ({{ posts_length }})</div>
@@ -55,8 +57,6 @@
           {% endfor %}
 
           <div>
-            <img src="./list_files/load.gif" style="display:none;margin: 0 auto;" id="loader_gif_2" width="50"
-              height="50" class="img-responsive loader_gif mx-auto" alt="loader">
             <div class="pagination" style="display: block;padding:0; width:100%">
               <div class="text-center">
                 <a href="{{ dir_url }}?page={{ next_page }}" class="more-result">
@@ -70,8 +70,6 @@
             لا توجد نتائج
           </div>
           {% endif %}
-            
-          
         </div>
         
         {% include 'sidebar.html' %}

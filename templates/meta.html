@@ -1,14 +1,14 @@
 {% load filters %}
+{% load static %}
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<meta name="keywords" content="عاجل، صحيفة، أخبار السعودية، محليات، سبق صحفي، حساب المواطن، رياضة،أخبار المملكة">
+<meta name="keywords" content="السعودية نيوز، صحيفة، أخبار السعودية، محليات، سبق صحفي، حساب المواطن، رياضة،أخبار المملكة">
 <meta name="description" content="صحيفة إلكترونية سعودية تم تأسيسها عام 2020 تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية.">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Author" content="صحيفة عاجل">
-<meta name="copyright" content="2020 &amp;copy; جميع الحقوق محفوظة لعاجل">
-<meta name="google-site-verification" content="uEVomjsn6efWSGScST4iOQmsAU6bNpDZLMNmn1tGl1E">
+<meta name="Author" content="صحيفة السعودية نيوز">
+<meta name="copyright" content="2020 &amp;copy; جميع الحقوق محفوظة لالسعودية نيوز">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 <meta name="p:domain_verify" content="b434d1ff6fc7f42bcc1739e81b6ee4f1">
@@ -26,18 +26,18 @@
 
 
 <meta property="og:url" content="content="{% if post %}{{ post.get_absolut_url }}{% else %}https://bblog.pythonanywhere.com{% endif %}"">
-<meta property="og:image" content="{% if post %}{{post.thumbnailURL}}{% else %}https://ajel.sa/ajel/images/logo.png{% endif %}">
-<meta property="og:title" content="{% if post %}{{post.title}}{% else %}صحيفة عاجل لنشر أخبار المملكة لحظة بلحظة{% endif %}">
+<meta property="og:image" content="{% if post %}{{post.thumbnailURL}}{% else %}{% static '/assets/images/logo1.png' %}{% endif %}">
+<meta property="og:title" content="{% if post %}{{post.title}}{% else %}صحيفة السعودية نيوز لنشر أخبار المملكة لحظة بلحظة{% endif %}">
 <meta property="og:description" content="{% if post %}{{ post.content|html2text|slice:":200" }}...{% else %}صحيفة إلكترونية سعودية تم تأسيسها عام 2020 تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية.{% endif %}">
-<meta property="og:site_name" content="صحيفة عاجل">
+<meta property="og:site_name" content="صحيفة السعودية نيوز">
 <meta property="og:type" content="article">
 <meta property="og:image:width" content="700">
 <meta property="og:image:height" content="400">
 <meta property="og:locale" content="ar_AR">
 
 <meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:title" content="{% if post %}{{post.title}}{% else %}صحيفة عاجل لنشر أخبار المملكة لحظة بلحظة{% endif %}">
-<meta property="twitter:image" content="{% if post %}{{post.thumbnailURL}}{% else %}https://ajel.sa/ajel/images/logo.png{% endif %}">
+<meta property="twitter:title" content="{% if post %}{{post.title}}{% else %}صحيفة السعودية نيوز لنشر أخبار المملكة لحظة بلحظة{% endif %}">
+<meta property="twitter:image" content="{% if post %}{{post.thumbnailURL}}{% else %}{% static '/assets/images/logo1.png' %}{% endif %}">
 <meta property="twitter:description" content="{% if post %}{{ post.content|html2text|slice:":200" }}...{% else %}صحيفة إلكترونية سعودية تم تأسيسها عام 2020 تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية.{% endif %}">
 <meta property="twitter:domain" content="https://bblog.pythonanywhere.com">
 <!-- <meta property="twitter:site" content="@ajlnews"> -->
@@ -45,4 +45,4 @@
 
 <meta itemprop="height" content="720">
 <meta itemprop="width" content="1280">
-<meta itemprop="url" content="{% if post %}{{post.thumbnailURL}}{% else %}https://ajel.sa/ajel/images/logo.png{% endif %}">
+<meta itemprop="url" content="{% if post %}{{post.thumbnailURL}}{% else %}{% static '/assets/images/logo1.png' %}{% endif %}">

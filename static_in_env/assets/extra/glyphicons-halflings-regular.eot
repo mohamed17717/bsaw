@@ -4,14 +4,14 @@
 <!--[if IE 8]><html class="no-js lt-ie9" lang="ar"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="ar" dir="rtl" prefix="og: http://ogp.me/ns#"><!--<![endif]-->
 <head>
-<base href="https://ajel.sa/" />
-<title>صحيفة عاجل - الصفحة غير موجودة</title>
-<meta name="keywords" content="عاجل، صحيفة، أخبار السعودية، محليات، سبق صحفي، حساب المواطن، رياضة،أخبار المملكة" />
+<base href="https://sanews.pythonanywhere.com/" />
+<title>صحيفة السعودية نيوز - الصفحة غير موجودة</title>
+<meta name="keywords" content="السعودية نيوز، صحيفة، أخبار السعودية، محليات، سبق صحفي، حساب المواطن، رياضة،أخبار المملكة" />
 <meta name="description" content="صحيفة إلكترونية سعودية تم تأسيسها عام 2007م تهتم بنشر الأخبار المحلية والمنافسة في سبق الأخبار بمهنية ومصداقية وموضوعية." />
 <meta name="robots" content="index, follow" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="Author" content="صحيفة عاجل" />
-<meta name="copyright" content="2020 &amp;copy; جميع الحقوق محفوظة لعاجل" />
+<meta name="Author" content="صحيفة السعودية نيوز" />
+<meta name="copyright" content="2020 &amp;copy; جميع الحقوق محفوظة لالسعودية نيوز" />
 <meta name="google-site-verification" content="uEVomjsn6efWSGScST4iOQmsAU6bNpDZLMNmn1tGl1E" />
 <meta name="msapplication-TileColor" content="#da532c" />
 <meta name="theme-color" content="#ffffff" />
@@ -712,7 +712,7 @@ Menu <span></span>
 <div class="clearfix flex">
 <div class="logo-outer ">
 <div class="logo">
-<a href="https://ajel.sa/">
+<a href="https://sanews.pythonanywhere.com/">
 <embed id="logo-img" src="/ajel/images/logo.png" alt="ajel" />
 </a>
 </div>
@@ -854,11 +854,11 @@ BBC
 <nav class="nav-container" id="navigation">
 <ul id="main-menu">
 <li class="mainCat"> <a href="https://twitter.com/ajlnews">
-تويتر عاجل
+تويتر السعودية نيوز
 </a>
 </li>
 <li class="mainCat"> <a href="https://www.snapchat.com/add/ajelco">
-سناب عاجل
+سناب السعودية نيوز
 </a>
 </li>
 </ul>
@@ -894,7 +894,7 @@ BBC
 <a href="/" class=" title-height "><img src="/ajel/images/mobile-logo.svg" alt="ajel" /></a>
 <div class="ul-flex hidden-sm hidden-xs">
 <ul>
-<li><a href="/about-us">عن عاجل</a></li>
+<li><a href="/about-us">عن السعودية نيوز</a></li>
 <li><a href="/contactmessage/send">اتصل بنا</a></li>
 <li><a href="/PrivacyPolicy">سياسة الخصوصية</a></li>
 </ul>
@@ -910,7 +910,7 @@ BBC
 </div>
 </div>
 <div class="col-lg-3  col-lg-offset-1 col-md-4  col-sm-6 col-12">
-<div class="title-height h3">صحيفة عاجل الإلكترونية</div>
+<div class="title-height h3">صحيفة السعودية نيوز الإلكترونية</div>
 <div class="ul-flex">
 <ul>
 <li><a href="Business" class="">
@@ -931,7 +931,7 @@ BBC
 </div>
 </div>
 <div class="col-lg-3 col-lg-offset-1  col-md-4  col-sm-12 col-12">
-<div class="h3">تطبيق عاجل على الجوال</div>
+<div class="h3">تطبيق السعودية نيوز على الجوال</div>
 <ul class="app-img">
 <li>
 <a href="https://play.google.com/store/apps/details?id=com.ajel.sa" target="_blank" rel="nofollow noopener">
@@ -954,7 +954,7 @@ BBC
 <div class="col-md-6 col-sm-12 col-12">
 <div class="clear-fix">
 <div class="h5 mt3 mb3 ">
-جميع الحقوق محفوظة <a href="/">لصحيفة عاجل</a> <span> 2007-2020 ©</span>
+جميع الحقوق محفوظة <a href="/">لصحيفة السعودية نيوز</a> <span> 2007-2020 ©</span>
 </div>
 </div>
 <br class="clearfix" />
@@ -1000,7 +1000,7 @@ BBC
 <div class="h3 modal-title">
 أدخل البريد الإلكتروني </div>
 </div>
-<form novalidate="" class="dev-js-validation" method="post" action="https://ajel.sa/socialEmailVerify">
+<form novalidate="" class="dev-js-validation" method="post" action="https://sanews.pythonanywhere.com/socialEmailVerify">
 <div class="modal-body">
 <div class="form-group">
 <input type="email" id="form_email" name="form[email]" required="required" class="email form-control" placeholder="ادخل البريد الالكترونى" />
@@ -1045,7 +1045,7 @@ BBC
       chooseAnswerToVote: "يجب اختيار إجابة واحدة علي الأقل للتصويت",
     };
 
-    var socialNetworkErrorMessage = 'تعذر الاتصال..يجب السماح لتطبيق عاجل بالحصول على المعلومات المطلوبة';
+    var socialNetworkErrorMessage = 'تعذر الاتصال..يجب السماح لتطبيق السعودية نيوز بالحصول على المعلومات المطلوبة';
   </script>
 <script>
     var domain = 'arabicajelsa';

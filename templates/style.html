@@ -1,21 +1,18 @@
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+<link rel="stylesheet" href="{% static '/assets/css/main.css' %}">
 
 <style>
-  @import url(https://fonts.googleapis.com/css?family=Lato&display=swap);
-</style>
+@import url(https://fonts.googleapis.com/css?family=Lato&display=swap);
 
-<!-- icons and fonts (assets in css) -->
-<style>
 @font-face {
   font-family: "FontAwesome";
-  src: url("{% static 'assets/extra/fontawesome-webfont.eot' %}");
-  src: url("{% static 'assets/extra/fontawesome-webfont.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/fontawesome-webfont.woff2' %}") format("woff2"),
-    url("{% static 'assets/extra/fontawesome-webfont.woff' %}") format("woff"),
-    url("{% static 'assets/extra/fontawesome-webfont.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/fontawesome-webfont.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/fontawesome-webfont.eot' %}");
+  src: url("{% static '/assets/extra/fontawesome-webfont.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/fontawesome-webfont.woff2' %}") format("woff2"),
+    url("{% static '/assets/extra/fontawesome-webfont.woff' %}") format("woff"),
+    url("{% static '/assets/extra/fontawesome-webfont.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/fontawesome-webfont.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -24,81 +21,81 @@
   font-family: Font awesome\5 Brands;
   font-style: normal;
   font-weight: 400;
-  src: url({% static 'assets/extra/fa-brands-400.eot' %});
-  src: url({% static 'assets/extra/fa-brands-400.eot' %}) format("embedded-opentype"),
-    url({% static 'assets/extra/fa-brands-400.woff2' %}) format("woff2"),
-    url({% static 'assets/extra/fa-brands-400.woff' %}) format("woff"),
-    url({% static 'assets/extra/fa-brands-400.ttf' %}) format("truetype"),
-    url({% static 'assets/extra/fa-brands-400.svg' %}) format("svg");
+  src: url({% static '/assets/extra/fa-brands-400.eot' %});
+  src: url({% static '/assets/extra/fa-brands-400.eot' %}) format("embedded-opentype"),
+    url({% static '/assets/extra/fa-brands-400.woff2' %}) format("woff2"),
+    url({% static '/assets/extra/fa-brands-400.woff' %}) format("woff"),
+    url({% static '/assets/extra/fa-brands-400.ttf' %}) format("truetype"),
+    url({% static '/assets/extra/fa-brands-400.svg' %}) format("svg");
 }
 
 @font-face {
   font-family: Font awesome\5 Free;
   font-style: normal;
   font-weight: 400;
-  src: url({% static 'assets/extra/fa-regular-400.eot' %});
-  src: url({% static 'assets/extra/fa-regular-400.eot' %}) format("embedded-opentype"),
-    url({% static 'assets/extra/fa-regular-400.woff2' %}) format("woff2"),
-    url({% static 'assets/extra/fa-regular-400.woff' %}) format("woff"),
-    url({% static 'assets/extra/fa-regular-400.ttf' %}) format("truetype"),
-    url({% static 'assets/extra/fa-regular-400.svg' %}) format("svg");
+  src: url({% static '/assets/extra/fa-regular-400.eot' %});
+  src: url({% static '/assets/extra/fa-regular-400.eot' %}) format("embedded-opentype"),
+    url({% static '/assets/extra/fa-regular-400.woff2' %}) format("woff2"),
+    url({% static '/assets/extra/fa-regular-400.woff' %}) format("woff"),
+    url({% static '/assets/extra/fa-regular-400.ttf' %}) format("truetype"),
+    url({% static '/assets/extra/fa-regular-400.svg' %}) format("svg");
 }
 
 @font-face {
   font-family: Font awesome\5 Free;
   font-style: normal;
   font-weight: 900;
-  src: url({% static 'assets/extra/fa-solid-900.eot' %});
-  src: url({% static 'assets/extra/fa-solid-900.eot' %}) format("embedded-opentype"),
-    url({% static 'assets/extra/fa-solid-900.woff2' %}) format("woff2"),
-    url({% static 'assets/extra/fa-solid-900.woff' %}) format("woff"),
-    url({% static 'assets/extra/fa-solid-900.ttf' %}) format("truetype"),
-    url({% static 'assets/extra/fa-solid-900.svg' %}) format("svg");
+  src: url({% static '/assets/extra/fa-solid-900.eot' %});
+  src: url({% static '/assets/extra/fa-solid-900.eot' %}) format("embedded-opentype"),
+    url({% static '/assets/extra/fa-solid-900.woff2' %}) format("woff2"),
+    url({% static '/assets/extra/fa-solid-900.woff' %}) format("woff"),
+    url({% static '/assets/extra/fa-solid-900.ttf' %}) format("truetype"),
+    url({% static '/assets/extra/fa-solid-900.svg' %}) format("svg");
 }
 
 @font-face {
   font-family: "Font Awesome 5 Brands";
   font-style: normal;
   font-weight: normal;
-  src: url("{% static 'assets/extra/fa-brands-400.eot' %}");
-  src: url("{% static 'assets/extra/fa-brands-400.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/fa-brands-400.woff2' %}") format("woff2"),
-    url("{% static 'assets/extra/fa-brands-400.woff' %}") format("woff"),
-    url("{% static 'assets/extra/fa-brands-400.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/fa-brands-400.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/fa-brands-400.eot' %}");
+  src: url("{% static '/assets/extra/fa-brands-400.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/fa-brands-400.woff2' %}") format("woff2"),
+    url("{% static '/assets/extra/fa-brands-400.woff' %}") format("woff"),
+    url("{% static '/assets/extra/fa-brands-400.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/fa-brands-400.svg' %}") format("svg");
 }
 
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 400;
-  src: url("{% static 'assets/extra/fa-regular-400.eot' %}");
-  src: url("{% static 'assets/extra/fa-regular-400.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/fa-regular-400.woff2' %}") format("woff2"),
-    url("{% static 'assets/extra/fa-regular-400.woff' %}") format("woff"),
-    url("{% static 'assets/extra/fa-regular-400.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/fa-regular-400.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/fa-regular-400.eot' %}");
+  src: url("{% static '/assets/extra/fa-regular-400.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/fa-regular-400.woff2' %}") format("woff2"),
+    url("{% static '/assets/extra/fa-regular-400.woff' %}") format("woff"),
+    url("{% static '/assets/extra/fa-regular-400.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/fa-regular-400.svg' %}") format("svg");
 }
 
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
-  src: url("{% static 'assets/extra/fa-solid-900.eot' %}");
-  src: url("{% static 'assets/extra/fa-solid-900.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/fa-solid-900.woff2' %}") format("woff2"),
-    url("{% static 'assets/extra/fa-solid-900.woff' %}") format("woff"),
-    url("{% static 'assets/extra/fa-solid-900.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/fa-solid-900.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/fa-solid-900.eot' %}");
+  src: url("{% static '/assets/extra/fa-solid-900.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/fa-solid-900.woff2' %}") format("woff2"),
+    url("{% static '/assets/extra/fa-solid-900.woff' %}") format("woff"),
+    url("{% static '/assets/extra/fa-solid-900.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/fa-solid-900.svg' %}") format("svg");
 }
 
 @font-face {
   font-family: "Flaticon";
-  src: url("{% static 'assets/extra/Flaticon.eot' %}");
-  src: url("{% static 'assets/extra/Flaticon.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/Flaticon.woff' %}") format("woff"),
-    url("{% static 'assets/extra/Flaticon.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/Flaticon.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/Flaticon.eot' %}");
+  src: url("{% static '/assets/extra/Flaticon.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/Flaticon.woff' %}") format("woff"),
+    url("{% static '/assets/extra/Flaticon.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/Flaticon.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -106,101 +103,99 @@
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "Flaticon";
-    src: url("{% static 'assets/extra/Flaticon.svg' %}") format("svg");
+    src: url("{% static '/assets/extra/Flaticon.svg' %}") format("svg");
   }
 }
 
 @font-face {
   font-family: "icomoon";
-  src: url("{% static 'assets/extra/icomoon.eot' %}");
-  src: url("{% static 'assets/extra/icomoon.eot' %}") format("embedded-opentype"),
-    url("{% static 'assets/extra/icomoon.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/icomoon.woff' %}") format("woff"),
-    url("{% static 'assets/extra/icomoon.svg' %}") format("svg");
+  src: url("{% static '/assets/extra/icomoon.eot' %}");
+  src: url("{% static '/assets/extra/icomoon.eot' %}") format("embedded-opentype"),
+    url("{% static '/assets/extra/icomoon.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/icomoon.woff' %}") format("woff"),
+    url("{% static '/assets/extra/icomoon.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: url({% static 'assets/extra/glyphicons-halflings-regular.eot' %});
-  src: url({% static 'assets/extra/glyphicons-halflings-regular.eot' %})
+  src: url({% static '/assets/extra/glyphicons-halflings-regular.eot' %});
+  src: url({% static '/assets/extra/glyphicons-halflings-regular.eot' %})
       format("embedded-opentype"),
-    url({% static 'assets/extra/glyphicons-halflings-regular.woff2' %}) format("woff2"),
-    url({% static 'assets/extra/glyphicons-halflings-regular.woff' %}) format("woff"),
-    url({% static 'assets/extra/glyphicons-halflings-regular.ttf' %}) format("truetype"),
-    url({% static 'assets/extra/glyphicons-halflings-regular.svg' %}) format("svg");
+    url({% static '/assets/extra/glyphicons-halflings-regular.woff2' %}) format("woff2"),
+    url({% static '/assets/extra/glyphicons-halflings-regular.woff' %}) format("woff"),
+    url({% static '/assets/extra/glyphicons-halflings-regular.ttf' %}) format("truetype"),
+    url({% static '/assets/extra/glyphicons-halflings-regular.svg' %}) format("svg");
 }
 
 .owl-carousel .owl-video-play-icon {
-  background: url({% static 'assets/extra/owl.video.play.png' %}) no-repeat;
+  background: url({% static '/assets/extra/owl.video.play.png' %}) no-repeat;
 }
 
 .sp-grabbing {
-  cursor: url({% static 'assets/extra/closedhand.cur' %}), move;
+  cursor: url({% static '/assets/extra/closedhand.cur' %}), move;
 }
 
 
-@import url("{% static 'assets/extra/jquery.mCustomScrollbar.min.css' %}");
+@import url("{% static '/assets/extra/jquery.mCustomScrollbar.min.css' %}");
 @font-face {
   font-family: "FrutigerAr-Light";
-  src: url("{% static 'assets/extra/FrutigerLTArabic-45Light.eot' %}")
+  src: url("{% static '/assets/extra/FrutigerLTArabic-45Light.eot' %}")
       format("embedded-opentype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-45Light.woff' %}") format("woff"),
-    url("{% static 'assets/extra/FrutigerLTArabic-45Light.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-45Light.svg' %}") format("svg");
+    url("{% static '/assets/extra/FrutigerLTArabic-45Light.woff' %}") format("woff"),
+    url("{% static '/assets/extra/FrutigerLTArabic-45Light.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/FrutigerLTArabic-45Light.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "FrutigerAr-Roman";
-  src: url("{% static 'assets/extra/FrutigerLTArabic-55Roman.eot' %}")
+  src: url("{% static '/assets/extra/FrutigerLTArabic-55Roman.eot' %}")
       format("embedded-opentype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-55Roman.woff' %}") format("woff"),
-    url("{% static 'assets/extra/FrutigerLTArabic-55Roman.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-55Roman.svg' %}") format("svg");
+    url("{% static '/assets/extra/FrutigerLTArabic-55Roman.woff' %}") format("woff"),
+    url("{% static '/assets/extra/FrutigerLTArabic-55Roman.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/FrutigerLTArabic-55Roman.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "FrutigerAr-Bold";
-  src: url("{% static 'assets/extra/FrutigerLTArabic-65Bold.eot' %}")
+  src: url("{% static '/assets/extra/FrutigerLTArabic-65Bold.eot' %}")
       format("embedded-opentype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-65Bold.woff' %}") format("woff"),
-    url("{% static 'assets/extra/FrutigerLTArabic-65Bold.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-65Bold.svg' %}") format("svg");
+    url("{% static '/assets/extra/FrutigerLTArabic-65Bold.woff' %}") format("woff"),
+    url("{% static '/assets/extra/FrutigerLTArabic-65Bold.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/FrutigerLTArabic-65Bold.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "FrutigerAr-Black";
-  src: url("{% static 'assets/extra/FrutigerLTArabic-75Black.eot' %}")
+  src: url("{% static '/assets/extra/FrutigerLTArabic-75Black.eot' %}")
       format("embedded-opentype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-75Black.woff' %}") format("woff"),
-    url("{% static 'assets/extra/FrutigerLTArabic-75Black.ttf' %}") format("truetype"),
-    url("{% static 'assets/extra/FrutigerLTArabic-75Black.svg' %}") format("svg");
+    url("{% static '/assets/extra/FrutigerLTArabic-75Black.woff' %}") format("woff"),
+    url("{% static '/assets/extra/FrutigerLTArabic-75Black.ttf' %}") format("truetype"),
+    url("{% static '/assets/extra/FrutigerLTArabic-75Black.svg' %}") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 .sticky-header .logo {
-  background: url({% static 'assets/extra/logo-small.png' %}) no-repeat;
+  background: url({% static '/assets/extra/logo-small.png' %}) no-repeat;
 }
 
 .main-header .logo-outer .logo.header-three-logo {
-  background: url({% static 'assets/extra/white-logo.png' %}) no-repeat;
+  background: url({% static '/assets/extra/white-logo.png' %}) no-repeat;
 }
 
 .opinion-block {
-  background: url({% static 'assets/extra/opinion-bg.png' %}) no-repeat;
+  background: url({% static '/assets/extra/opinion-bg.png' %}) no-repeat;
 }
 .dark .opinion-block {
-  background: url({% static 'assets/extra/opinion-bg-dark.png' %}) no-repeat !important;
+  background: url({% static '/assets/extra/opinion-bg-dark.png' %}) no-repeat !important;
   background-size: cover !important;
 }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -213,9 +208,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -228,8 +221,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
-<style>
+
   .misc-bg::before {
     background: #945ba4;
   }
@@ -242,8 +234,7 @@
   .slider-overlay>.misc-slide-content::after {
     border-color: #945ba4 transparent transparent transparent;
   }
-</style>
-<style>
+
   .local-bg::before {
     background: #4eb96f;
   }
@@ -256,8 +247,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
-<style>
+
   .local-bg::before {
     background: #4eb96f;
   }
@@ -270,8 +260,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
-<style>
+
   .triangle-local::before {
     border-color: #4eb96f transparent transparent transparent !important;
   }
@@ -335,8 +324,7 @@
   .triangle-Women::before {
     border-color: #f200ff transparent transparent transparent !important;
   }
-</style>
-<style>
+
   .triangle-misc::before {
     border-color: #945ba4 transparent transparent transparent !important;
   }
@@ -344,9 +332,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-International::before {
     border-color: #3b97d2 transparent transparent transparent !important;
   }
@@ -354,8 +340,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
-<style>
+
   .triangle-International::before {
     border-color: #3b97d2 transparent transparent transparent !important;
   }
@@ -363,9 +348,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-sports::before {
     border-color: #ee7f1f transparent transparent transparent !important;
   }
@@ -373,8 +356,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
-<style>
+
   .triangle-local::before {
     border-color: #4eb96f transparent transparent transparent !important;
   }
@@ -382,10 +364,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-
-<style>
   #main-slider .owl-nav {
     bottom: 120px;
     position: relative;
@@ -400,10 +379,7 @@
     left: 20px;
     position: absolute;
   }
-</style>
 
-
-<style type="text/css">
   .main-category-icon span {
     position: absolute;
     top: -20px;
@@ -817,9 +793,7 @@
   .mainCat5dd47a40a145c263eb2f9092>a::before {
     background-color: #f200ff !important;
   }
-</style>
 
-<style>
   .sticky-adv-container.fixed-theme,
   .sticky-adv-fixed-top.fixed-theme,
   .sticky-adv-container {
@@ -843,9 +817,7 @@
   #sticky-adv.fixed-theme {
     background: rgba(255, 255, 255, 0.7);
   }
-</style>
 
-<style>
   #main-slider .owl-nav {
     bottom: 120px;
     position: relative;
@@ -860,9 +832,7 @@
     left: 20px;
     position: absolute;
   }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -875,9 +845,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -890,9 +858,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -905,9 +871,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
 
-<style>
   .local-bg::before {
     background: #4eb96f;
   }
@@ -920,9 +884,7 @@
   .slider-overlay>.local-slide-content::after {
     border-color: #4eb96f transparent transparent transparent;
   }
-</style>
 
-<style>
   .misc-bg::before {
     background: #945ba4;
   }
@@ -935,9 +897,7 @@
   .slider-overlay>.misc-slide-content::after {
     border-color: #945ba4 transparent transparent transparent;
   }
-</style>
 
-<style>
   .triangle-local::before {
     border-color: #4eb96f transparent transparent transparent !important;
   }
@@ -1001,9 +961,7 @@
   .triangle-Women::before {
     border-color: #f200ff transparent transparent transparent !important;
   }
-</style>
 
-<style>
   .triangle-misc::before {
     border-color: #945ba4 transparent transparent transparent !important;
   }
@@ -1011,9 +969,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-International::before {
     border-color: #3b97d2 transparent transparent transparent !important;
   }
@@ -1021,9 +977,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-International::before {
     border-color: #3b97d2 transparent transparent transparent !important;
   }
@@ -1031,9 +985,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-sports::before {
     border-color: #ee7f1f transparent transparent transparent !important;
   }
@@ -1041,9 +993,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .triangle-local::before {
     border-color: #4eb96f transparent transparent transparent !important;
   }
@@ -1051,9 +1001,7 @@
   .icon-white i::before {
     color: white;
   }
-</style>
 
-<style>
   .news-titles h1 {
     color: #5c5d6a;
     margin-bottom: 8px;
@@ -1072,16 +1020,12 @@
   .hide {
     display: none;
   }
-</style>
 
-<style>
   .categoryColor::before {
     border-color: #3b97d2 transparent transparent transparent;
     opacity: 0.65;
   }
-</style>
 
-<style>
   .active {
     color: #ec1c3f;
   }

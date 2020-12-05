@@ -3,21 +3,6 @@
   "use strict";
 
 
-  //Hide Loading Box (Preloader)
-//		function handlePreloader() {
-//			if($('.preloader').length){
-//				$('.preloader').delay(200).fadeOut(500);
-//			}
-//		}
-
-
-  //Hide Loading Box (Preloader)
-  //		if($('.main-slider-six .default-tab-box .tab-btns').length){
-  //			$('.main-slider-six .default-tab-box .tab-btns').mCustomScrollbar();
-  //		}
-
-
-  //Update Header Style and Scroll to Top
   function headerStyle() {
     if ($('.main-header').length) {
       var windowpos = $(window).scrollTop();
@@ -92,11 +77,6 @@
       hiddenBar.removeClass('visible-sidebar');
     });
   }
-
-
-  /* ==========================================================================
-   When document is Scrollig, do
-   ========================================================================== */
 
   $(window).on('scroll', function () {
     headerStyle();
@@ -249,18 +229,12 @@
     // instantiate fancybox when a link is clicked
     $('#example4 .sp-lightbox').on('click', function (event) {
       event.preventDefault();
-
-      // check if the clicked link is also used in swiping the slider
-      // by checking if the link has the 'sp-swiping' class attached.
-      // if the slider is not being swiped, open the lightbox programmatically,
-      // at the correct index
       if ($('#example4').hasClass('sp-swiping') === false) {
         $.fancybox.open(this);
       }
     });
   });
 
-  // popup
   $(document).ready(function () {
     $('.popup-gallery').magnificPopup({
       delegate: 'a',
@@ -321,9 +295,6 @@
     });
   });
 
-  /*----------------------------------------
-   Upload btn
-   ------------------------------------------*/
   var SITE = SITE || {};
 
   SITE.fileInputs = function () {
@@ -333,14 +304,6 @@
             newVal = valArray[valArray.length - 1],
             $button = $this.siblings('.btn'),
             $fakeFile = $this.siblings('.file-holder');
-//  if(newVal !== '') {
-//    $button.text('Photo Chosen');
-//    if($fakeFile.length === 0) {
-//      $button.after('<span class="file-holder">' + newVal + '</span>');
-//    } else {
-//      $fakeFile.text(newVal);
-//    }
-//  }
   };
 
 
@@ -363,47 +326,6 @@
   $(".uploader").change(function (e) {
     readURL(this, e);
   });
-
-//    $('#myForm').validator()
-  /* ==========================================================================
-   When document is loaded, do
-   ========================================================================== */
-
-  // $(window).on('load', function() {
-  // 	handlePreloader();
-  // });
-//     function change()
-//        {
-//            if (this.value=="open"){
-//                this.value = "close";
-//                this.text("اظهار ");
-//            }
-//            else {
-//                this.value = "open";
-//                this.text("close ");
-//            }
-//        }
-
-  //toggle button
-
-//     const Btoggle = document.querySelector('.btn-toggle ')
-//    Btoggle.addEventListener('click', function () {
-//
-//            //toggle button text
-//            if (Btoggle.innerHTML==="اخفاء النتائج"){
-//                Btoggle.innerHTML = "اظهار النتائج"
-//            }
-//            else {
-//                Btoggle.innerHTML = "اخفاء النتائج"
-//            };
-//        })
-//
-//     $('[data-toggle="tooltip"]').tooltip({trigger: 'manual'}).tooltip('show');
-//
-
-//	$(window).on('load', function() {
-//		handlePreloader();
-//	});
 
 })(window.jQuery);
 

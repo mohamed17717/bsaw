@@ -1,7 +1,3 @@
-/*
- * Translated default messages for the jQuery validation plugin.
- * Locale: AR (Arabic; العربية)
- */
 (function($) {
     var phoneErrorMessage = 'يجب ان تكون صيغة الجوال صحيحة';
 	$.extend($.validator.messages, {

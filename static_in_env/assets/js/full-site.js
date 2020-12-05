@@ -2,28 +2,7 @@ var failCount = 0;
 var onLogoutRemoveIds = [];
 var reoloadPageForChat = false;
 
-/**
- * @author Gehad Mohamed
- */
-function showLoginPopUp(){
-    if(!isLoggedIn){
-         $('#login-popup').lightcase('start',{
-             href: "#login-popup",
-             liveResize:true,
-             maxHeight:1000,
-             onClose: {
-                 qux:function(){
-//                    afterLoginPerformAction = null;
-                }
-             },
-            onFinish : {
-		baz: function() {
-                    initFormValidation('#ajax-form-login-resp');
-                }
-            }
-         });
-    }
-}
+function showLoginPopUp(){}
 
 function showNotification(type, txt) {
     toastr.options.rtl = true;
@@ -69,13 +48,6 @@ function clickElm(selector) {
     }
 }
 
-/**
- *
- * @param {type} choicesModalTitle
- * @param {type} choicesModalMessage
- * @param {type} buttons like --> [ { textValue: "Ok", clickAction: "function"},{ text: "Ok", click: "function"},{ text: "Ok", click: "function"} ]
- * @param {type} onCancelFunction [optional]
- */
 function showChoicesModal(choicesModalTitle, choicesModalMessage, buttons, onCancelFunction) {
 
     var $choicesModal = $('#choices-modal');
@@ -200,10 +172,6 @@ function showAuthError(error) {
         location.href = loginUrl;
     } else {
         showNotification('error',error);
-//        $('.dev-login-li').find('.alert').remove();
-//        $('.dev-login-li').prepend('<div class="alert alert-danger remove-5s">'
-//                + error + '</div>');
-//        if($('#ajax-form-login-resp').is(':visible')) $('#login-popup').lightcase('resize');
     }
 }
 
@@ -228,24 +196,12 @@ function SocialNetworkConnect(element) {
         }
     }
 
-function show_email_modal() {
-    document.getElementById('form_email').value = "";
-//    $('#form_email').css('text-indent', '35px');
-    $('#form-modal .help-error').remove();
-    $('#form-modal .form-group').removeClass('is-invalid');
-    $('#form-modal').modal('show');
-}
-
 function getprayerTimeData() {
     $.ajax({
         url: getPrayerInfoUrl,
         success: preparePrayerTimeWidget
     });
 }
-
-
-
-    // increaseFontSize and decreaseFontSize
     var min = 16;
     var max = 20;
 
@@ -336,10 +292,6 @@ $(document).on('shown.bs.tab', 'a[data-toggle="tab"]',function (e) {
 });
 jQuery(document).ready(function ($) {
 
-//    $(window).on('user.loggedin', loginToChat);
-//    $(window).on('user.loggedout', logoutFromChat);
-
-
         $('form[name=searchForm]').submit(function (e) {
         if (typeof inAngularLayout === 'undefined') {
             e.preventDefault();
@@ -369,7 +321,6 @@ jQuery(document).ready(function ($) {
         }
     });
 
-    // hijri date switcher
     $(function () {
         $ds = $('#dev-date-container span');
         $ds.hide().eq(0).show();
@@ -392,53 +343,6 @@ jQuery(document).ready(function ($) {
         $('.submenu-dropzone').eq(menuIndex).stop(true, false, true).slideToggle(300);
         return false;
     });
-
-
-//       var currentTime = new Date();
-//        var dateInHailTimezone = new Date((currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000)) + (3600000 * 3));
-//        var currentDayDate = dateInHailTimezone.toLocaleDateString('ar-SA', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
-//        var todayDate = currentTime.getFullYear() + '-' + (currentTime.getMonth() + 1) + '-' + currentTime.getDate();
-//        var prayerNames = {'Fajr': 'الفجر', 'Dhuhr': 'الظهر', 'Asr': 'العصر', 'Maghrib': 'المغرب', 'Isha': 'العشاء'};
-//
-//        function getTimeStringFromDateObject(status) {
-//        var timeStatus = 'AM';
-//        if (status == "مساءًا") {
-//            timeStatus = 'PM';
-//        }
-//
-//        return timeStatus;
-//    }
-
-
-//    $(window).on('activePrayerTime', function () {
-//        $('.dev-active-prayer-label').text(activePrayerObject.activePrayerLabel)
-//        $('.dev-active-prayer-time').text(activePrayerObject.activePrayer)
-//        $('.dev-asr').text(prayerTimeDate.asr);
-//        $('.dev-fajr').text(prayerTimeDate.fajr);
-//        $('.dev-isha').text(prayerTimeDate.isha);
-//        $('.dev-maghrib').text(prayerTimeDate.maghrib);
-//        $('.dev-zuhr').text(prayerTimeDate.zuhr);
-//        $('.dev-prayer-city').text(prayerCity);
-//        $('.dev-remaing-label').text('يحين ' + activePrayerObject.activePrayerLabel + '  بعد');
-//        displayCount(remaining, 'dev-remaining-time', getNextActivePrayer);
-//    });
-//
-//    // show the ads in the pages that does not include the angular files
-////    setTimeout(function () {
-////        if (typeof inAngularLayout === 'undefined') {
-////            addGeneralAds('General');
-////        }
-////    }, 1000);
-//
-    $.ajax({
-        url: getUserStatsUrl,
-        success: function (data) {
-            if (data) {
-                userStateChange(data.data, true);
-            }
-        }
-    });
-//
 
 
     $('body').on('submit', '#ajax-form-login,#ajax-form-login-resp,#ajax-form-login-comment', function (e) {
@@ -477,34 +381,8 @@ jQuery(document).ready(function ($) {
         }
     });
 
-//    $('.ajax-logout').click(function (e) {
-//        e.preventDefault();
-//        $.ajax({
-//            url: $(this).attr('href'),
-//            complete: function () {
-//                userStateChange();
-//                if (typeof angular == "undefined") {
-//                    location.href = homePageUrl;
-//                }
-//            }
-//        });
-//    });
-//
-//    $('body').on('click','.collapse-btn',function () {
-//        $(this).toggleClass("on");
-//        $($(this).attr('data-ctrl')).slideToggle();
-//    });
-//
-//    jQuery(function() {
-//        jQuery.scrollDepth({
-//            nonInteraction:false
-//        });
-//    });
+getBreakingNews();
 
-// Ready Methods
-    getBreakingNews();
-
-//---------(Functions)------------>
 function getBreakingNews(){
     $.ajax({
         url: $("#breakingNewsUrl").val(),

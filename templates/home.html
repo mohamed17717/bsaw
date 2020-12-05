@@ -27,8 +27,6 @@
                 <div class="carousel-caption">
                   <div class="slide-content local">
                     <div class=" without-opacity " style="opacity: 1 !important;">
-                      <!-- <div class="h3 hidden-sm hidden-xs"><a class=" content-color" href="https://ajel.sa/rCFkQx/">في
-                          ختام «مجموعة تواصل المرأة 20»..</a></div> -->
                       <p><a href="{{ featured_posts.first.get_absolute_url }}">{{ featured_posts.first.title }}</a></p>
                     </div>
                   </div>
@@ -159,8 +157,10 @@
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
         <div class="title-bg">
-          <span class="icon-Weather-Icons-16"></span>
-          <span class="flaticon-pause-bars"></span>
+          <!-- <span class="icon-Weather-Icons-16"></span>
+          <span class="flaticon-pause-bars"></span> -->
+          <img class="icon-Weather-Icons-16" src="{% static '/assets/images/tab.png' %}" alt="">
+
           <div class="row">
             <div class="col-md-8 col-sm-8 col-xs-8">
               <a href="{% url 'latest-posts' %}" class="header-title red">اّخر الأخبار </a>
