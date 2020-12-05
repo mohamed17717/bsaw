@@ -55,6 +55,8 @@ def since_when(value):
                 since = f'{since} {arabic[0]}'
 
             return phrase.format(since)
+    return phrase.format('ثانية')
+
 
 
 @register.filter
@@ -72,3 +74,7 @@ def html2text(value):
     h.ignore_tables = True
 
     return h.handle(value).strip()
+
+@register.filter
+def operator_or(value, new):
+    return value or new
