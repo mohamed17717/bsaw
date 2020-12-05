@@ -14,19 +14,23 @@ from decorators import require_http_methods, require_fields, allow_fields, check
 
 from pprint import pprint
 
+def get_defualt_context():
+    return {
+        'nav_categories': Category.get_nav_categories(5),
+        'sidebar_categories': Category.get_sidebar_categories(),
+        'footer_categories': Category.get_top_categories(10)
+    }
+
 
 @require_http_methods(['GET'])
 def index(request):
-    featured_posts = Post.objects.filter(featured=True)[:10]
-
     context = {
-        'nav_categories': Category.get_nav_categories(5),
-        'featured_posts': Post.get_most_viewed_posts_in_last_days(7)[:6],
+        **get_defualt_context(),
+
+        'featured_posts': Post.get_featured_posts(6, force_count=True),
         'popular_tags': Tag.get_popular_tags(),
         'latest_posts': Post.get_latest_posts(8),
         'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
-        'sidebar_categories': Category.get_sidebar_categories(),
-        'footer_categories': Category.get_top_categories(10)
     }
 
     return render(request, 'home.html', context)
@@ -38,18 +42,13 @@ def post(request, id):
     post.seen_count += 1
     post.save()
 
-    next_post = Post.objects.filter(id=id+1).first()
-    previous_post = Post.objects.filter(id=id-1).first()
-
     context = {
-        'nav_categories': Category.get_nav_categories(5),
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
-        'sidebar_categories': Category.get_sidebar_categories(),
-        'footer_categories': Category.get_top_categories(10),
+        **get_defualt_context(),
 
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
         'post': post,
-        'next_post': next_post,
-        'previous_post': previous_post,
+        'next_post': Post.objects.filter(id=id+1).first(),
+        'previous_post': Post.objects.filter(id=id-1).first(),
     }
 
     return render(request, 'post.html', context)
@@ -98,17 +97,14 @@ def listPosts(view_name):
         posts_qs = view_obj['qs'](*args, **kwargs)
 
         context = {
+            **get_defualt_context(),
+
             'posts': paginatePosts(posts_qs, page),
             'dir_name': view_obj['dir_name'](*args, **kwargs),
             'dir_url': view_obj['dir_url'](*args, **kwargs),
             'posts_length': len(posts_qs),
-
             'next_page': page + 1,
-
-            'nav_categories': Category.get_nav_categories(5),
             'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
-            'sidebar_categories': Category.get_sidebar_categories(),
-            'footer_categories': Category.get_top_categories(10)
         }
 
         return render(request, 'list.html', context)
@@ -124,13 +120,11 @@ def static_template(templateName):
 
 @require_http_methods(['POST'])
 @require_fields(['url', 'title', 'thumbnailURL', 'content'])
-@allow_fields(['url', 'title', 'thumbnailURL', 'content', 'categories', 'tags', 'date', 'small_summery', 'overview'])
+@allow_fields(['url', 'title', 'thumbnailURL', 'content', 'categories', 'tags', 'date', 'small_summery', 'overview', 'creator'])
 @check_unique_fields(Post, ['url'])
 def create_post(request):
     data = json.loads(request.body.decode('utf-8'))  # .dict()
-
-    print(data)
-
+    # print(data)
     categories = data.pop('categories', [])
     tags = data.pop('tags', [])
 
@@ -140,7 +134,7 @@ def create_post(request):
         tag, forced=True) for tag in tags]
 
     post = Post.objects.create(**data)
-    print('\n\n POST: ', post.title, '\n\n')
+    # print('\n\n POST: ', post.title, '\n\n')
 
     post.set_categories(categoriesObjects)
     post.set_tags(tagsObjects)
