@@ -115,6 +115,12 @@ def listPosts(view_name):
     return view
 
 
+# static views
+def static_template(templateName):
+    def view(request):
+        return render(request, templateName, {})
+    return view
+
 
 @require_http_methods(['POST'])
 @require_fields(['url', 'title', 'thumbnailURL', 'content'])
