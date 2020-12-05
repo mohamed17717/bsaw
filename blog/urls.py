@@ -8,6 +8,7 @@ from posts.views import (
     post,
     create_post,
     listPosts,
+    static_template
 )
 
 from django.contrib.sitemaps.views import sitemap
@@ -20,19 +21,27 @@ sitemaps = {
 }
 
 urlpatterns = [
+    # home
     path('', index, name='home'),
+    # post detail
     path('post/<int:id>/', post, name="post-detail"),
-
+    # lists
     path('search/<str:query>/', listPosts('search_posts'), name='search'),
     path('category/<str:title>/', listPosts('category_posts'), name='category-filter'),
     path('tag/<str:title>/', listPosts('tag_posts'), name='tag-filter'),
     path('latest/posts/', listPosts('latest_posts'), name='latest-posts'),
 
+    # static urls
+    path('privacy-policy/', static_template('privacy.html'), name='privacy-policy'),
+    path('about-us/', static_template('aboutus.html'), name='about-us'),
+    path('contact-us/', static_template('contactus.html'), name='contact-us'),
+
+    # create from the collector
     path('create/post/', create_post, name='create-post'),
 
+    # third party
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
-    path('admin/', admin.site.urls),
+    path('jJYDbuc44KAYpqiasHvI2HaPrut7B9/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
 ]
 
