@@ -1,4 +1,5 @@
 {% load static %}
+{% load filters %}
 
 <header class="main-header fixed-header">
 
@@ -82,10 +83,15 @@
                     </a>
                   </li>
                   
-                  {% for category in nav_categories %}  
+                  {% for category in nav_categories %}
                   <li class="mainCat5bb20db1c581b17f17037954"> 
+                    <style>
+                      a[href="{{ category.get_absolute_url }}"]::before {
+                        background-color: {{ category.css_icon_color|operator_or:"#EEE" }};
+                      }
+                    </style>
                     <a href="{{ category.get_absolute_url }}">
-                      <i class="{{ category.css_icon_class }} main-category-icon"></i>
+                    <i class="{{ category.css_icon_class }} main-category-icon" style="color: {{ category.css_icon_color|operator_or:"#EEE" }}"></i>
                       {{ category.title }}
                     </a>
                   </li>
