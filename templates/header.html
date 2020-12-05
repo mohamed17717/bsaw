@@ -87,7 +87,7 @@
                   <li class="mainCat5bb20db1c581b17f17037954"> 
                     <style>
                       a[href="{{ category.get_absolute_url }}"]::before {
-                        background-color: {{ category.css_icon_color|operator_or:"#EEE" }};
+                        background-color: {{ category.css_icon_color|operator_or:"#EEE" }} !important;
                       }
                     </style>
                     <a href="{{ category.get_absolute_url }}">
