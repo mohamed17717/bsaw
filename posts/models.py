@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Subquery, Count, Sum
+from django.db.models import Subquery, Count, Sum, F
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
@@ -10,10 +10,6 @@ import random
 
 User = get_user_model()
 
-
-def user_directory_path(instance, filename):
-    # file will be uploaded to MEDIA_ROOT / user_<id>/<filename>
-    return 'user_{0}/{1}'.format(instance.id, filename)
 
 
 class Author(models.Model):
@@ -28,7 +24,7 @@ class Category(models.Model):
     title = models.CharField(max_length=20)
     css_icon_class = models.CharField(max_length=64, blank=True, null=True)
     css_icon_color = models.CharField(max_length=32, blank=True, null=True)
-# flaticon-runer-silhouette-running-fast
+
     is_nav = models.BooleanField(default=False)
     is_home_sidebar = models.BooleanField(default=False)
 
@@ -160,5 +156,5 @@ class Post(models.Model):
 
     @staticmethod
     def get_most_viewed_posts_in_last_days(days=3):
-        qs = Post.get_posts_in_last_days(days).order_by('-seen_count')
+        qs = Post.get_posts_in_last_days(days).annotate(visits=F('seen_count') - F('fake_seen_count')).order_by('-visits')
         return qs

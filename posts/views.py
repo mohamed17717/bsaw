@@ -24,7 +24,7 @@ def index(request):
         'featured_posts': Post.get_most_viewed_posts_in_last_days(7)[:6],
         'popular_tags': Tag.get_popular_tags(),
         'latest_posts': Post.get_latest_posts(8),
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
         'sidebar_categories': Category.get_sidebar_categories(),
         'footer_categories': Category.get_top_categories(10)
     }
@@ -106,7 +106,7 @@ def listPosts(view_name):
             'next_page': page + 1,
 
             'nav_categories': Category.get_nav_categories(5),
-            'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
+            'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
             'sidebar_categories': Category.get_sidebar_categories(),
             'footer_categories': Category.get_top_categories(10)
         }
