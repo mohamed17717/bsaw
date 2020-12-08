@@ -102,9 +102,9 @@ def listPosts(view_name):
             'posts': paginatePosts(posts_qs, page),
             'dir_name': view_obj['dir_name'](*args, **kwargs),
             'dir_url': view_obj['dir_url'](*args, **kwargs),
-            'posts_length': len(posts_qs),
+            # 'posts_length': len(posts_qs),
             'next_page': page + 1,
-            'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
+            # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
         }
 
         return render(request, 'list.html', context)
