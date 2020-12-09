@@ -123,7 +123,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.CASCADE, null=True, blank=True)
 
-    creator = models.CharField(max_length=16, default='bot')
+    creator = models.CharField(max_length=16, default='admin')
 
     def __str__(self):
         return self.title
