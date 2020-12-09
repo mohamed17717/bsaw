@@ -18,7 +18,8 @@ def get_defualt_context():
     return {
         'nav_categories': Category.get_nav_categories(5),
         'sidebar_categories': Category.get_sidebar_categories(),
-        'footer_categories': Category.get_top_categories(10)
+        'footer_categories': Category.get_top_categories(10),
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
     }
 
 
@@ -30,7 +31,6 @@ def index(request):
         'featured_posts': Post.get_featured_posts(6, force_count=True),
         'popular_tags': Tag.get_popular_tags(),
         'latest_posts': Post.get_latest_posts(8),
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
     }
 
     return render(request, 'home.html', context)
@@ -44,8 +44,6 @@ def post(request, id):
 
     context = {
         **get_defualt_context(),
-
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(1)[:20],
         'post': post,
         'next_post': Post.objects.filter(id=id+1).first(),
         'previous_post': Post.objects.filter(id=id-1).first(),
@@ -102,9 +100,8 @@ def listPosts(view_name):
             'posts': paginatePosts(posts_qs, page),
             'dir_name': view_obj['dir_name'](*args, **kwargs),
             'dir_url': view_obj['dir_url'](*args, **kwargs),
-            # 'posts_length': len(posts_qs),
+            'posts_length': posts_qs.count,
             'next_page': page + 1,
-            # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
         }
 
         return render(request, 'list.html', context)
