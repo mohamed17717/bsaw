@@ -15,6 +15,9 @@ from django.contrib.sitemaps.views import sitemap
 from posts.sitemaps import Static_Sitemap
 from posts.sitemaps import Post_Sitemap
 
+from django.views.generic.base import TemplateView
+
+
 sitemaps = {
     'article': Post_Sitemap(),
     'static': Static_Sitemap(),
@@ -43,6 +46,12 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('jJYDbuc44KAYpqiasHvI2HaPrut7B9/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
+
+    # SEO
+    path(
+        "robots.txt",
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+    ),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sanews.pythonanywhere.com/sitemap.xml
