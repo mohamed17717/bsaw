@@ -56,9 +56,9 @@ class Category(models.Model):
     @staticmethod
     def get_top_categories(count):
         return Category\
-            .objects.all()\
-            .annotate(count=Sum('post_category__seen_count'))\
-            .order_by('-count')[:count]
+            .objects.all()
+            # .annotate(count=Sum('post_category__seen_count'))\
+            # .order_by('-count')[:count]
 
 
 class Tag(models.Model):
@@ -79,11 +79,26 @@ class Tag(models.Model):
         # order on most seen
         # last 100 post
         # list tags and order on its repetation
-        qs = Post.get_most_viewed_posts_in_last_days(3)\
-            .values('tags__title')\
-            .annotate(count=Count('tags__title'))\
-            .order_by('-count')[:10]
-        return qs
+        qs = Post.get_most_viewed_posts_in_last_days(3, 20)\
+            # .values('tags__title')
+            # \
+            # .annotate(count=Count('tags__title'))\
+            # .order_by('-count')[:10]
+
+        tags_tacker = {}
+        for item in qs:
+            # print(item.tags.all())
+            for tag in item.tags.all():
+                tag_title = tag.title
+                if tags_tacker.get(tag_title):
+                    tags_tacker[tag_title] += 1
+                else:
+                    tags_tacker[tag_title] = 1
+
+        tags = [{'tags__title': tag_name, 'count': count} for tag_name, count in tags_tacker.items()]
+        tags.sort(key=lambda i: i['count'])
+
+        return tags[:20]
 
     @staticmethod
     def get_tag_by_name(name, forced=False):
@@ -157,14 +172,18 @@ class Post(models.Model):
         return qs
 
     @staticmethod
-    def get_most_viewed_posts_in_last_days(days=3):
-        qs = Post.get_posts_in_last_days(days).annotate(visits=F('seen_count') - F('fake_seen_count')).order_by('-visits')
+    def get_most_viewed_posts_in_last_days(days=3, count=10):
+        # qs = Post.get_posts_in_last_days(days).annotate(visits=F('seen_count') - F('fake_seen_count')).order_by('-visits')
+        qs = Post.get_posts_in_last_days(days).order_by('-seen_count')
+        if count:
+            qs = qs[:count]
         return qs
 
     @staticmethod
     def get_featured_posts(count, force_count=False):
         qs = Post.objects.filter(featured=True)
-        if force_count and len(qs) < count:
-            more_qs = Post.get_most_viewed_posts_in_last_days(3)[:count - len(qs)]
+        got_posts = len(qs)
+        if force_count and got_posts < count:
+            more_qs = Post.get_most_viewed_posts_in_last_days(3, count-got_posts)
 
         return [*qs, *more_qs]

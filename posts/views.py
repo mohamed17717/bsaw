@@ -19,7 +19,7 @@ def get_defualt_context():
         'nav_categories': Category.get_nav_categories(5),
         'sidebar_categories': Category.get_sidebar_categories(),
         'footer_categories': Category.get_top_categories(10),
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2)[:20],
+        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
     }
 
 
@@ -54,8 +54,12 @@ def post(request, id):
 
 def paginatePosts(qs, page):
     paginator = Paginator(qs, 12)
-    try:posts = paginator.page(page)
-    except:posts = []
+
+    try:
+        posts = paginator.page(page)
+    except:
+        posts = []
+
     return posts
 
 def listPosts(view_name):
@@ -100,7 +104,7 @@ def listPosts(view_name):
             'posts': paginatePosts(posts_qs, page),
             'dir_name': view_obj['dir_name'](*args, **kwargs),
             'dir_url': view_obj['dir_url'](*args, **kwargs),
-            'posts_length': posts_qs.count,
+            # 'posts_length': posts_qs.count,
             'next_page': page + 1,
         }
 
