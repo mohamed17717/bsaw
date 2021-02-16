@@ -2,80 +2,748 @@
 {% load static %}
 {% load filters %}
 
+
+{% block head %}
+
+<title>اخبار التقنية | سواح ميديا</title>
+
+
+<link href="https://sawahmedia.com/category/tech/" rel="canonical" />
+<link href="https://sawahmedia.com/category/tech/page/2/" rel="next" />
+
+
+<script class="yoast-schema-graph" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [{
+      "@type": "WebSite",
+      "@id": "https://sawahmedia.com/#website",
+      "url": "https://sawahmedia.com/",
+      "name": "\u0633\u0648\u0627\u062d \u0645\u064a\u062f\u064a\u0627",
+      "description": "\u0627\u062e\u0631 \u0627\u0644\u0627\u062e\u0628\u0627\u0631 \u0648\u0627\u0644\u062a\u0631\u0646\u062f \u0627\u0644\u0639\u0631\u0628\u064a \u0648\u0627\u0644\u0639\u0627\u0644\u0645\u064a",
+      "potentialAction": [{
+        "@type": "SearchAction",
+        "target": "https://sawahmedia.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }],
+      "inLanguage": "ar"
+    }, {
+      "@type": "CollectionPage",
+      "@id": "https://sawahmedia.com/category/tech/#webpage",
+      "url": "https://sawahmedia.com/category/tech/",
+      "name": "\u0627\u062e\u0628\u0627\u0631 \u0627\u0644\u062a\u0642\u0646\u064a\u0629 | \u0633\u0648\u0627\u062d \u0645\u064a\u062f\u064a\u0627",
+      "isPartOf": {
+        "@id": "https://sawahmedia.com/#website"
+      },
+      "inLanguage": "ar",
+      "potentialAction": [{
+        "@type": "ReadAction",
+        "target": ["https://sawahmedia.com/category/tech/"]
+      }]
+    }]
+  }
+</script>
+
+<link href="https://sawahmedia.com/category/tech/feed/" rel="alternate" title="سواح ميديا « اخبار التقنية خلاصة التصنيف"
+  type="application/rss+xml" />
+
+
+<meta content="اخبار التقنية | سواح ميديا" property="og:title" />
+<meta content="https://sawahmedia.com/category/tech/" property="og:url" />
+<link href="https://sawahmedia.com/wp-json/wp/v2/categories/1484" rel="alternate" type="application/json" />
+
+<link data-minify="1" href="{% static 'css/56ab2433da3c92248e21ed5adbbdfd7a.de4c16a2.css' %}" media="all"
+  rel="stylesheet" />
+{% endblock head %}
+
+
+{% block bodyClasses %}
+rtl archive category category-tech category-1484 tie-no-js cookies-not-set wrapper-has-shadow block-head-1 magazine3
+magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-3 has-header-ad sidebar-left has-sidebar
+hide_breaking_news hide_footer hide_post_newsletter hide_read_next hide_post_authorbio hide_post_nav
+hide_back_top_button hide_inline_related_posts
+{% endblock bodyClasses %}
+
+
 {% block content %}
 
-<div id="category-news">
-  <section id="lastest-news">
-    <div class="auto-container">
-      <div class="row">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item "><a href="/"><span>الصفحة الرئيسية</span></a></li>
-          <li class="breadcrumb-item active">
-            <a href="{{ dir_url }}">
-              <span>{{ dir_name }}</span>
-            </a>
-          </li>
-        </ol>
 
-        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12" id="results-div">
-          <div class="title-bg">
-            <!-- <span class="icon-Weather-Icons-16"></span>
-            <span class="flaticon-pause-bars"></span> -->
-            <img class="icon-Weather-Icons-16" src="{% static '/assets/images/tab.png' %}" alt="">
 
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="header-title mT-5 red">{{ dir_name }} ({{ posts_length }})</div>
-              </div>
-            </div>
-          </div>
-          
-          {% if posts %}
-          {% for post in posts %}
-          <div class="news-item">
-            <div class="new-image triangle-International">
-              <a class="icon-white" href="{{ post.categories.first.get_absolute_url }}"><i class="{{ post.categories.first.css_icon_class }}"></i></a>
-              <a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnailURL }}" loading="lazy" alt="{{ post.title }}"></a>
-            </div>
-            <div class="news-details">
-              <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-              <p>
-                {{ post.content|html2text|slice:":200" }}...
-              </p>
-              <div class="flex">
-                <ul class="post-meta ">
-                  <li><span class="flaticon-clock-circular-outline"></span>{{ post.created|since_when }}</li>
-                  <li>{{ post.seen_count }}<span class="flaticon-view"></span></li>
-                </ul>
-                <ul class="news-btn">
-                  <li><a href="{{ post.get_absolute_url }}">
-                      اقرأ المزيد ... </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
 
-          <div>
-            <div class="pagination" style="display: block;padding:0; width:100%">
-              <div class="text-center">
-                <a href="{{ dir_url }}?page={{ next_page }}" class="more-result">
-                  <span>المزيد</span>
-                </a>
-              </div>
-            </div>
+
+
+<div class="site-content container" id="content">
+  <div class="tie-row main-content-row" id="main-content-row">
+    <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
+      <header class="entry-header-outer container-wrapper">
+        <nav id="breadcrumb"><a href="https://sawahmedia.com/"><span aria-hidden="true" class="tie-icon-home"></span>
+            الرئيسية</a><em class="delimiter">/</em><span class="current">اخبار
+            التقنية</span></nav>
+        <script type="application/ld+json">
+          {
+            "@context": "http:\/\/schema.org",
+            "@type": "BreadcrumbList",
+            "@id": "#Breadcrumb",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "name": "\u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629",
+                "@id": "https:\/\/sawahmedia.com\/"
+              }
+            }]
+          }
+        </script>
+        <h1 class="page-title">اخبار التقنية</h1>
+      </header>
+      <div class="mag-box miscellaneous-box first-post-gradient has-first-big-post">
+        <div class="container-wrapper">
+          <div class="mag-box-container clearfix">
+            <ul class="posts-items" data-layout="large-above"
+              data-settings="{'uncropped_image':'jannah-image-post','category_meta':false,'post_meta':true,'excerpt':'true','excerpt_length':'20','read_more':'true','read_more_text':false,'media_overlay':false,'title_length':0,'is_full':false,'is_category':true}"
+              id="posts-container">
+              <li class="post-item">
+                <a aria-label="الجمعة البيضاء 2020.. أفضل العروض على ساعة آبل الذكية" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%a7%d9%84%d8%ac%d9%85%d8%b9%d8%a9-%d8%a7%d9%84%d8%a8%d9%8a%d8%b6%d8%a7%d8%a1-2020-%d8%a3%d9%81%d8%b6%d9%84-%d8%a7%d9%84%d8%b9%d8%b1%d9%88%d8%b6-%d8%b9%d9%84%d9%89-%d8%b3%d8%a7%d8%b9%d8%a9-%d8%a2/"><img
+                    alt="" class="attachment-jannah-image-post size-jannah-image-post wp-post-image" height="470"
+                    loading="lazy" src="{% static 'jpg/The-Best-Apple-Watch-Deals-2020-780x470.ddaf2bc2.jpg' %}"
+                    width="780" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <a class="post-cat tie-cat-1484" href="https://sawahmedia.com/category/tech/">اخبار
+                      التقنية</a>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%a7%d9%84%d8%ac%d9%85%d8%b9%d8%a9-%d8%a7%d9%84%d8%a8%d9%8a%d8%b6%d8%a7%d8%a1-2020-%d8%a3%d9%81%d8%b6%d9%84-%d8%a7%d9%84%d8%b9%d8%b1%d9%88%d8%b6-%d8%b9%d9%84%d9%89-%d8%b3%d8%a7%d8%b9%d8%a9-%d8%a2/">الجمعة
+                        البيضاء 2020.. أفضل العروض على ساعة آبل الذكية</a></h2>
+                    <div class="thumb-meta">
+                      <div class="post-meta clearfix"><span class="author-meta single-author no-avatars"><span
+                            class="meta-item meta-author-wrapper"><span class="meta-author"><a
+                                class="author-name tie-icon" href="https://sawahmedia.com/author/admin/"
+                                title="محمد السواح">محمد السواح</a></span></span></span><span
+                          class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                        <div class="tie-alignright"><span
+                            class="meta-comment tie-icon meta-item fa-before">0</span><span
+                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
+                            0 </span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="لعبة الباتل رويال Fortnite تُطلق خدمة The Crew للاشتراك الشهري." class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d9%84%d8%b9%d8%a8%d8%a9-%d8%a7%d9%84%d8%a8%d8%a7%d8%aa%d9%84-%d8%b1%d9%88%d9%8a%d8%a7%d9%84-fortnite-%d8%aa%d9%8f%d8%b7%d9%84%d9%82-%d8%ae%d8%af%d9%85%d8%a9-the-crew-%d9%84%d9%84%d8%a7%d8%b4%d8%aa/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/the-crew-fortnite-390x220.9ae02746.jpg' %}"
+                    srcset="{% static 'jpg/the-crew-fortnite-390x220.9ae02746.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/the-crew-fortnite-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/the-crew-fortnite-1024x576.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/the-crew-fortnite-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/the-crew-fortnite-1536x864.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/the-crew-fortnite.jpg 1920w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d9%84%d8%b9%d8%a8%d8%a9-%d8%a7%d9%84%d8%a8%d8%a7%d8%aa%d9%84-%d8%b1%d9%88%d9%8a%d8%a7%d9%84-fortnite-%d8%aa%d9%8f%d8%b7%d9%84%d9%82-%d8%ae%d8%af%d9%85%d8%a9-the-crew-%d9%84%d9%84%d8%a7%d8%b4%d8%aa/">لعبة
+                        الباتل رويال Fortnite تُطلق خدمة The Crew للاشتراك الشهري.</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="إنستاجرام تطور ميزة الأسئلة الشائعة للشركات" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%a5%d9%86%d8%b3%d8%aa%d8%a7%d8%ac%d8%b1%d8%a7%d9%85-%d8%aa%d8%b7%d9%88%d8%b1-%d9%85%d9%8a%d8%b2%d8%a9-%d8%a7%d9%84%d8%a3%d8%b3%d8%a6%d9%84%d8%a9-%d8%a7%d9%84%d8%b4%d8%a7%d8%a6%d8%b9%d8%a9-%d9%84/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/instagram-app-icon-390x220.68fea51d.jpg' %}"
+                    srcset="{% static 'jpg/instagram-app-icon-390x220.68fea51d.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/instagram-app-icon-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/instagram-app-icon-1024x575.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/instagram-app-icon-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/instagram-app-icon.jpg 1390w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%a5%d9%86%d8%b3%d8%aa%d8%a7%d8%ac%d8%b1%d8%a7%d9%85-%d8%aa%d8%b7%d9%88%d8%b1-%d9%85%d9%8a%d8%b2%d8%a9-%d8%a7%d9%84%d8%a3%d8%b3%d8%a6%d9%84%d8%a9-%d8%a7%d9%84%d8%b4%d8%a7%d8%a6%d8%b9%d8%a9-%d9%84/">إنستاجرام
+                        تطور ميزة الأسئلة الشائعة للشركات</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="جهاز M1 Mac mini يواجه مشاكل في اتصال البلوتوث" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%ac%d9%87%d8%a7%d8%b2-m1-mac-mini-%d9%8a%d9%88%d8%a7%d8%ac%d9%87-%d9%85%d8%b4%d8%a7%d9%83%d9%84-%d9%81%d9%8a-%d8%a7%d8%aa%d8%b5%d8%a7%d9%84-%d8%a7%d9%84%d8%a8%d9%84%d9%88%d8%aa%d9%88%d8%ab/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/M1-Mac-mini-390x220.69dcddb8.jpg' %}"
+                    srcset="{% static 'jpg/M1-Mac-mini-390x220.69dcddb8.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/M1-Mac-mini-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/M1-Mac-mini-1024x576.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/M1-Mac-mini-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/M1-Mac-mini-1536x864.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/M1-Mac-mini.jpg 1956w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%ac%d9%87%d8%a7%d8%b2-m1-mac-mini-%d9%8a%d9%88%d8%a7%d8%ac%d9%87-%d9%85%d8%b4%d8%a7%d9%83%d9%84-%d9%81%d9%8a-%d8%a7%d8%aa%d8%b5%d8%a7%d9%84-%d8%a7%d9%84%d8%a8%d9%84%d9%88%d8%aa%d9%88%d8%ab/">جهاز
+                        M1 Mac mini يواجه مشاكل في اتصال البلوتوث</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="بايدو تجمع بيانات المستخدم الحساسة" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%a8%d8%a7%d9%8a%d8%af%d9%88-%d8%aa%d8%ac%d9%85%d8%b9-%d8%a8%d9%8a%d8%a7%d9%86%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ae%d8%af%d9%85-%d8%a7%d9%84%d8%ad%d8%b3%d8%a7%d8%b3%d8%a9/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" src="{% static 'jpg/gettyimages-458948860-scaled-390x220.0f9ad87f.jpg' %}"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%a8%d8%a7%d9%8a%d8%af%d9%88-%d8%aa%d8%ac%d9%85%d8%b9-%d8%a8%d9%8a%d8%a7%d9%86%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d8%ae%d8%af%d9%85-%d8%a7%d9%84%d8%ad%d8%b3%d8%a7%d8%b3%d8%a9/">بايدو
+                        تجمع بيانات المستخدم الحساسة</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="SanDisk ستصبح الأن مندمجه بالكامل تحت العلامة التجارية Western Digital"
+                  class="post-thumb"
+                  href="https://sawahmedia.com/tech/sandisk-%d8%b3%d8%aa%d8%b5%d8%a8%d8%ad-%d8%a7%d9%84%d8%a3%d9%86-%d9%85%d9%86%d8%af%d9%85%d8%ac%d9%87-%d8%a8%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84-%d8%aa%d8%ad%d8%aa-%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d9%85/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/SanDisk-390x220.84964252.jpg' %}"
+                    srcset="{% static 'jpg/SanDisk-390x220.84964252.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/SanDisk-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/SanDisk-1024x576.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/SanDisk-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/SanDisk-1536x864.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/SanDisk.jpg 1920w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/sandisk-%d8%b3%d8%aa%d8%b5%d8%a8%d8%ad-%d8%a7%d9%84%d8%a3%d9%86-%d9%85%d9%86%d8%af%d9%85%d8%ac%d9%87-%d8%a8%d8%a7%d9%84%d9%83%d8%a7%d9%85%d9%84-%d8%aa%d8%ad%d8%aa-%d8%a7%d9%84%d8%b9%d9%84%d8%a7%d9%85/">SanDisk
+                        ستصبح الأن مندمجه بالكامل تحت العلامة التجارية Western Digital</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="الرموز التعبيرية قد تصبح منفصلة عن تحديثات أندرويد" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%a7%d9%84%d8%b1%d9%85%d9%88%d8%b2-%d8%a7%d9%84%d8%aa%d8%b9%d8%a8%d9%8a%d8%b1%d9%8a%d8%a9-%d9%82%d8%af-%d8%aa%d8%b5%d8%a8%d8%ad-%d9%85%d9%86%d9%81%d8%b5%d9%84%d8%a9-%d8%b9%d9%86-%d8%aa%d8%ad%d8%af/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy"
+                    src="{% static 'jpg/Android-system-emoji-update-Google-Feature-Image_3-390x220.9a7d8d95.jpg' %}"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%a7%d9%84%d8%b1%d9%85%d9%88%d8%b2-%d8%a7%d9%84%d8%aa%d8%b9%d8%a8%d9%8a%d8%b1%d9%8a%d8%a9-%d9%82%d8%af-%d8%aa%d8%b5%d8%a8%d8%ad-%d9%85%d9%86%d9%81%d8%b5%d9%84%d8%a9-%d8%b9%d9%86-%d8%aa%d8%ad%d8%af/">الرموز
+                        التعبيرية قد تصبح منفصلة عن تحديثات أندرويد</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="بطاقة RTX 3060 Ti تحصل على نتائج جديدة مع Ashes of the Singularity" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%a8%d8%b7%d8%a7%d9%82%d8%a9-rtx-3060-ti-%d8%aa%d8%ad%d8%b5%d9%84-%d8%b9%d9%84%d9%89-%d9%86%d8%aa%d8%a7%d8%a6%d8%ac-%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%85%d8%b9-ashes-of-the-singularity/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/NVIDIA-RTX-3060-TI-390x220.623553cd.jpg' %}"
+                    srcset="{% static 'jpg/NVIDIA-RTX-3060-TI-390x220.623553cd.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/NVIDIA-RTX-3060-TI-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/NVIDIA-RTX-3060-TI-1024x576.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/NVIDIA-RTX-3060-TI-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/NVIDIA-RTX-3060-TI-1536x864.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/NVIDIA-RTX-3060-TI.jpg 1920w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%a8%d8%b7%d8%a7%d9%82%d8%a9-rtx-3060-ti-%d8%aa%d8%ad%d8%b5%d9%84-%d8%b9%d9%84%d9%89-%d9%86%d8%aa%d8%a7%d8%a6%d8%ac-%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%85%d8%b9-ashes-of-the-singularity/">بطاقة
+                        RTX 3060 Ti تحصل على نتائج جديدة مع Ashes of the Singularity</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="Fortnite Crew .. اشتراك شهري للعبة فورتنايت" class="post-thumb"
+                  href="https://sawahmedia.com/tech/fortnite-crew-%d8%a7%d8%b4%d8%aa%d8%b1%d8%a7%d9%83-%d8%b4%d9%87%d8%b1%d9%8a-%d9%84%d9%84%d8%b9%d8%a8%d8%a9-%d9%81%d9%88%d8%b1%d8%aa%d9%86%d8%a7%d9%8a%d8%aa/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/fortnite-crew-390x220.6cedf776.jpg' %}"
+                    srcset="{% static 'jpg/fortnite-crew-390x220.6cedf776.jpg' %} 390w, https://sawahmedia.com/wp-content/uploads/2020/11/fortnite-crew-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/fortnite-crew-1024x576.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/fortnite-crew-768x432.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/fortnite-crew-1536x864.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/fortnite-crew.jpg 1920w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/fortnite-crew-%d8%a7%d8%b4%d8%aa%d8%b1%d8%a7%d9%83-%d8%b4%d9%87%d8%b1%d9%8a-%d9%84%d9%84%d8%b9%d8%a8%d8%a9-%d9%81%d9%88%d8%b1%d8%aa%d9%86%d8%a7%d9%8a%d8%aa/">Fortnite
+                        Crew .. اشتراك شهري للعبة فورتنايت</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="post-item">
+                <a aria-label="على غرار المشاكل المتعاقبة ، شركة HSMC الصينية تعاني من شبح الإفلاس" class="post-thumb"
+                  href="https://sawahmedia.com/tech/%d8%b9%d9%84%d9%89-%d8%ba%d8%b1%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%b4%d8%a7%d9%83%d9%84-%d8%a7%d9%84%d9%85%d8%aa%d8%b9%d8%a7%d9%82%d8%a8%d8%a9-%d8%8c-%d8%b4%d8%b1%d9%83%d8%a9-hsmc-%d8%a7%d9%84%d8%b5/"><img
+                    alt="" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
+                    loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    src="{% static 'jpg/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-390x220.997' %}9c5c8.jpg"
+                    srcset="{% static 'jpg/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-390x220.997' %}9c5c8.jpg 390w, https://sawahmedia.com/wp-content/uploads/2020/11/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-300x169.jpg 300w, https://sawahmedia.com/wp-content/uploads/2020/11/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-1024x575.jpg 1024w, https://sawahmedia.com/wp-content/uploads/2020/11/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-768x431.jpg 768w, https://sawahmedia.com/wp-content/uploads/2020/11/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1-1536x863.jpg 1536w, https://sawahmedia.com/wp-content/uploads/2020/11/غرار-المشاكل-المتعاقبة-،-شركة-HSMC-الصينية-تعاني-من-شبح-الإفلاس-1.v1.jpg 1921w"
+                    width="390" /></a>
+                <div class="clearfix"></div>
+                <div class="post-overlay">
+                  <div class="post-content">
+                    <div class="post-meta clearfix"><span class="date meta-item tie-icon">نوفمبر 25, 2020</span>
+                      <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                      </div>
+                    </div>
+                    <h2 class="post-title"><a
+                        href="https://sawahmedia.com/tech/%d8%b9%d9%84%d9%89-%d8%ba%d8%b1%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%b4%d8%a7%d9%83%d9%84-%d8%a7%d9%84%d9%85%d8%aa%d8%b9%d8%a7%d9%82%d8%a8%d8%a9-%d8%8c-%d8%b4%d8%b1%d9%83%d8%a9-hsmc-%d8%a7%d9%84%d8%b5/">على
+                        غرار المشاكل المتعاقبة ، شركة HSMC الصينية تعاني من شبح الإفلاس</a></h2>
+                    <div class="post-meta"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
           </div>
-          {% else %}
-          <div style="text-align: center;font-size: 30px;color: #818181;">
-            لا توجد نتائج
-          </div>
-          {% endif %}
         </div>
-        
-        {% include 'sidebar.html' %}
+      </div>
+      <div class="pages-nav">
+        <ul class="pages-numbers">
+          <li class="current"><span class="pages-nav-item">1</span></li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/2/" title="2">2</a></li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/3/" title="3">3</a></li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/4/" title="4">4</a></li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/5/" title="5">5</a></li>
+          <li class="the-next-page"><a href="https://sawahmedia.com/category/tech/page/2/">»</a></li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/10/" title="10">10</a>
+          </li>
+          <li><a class="pages-nav-item" href="https://sawahmedia.com/category/tech/page/20/" title="20">20</a>
+          </li>
+          <li class="extend"><span class="pages-nav-item">...</span></li>
+          <li class="last-page first-last-pages"><a class="pages-nav-item"
+              href="https://sawahmedia.com/category/tech/page/20/" title="الأخيرة">الأخيرة<span aria-hidden="true"
+                class="fa"></span></a></li>
+        </ul>
       </div>
     </div>
-  </section>
+    <aside aria-label="القائمة الجانبية الرئيسية" class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky">
+      <div class="theiaStickySidebar">
+        <div class="container-wrapper widget posts-list" id="posts-list-widget-3">
+          <div class="widget-title the-global-title">
+            <div class="the-subtitle">اخر المقالات<span class="widget-title-icon tie-icon"></span></div>
+          </div>
+          <div class="widget-posts-list-container posts-list-counter" data-current="1"
+            data-query="{'number':'5','offset':'1','order':'views','id':''}" data-style="[]">
+            <ul class="posts-list-items widget-posts-wrapper">
+              <li class="widget-single-post-item widget-post-list tie-standard">
+                <div class="post-widget-thumbnail">
+                  <a aria-label="شاهد الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP"
+                    class="post-thumb"
+                    href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                      alt="الهيبة الرد الحلقة 23"
+                      class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                      height="150" loading="lazy"
+                      src="{% static 'jpg/الحلقة-23-مسلسل-الهيبة-الرد-220x150.3412640e.jpg' %}" width="220" /></a>
+                </div>
+                <div class="post-widget-body">
+                  <h3 class="post-title"><a
+                      href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                      الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP</a></h3>
+                  <div class="post-meta">
+                    <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                </div>
+              </li>
+              <li class="widget-single-post-item widget-post-list">
+                <div class="post-widget-thumbnail">
+                  <a aria-label="تحضير درس الاسماء المبنية للسنة الثانية ثانوي علمي" class="post-thumb"
+                    href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/"><img
+                      alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image" height="150"
+                      loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}" width="220" /></a> </div>
+                <div class="post-widget-body">
+                  <h3 class="post-title"><a
+                      href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/">تحضير
+                      درس الاسماء المبنية للسنة الثانية ثانوي علمي</a></h3>
+                  <div class="post-meta">
+                    <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                </div>
+              </li>
+              <li class="widget-single-post-item widget-post-list">
+                <div class="post-widget-thumbnail">
+                  <a aria-label="تحضير نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي" class="post-thumb"
+                    href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/"><img
+                      alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image" height="150"
+                      loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}" width="220" /></a> </div>
+                <div class="post-widget-body">
+                  <h3 class="post-title"><a
+                      href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/">تحضير
+                      نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي</a></h3>
+                  <div class="post-meta">
+                    <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                </div>
+              </li>
+              <li class="widget-single-post-item widget-post-list tie-standard">
+                <div class="post-widget-thumbnail">
+                  <a aria-label="شاهد الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP"
+                    class="post-thumb"
+                    href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                      alt="الهيبة الرد الحلقة 25"
+                      class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                      height="150" loading="lazy" src="{% static 'jpg/الحلقة-25-الهيبة-الرد-220x150.6ab5cf7d.jpg' %}"
+                      width="220" /></a>
+                </div>
+                <div class="post-widget-body">
+                  <h3 class="post-title"><a
+                      href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                      الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP</a></h3>
+                  <div class="post-meta">
+                    <span class="date meta-item tie-icon">ديسمبر 1, 2020</span> </div>
+                </div>
+              </li>
+              <li class="widget-single-post-item widget-post-list">
+                <div class="post-widget-thumbnail">
+                  <a aria-label="من أسباب حدوث التعرية وما هي سلبيات ومخاطر التعرية" class="post-thumb"
+                    href="https://sawahmedia.com/articles/%d9%85%d9%86-%d8%a3%d8%b3%d8%a8%d8%a7%d8%a8-%d8%ad%d8%af%d9%88%d8%ab-%d8%a7%d9%84%d8%aa%d8%b9%d8%b1%d9%8a%d8%a9-%d9%88%d9%85%d8%a7-%d9%87%d9%8a-%d8%b3%d9%84%d8%a8%d9%8a%d8%a7%d8%aa-%d9%88%d9%85/"><img
+                      alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                      height="150" loading="lazy" src="{% static 'jpg/IMG-20201121-WA0007-220x150.bd928a2d.jpg' %}"
+                      width="220" /></a>
+                </div>
+                <div class="post-widget-body">
+                  <h3 class="post-title"><a
+                      href="https://sawahmedia.com/articles/%d9%85%d9%86-%d8%a3%d8%b3%d8%a8%d8%a7%d8%a8-%d8%ad%d8%af%d9%88%d8%ab-%d8%a7%d9%84%d8%aa%d8%b9%d8%b1%d9%8a%d8%a9-%d9%88%d9%85%d8%a7-%d9%87%d9%8a-%d8%b3%d9%84%d8%a8%d9%8a%d8%a7%d8%aa-%d9%88%d9%85/">من
+                      أسباب حدوث التعرية وما هي سلبيات ومخاطر التعرية</a></h3>
+                  <div class="post-meta">
+                    <span class="date meta-item tie-icon">نوفمبر 22, 2020</span> </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="widget-pagination-wrapper">
+            <ul class="slider-arrow-nav">
+              <li>
+                <a class="widget-pagination prev-posts pagination-disabled" href="#">
+                  <span aria-hidden="true" class="tie-icon-angle-left"></span>
+                  <span class="screen-reader-text">الصفحة السابقة</span>
+                </a>
+              </li>
+              <li>
+                <a class="widget-pagination next-posts" href="#">
+                  <span aria-hidden="true" class="tie-icon-angle-right"></span>
+                  <span class="screen-reader-text">الصفحة التالية</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="container-wrapper tabs-container-wrapper tabs-container-4">
+          <div class="widget tabs-widget">
+            <div class="widget-container">
+              <div class="tabs-widget">
+                <div class="tabs-wrapper">
+                  <ul class="tabs">
+                    <li><a href="#widget_tabs-1-popular">الأشهر</a></li>
+                    <li><a href="#widget_tabs-1-recent">الأخيرة</a></li>
+                    <li><a href="#widget_tabs-1-comments">تعليقات</a></li>
+                  </ul>
+                  <div class="tab-content tab-content-popular" id="widget_tabs-1-popular">
+                    <ul class="tab-content-elements">
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="لخص في نص علمي اليات النمو والتجديد الخلوي" class="post-thumb"
+                            href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/"><img
+                              alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image"
+                              height="150" loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/">لخص
+                              في نص علمي اليات النمو والتجديد الخلوي</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list tie-standard">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="شاهد الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP"
+                            class="post-thumb"
+                            href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                              alt="الهيبة الرد الحلقة 23"
+                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                              height="150" loading="lazy"
+                              src="{% static 'jpg/الحلقة-23-مسلسل-الهيبة-الرد-220x150.3412640e.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                              الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="تحضير درس الاسماء المبنية للسنة الثانية ثانوي علمي" class="post-thumb"
+                            href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/"><img
+                              alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image"
+                              height="150" loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/">تحضير
+                              درس الاسماء المبنية للسنة الثانية ثانوي علمي</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="تحضير نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي" class="post-thumb"
+                            href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/"><img
+                              alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image"
+                              height="150" loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/">تحضير
+                              نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list tie-standard">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="شاهد الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP"
+                            class="post-thumb"
+                            href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                              alt="الهيبة الرد الحلقة 25"
+                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                              height="150" loading="lazy"
+                              src="{% static 'jpg/الحلقة-25-الهيبة-الرد-220x150.6ab5cf7d.jpg' %}" width="220" /></a>
+                        </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                              الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">ديسمبر 1, 2020</span> </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-content tab-content-recent" id="widget_tabs-1-recent">
+                    <ul class="tab-content-elements">
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="«الوفد» عن فصل 10 من أعضاء الحزب: نتاج 6 أشهر من المشاكل الداخلية"
+                            class="post-thumb"
+                            href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d9%81%d8%af-%d8%b9%d9%86-%d9%81%d8%b5%d9%84-10-%d9%85%d9%86-%d8%a3%d8%b9%d8%b6%d8%a7%d8%a1-%d8%a7%d9%84%d8%ad%d8%b2%d8%a8-%d9%86%d8%aa%d8%a7%d8%ac-6-%d8%a3%d8%b4%d9%87/"><img
+                              alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image"
+                              height="150" loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d9%81%d8%af-%d8%b9%d9%86-%d9%81%d8%b5%d9%84-10-%d9%85%d9%86-%d8%a3%d8%b9%d8%b6%d8%a7%d8%a1-%d8%a7%d9%84%d8%ad%d8%b2%d8%a8-%d9%86%d8%aa%d8%a7%d8%ac-6-%d8%a3%d8%b4%d9%87/">«الوفد»
+                              عن فصل 10 من أعضاء الحزب: نتاج 6 أشهر من المشاكل الداخلية</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">فبراير 10, 2021</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="دور مصر تجاه القضية الفلسطينية “أبوي”" class="post-thumb"
+                            href="https://sawahmedia.com/news/me/%d8%af%d9%88%d8%b1-%d9%85%d8%b5%d8%b1-%d8%aa%d8%ac%d8%a7%d9%87-%d8%a7%d9%84%d9%82%d8%b6%d9%8a%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a3%d8%a8%d9%88%d9%8a/"><img
+                              alt=""
+                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                              height="150" loading="lazy" src="{% static 'jpg/829-220x150.ea3077ce.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/news/me/%d8%af%d9%88%d8%b1-%d9%85%d8%b5%d8%b1-%d8%aa%d8%ac%d8%a7%d9%87-%d8%a7%d9%84%d9%82%d8%b6%d9%8a%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a3%d8%a8%d9%88%d9%8a/">دور
+                              مصر تجاه القضية الفلسطينية “أبوي”</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">فبراير 10, 2021</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="9 معلومات عن مستشار الشرطة الأسترالية: شاب مصري خريج «حقوق القاهرة»"
+                            class="post-thumb"
+                            href="https://sawahmedia.com/news/me/9-%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d8%b9%d9%86-%d9%85%d8%b3%d8%aa%d8%b4%d8%a7%d8%b1-%d8%a7%d9%84%d8%b4%d8%b1%d8%b7%d8%a9-%d8%a7%d9%84%d8%a3%d8%b3%d8%aa%d8%b1%d8%a7%d9%84%d9%8a%d8%a9-%d8%b4/"><img
+                              alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image"
+                              height="150" loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/news/me/9-%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d8%b9%d9%86-%d9%85%d8%b3%d8%aa%d8%b4%d8%a7%d8%b1-%d8%a7%d9%84%d8%b4%d8%b1%d8%b7%d8%a9-%d8%a7%d9%84%d8%a3%d8%b3%d8%aa%d8%b1%d8%a7%d9%84%d9%8a%d8%a9-%d8%b4/">9
+                              معلومات عن مستشار الشرطة الأسترالية: شاب مصري خريج «حقوق القاهرة»</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">فبراير 10, 2021</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="الوحدة الفلسطينية بداية مواجهة الاحتلال الإسرائيلي (فيديو)" class="post-thumb"
+                            href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d8%ad%d8%af%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a8%d8%af%d8%a7%d9%8a%d8%a9-%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa/"><img
+                              alt=""
+                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                              height="150" loading="lazy" src="{% static 'jpg/762-220x150.bb7c1ff3.jpg' %}"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d8%ad%d8%af%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a8%d8%af%d8%a7%d9%8a%d8%a9-%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa/">الوحدة
+                              الفلسطينية بداية مواجهة الاحتلال الإسرائيلي (فيديو)</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">فبراير 10, 2021</span> </div>
+                        </div>
+                      </li>
+                      <li class="widget-single-post-item widget-post-list">
+                        <div class="post-widget-thumbnail">
+                          <a aria-label="«دينا علاء مشرف» بطلة تنس الطاولة تكشف سبب نجاحها .. فيديو" class="post-thumb"
+                            href="https://sawahmedia.com/news/me/%d8%af%d9%8a%d9%86%d8%a7-%d8%b9%d9%84%d8%a7%d8%a1-%d9%85%d8%b4%d8%b1%d9%81-%d8%a8%d8%b7%d9%84%d8%a9-%d8%aa%d9%86%d8%b3-%d8%a7%d9%84%d8%b7%d8%a7%d9%88%d9%84%d8%a9-%d8%aa%d9%83%d8%b4%d9%81/"><img
+                              alt=""
+                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                              height="150" loading="lazy"
+                              src="{% static 'jpg/637485029455607352_967_LTH.jpg_q_1_LTH-220x150.f3a' %}58b03.jpg"
+                              width="220" /></a> </div>
+                        <div class="post-widget-body">
+                          <h3 class="post-title"><a
+                              href="https://sawahmedia.com/news/me/%d8%af%d9%8a%d9%86%d8%a7-%d8%b9%d9%84%d8%a7%d8%a1-%d9%85%d8%b4%d8%b1%d9%81-%d8%a8%d8%b7%d9%84%d8%a9-%d8%aa%d9%86%d8%b3-%d8%a7%d9%84%d8%b7%d8%a7%d9%88%d9%84%d8%a9-%d8%aa%d9%83%d8%b4%d9%81/">«دينا
+                              علاء مشرف» بطلة تنس الطاولة تكشف سبب نجاحها .. فيديو</a></h3>
+                          <div class="post-meta">
+                            <span class="date meta-item tie-icon">فبراير 10, 2021</span> </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-content tab-content-comments" id="widget_tabs-1-comments">
+                    <ul class="tab-content-elements">
+                      <li>
+                        <div class="post-widget-thumbnail" style="width:70px">
+                          <a class="author-avatar"
+                            href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/#comment-17">
+                            <img alt="صورة Ferdi malak" class="avatar avatar-70 photo" height="70" loading="lazy"
+                              src="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=70&amp;d=mm&amp;r=g"
+                              srcset="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=140&amp;d=mm&amp;r=g 2x"
+                              width="70" /> </a>
+                        </div>
+                        <div class="comment-body">
+                          <a class="comment-author"
+                            href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/#comment-17">
+                            Ferdi malak </a>
+                          <p>صفحتكم جميلة ومفيدة...</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="post-widget-thumbnail" style="width:70px">
+                          <a class="author-avatar"
+                            href="https://sawahmedia.com/sports/%d8%a3%d9%86%d8%a7-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d8%b4%d8%b1%d8%b9%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%af%d9%8a-%d9%85%d8%a7%d8%b0%d8%a7-%d8%b7%d9%84%d8%a8-%d9%85%d8%b1%d8%aa/#comment-16">
+                            <img alt="صورة د أحمد المصري" class="avatar avatar-70 photo" height="70" loading="lazy"
+                              src="https://secure.gravatar.com/avatar/232ab9c49eca1e9f8e04d1cc559830b9?s=70&amp;d=mm&amp;r=g"
+                              srcset="https://secure.gravatar.com/avatar/232ab9c49eca1e9f8e04d1cc559830b9?s=140&amp;d=mm&amp;r=g 2x"
+                              width="70" /> </a>
+                        </div>
+                        <div class="comment-body">
+                          <a class="comment-author"
+                            href="https://sawahmedia.com/sports/%d8%a3%d9%86%d8%a7-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d8%b4%d8%b1%d8%b9%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%af%d9%8a-%d9%85%d8%a7%d8%b0%d8%a7-%d8%b7%d9%84%d8%a8-%d9%85%d8%b1%d8%aa/#comment-16">
+                            د أحمد المصري </a>
+                          <p>تحياتي وتهنئتي بحسن اختيار الموضوع للمناقشة والتعليق! تفضلتم...</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="post-widget-thumbnail" style="width:70px">
+                          <a class="author-avatar"
+                            href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-12">
+                            <img alt="صورة احمد مصطفى عبدالقادر" class="avatar avatar-70 photo" height="70"
+                              loading="lazy"
+                              src="https://secure.gravatar.com/avatar/7ae61e5200822f278abf40300edaf1c0?s=70&amp;d=mm&amp;r=g"
+                              srcset="https://secure.gravatar.com/avatar/7ae61e5200822f278abf40300edaf1c0?s=140&amp;d=mm&amp;r=g 2x"
+                              width="70" /> </a>
+                        </div>
+                        <div class="comment-body">
+                          <a class="comment-author"
+                            href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-12">
+                            احمد مصطفى عبدالقادر </a>
+                          <p>المنيا-بنى مزار-صندفا...</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="post-widget-thumbnail" style="width:70px">
+                          <a class="author-avatar"
+                            href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a7%d9%84%d8%b5%d8%b1%d8%a7%d8%b9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%82%d8%af%d9%85%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d9%85%d8%ad%d8%af%d8%ab%d9%8a%d9%86/#comment-11">
+                            <img alt="صورة Ayoubbentaleb" class="avatar avatar-70 photo" height="70" loading="lazy"
+                              src="https://secure.gravatar.com/avatar/fbbc18a425db56627c8837c492375f88?s=70&amp;d=mm&amp;r=g"
+                              srcset="https://secure.gravatar.com/avatar/fbbc18a425db56627c8837c492375f88?s=140&amp;d=mm&amp;r=g 2x"
+                              width="70" /> </a>
+                        </div>
+                        <div class="comment-body">
+                          <a class="comment-author"
+                            href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a7%d9%84%d8%b5%d8%b1%d8%a7%d8%b9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%82%d8%af%d9%85%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d9%85%d8%ad%d8%af%d8%ab%d9%8a%d9%86/#comment-11">
+                            Ayoubbentaleb </a>
+                          <p><a class="__cf_email__"
+                              data-cfemail="82e0e7ecf6e3eee7e0e3fbedf7e0b0b6b6c2e5efe3ebeeace1edefacacac"
+                              href="/cdn-cgi/l/email-protection">[email protected]</a></p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="post-widget-thumbnail" style="width:70px">
+                          <a class="author-avatar"
+                            href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-10">
+                            <img alt="صورة محدود محمد عبد اللطيف" class="avatar avatar-70 photo" height="70"
+                              loading="lazy"
+                              src="https://secure.gravatar.com/avatar/b65f07f6a3ed90b525f989ce90f70e30?s=70&amp;d=mm&amp;r=g"
+                              srcset="https://secure.gravatar.com/avatar/b65f07f6a3ed90b525f989ce90f70e30?s=140&amp;d=mm&amp;r=g 2x"
+                              width="70" /> </a>
+                        </div>
+                        <div class="comment-body">
+                          <a class="comment-author"
+                            href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-10">
+                            محدود محمد عبد اللطيف </a>
+                          <p>وظيفه امين مخزن...</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
 </div>
-  
+
+
+
+
+
+
+
+
+
 {% endblock content %}

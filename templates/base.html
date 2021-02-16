@@ -1,46 +1,60 @@
+{% load static %}
+{% load filters %}
+
 <!DOCTYPE html>
-<html class="no-js js-priorityNav" lang="ar" dir="rtl">
-{% include 'head.html' %}
+<html class="" data-skin="light" dir="rtl" lang="ar">
 
-<body class="ar">
+<head>
 
-  <div class="page-wrapper">
-    <!--[if IE]>
-      <div role="alert" class="alert alert-warning fade in not-support-floating">
-        <button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span
-                class="sr-only">Close</span>
-        </button>
-        <i class="fa fa-warning"></i>
-        عذرًا المتصفح الخاص بك لا يدعم جميع خصائص هذا الموقع<br/>
-        نرجو تحديث المتصفح الخاص بك إلى إصدار إنترنت إكسبلورر 10 او 11 حتى يدعم جميع الخصائص 
+  {% include 'head.html' %}
+  {% block head %}
+  {% endblock head %}
+  {% include 'style.html' %}
+
+  {% block headAfter %}
+
+  {% endblock headAfter %}
+
+</head>
+
+<body class="
+  {% block bodyClasses %}
+    
+  {% endblock bodyClasses %}
+    " data-rsssl="1" id="tie-body">
+
+
+  <div class="background-overlay">
+    <div class="site tie-container" id="tie-container">
+      <div id="tie-wrapper">
+        {% include 'header.html' %}
+
+        {% block content %}
+        {% endblock content %}
+
+        {% include 'footer.html' %}
       </div>
-    <![endif]-->
 
-    {% include 'header.html' %}
-
-
-
-    {% block content %}
-    <h1>BODY NOT FOUND</h1>
-    {% endblock content %}
-
-
-
-    {% include 'footer.html' %}
+      {% include 'sidebar.html' %}
+    </div>
   </div>
 
+  <!-- unique -->
+  <div id="reading-position-indicator"></div>
+
+
+  <div class="autocomplete-suggestions" id="autocomplete-suggestions"></div>
+  <div id="is-scroller-outer">
+    <div id="is-scroller"></div>
+  </div>
+
+  <div id="fb-root"></div>
+
+  {% include 'pop-up.html' %}
+  {% include 'cookie-notice.html' %}
   {% include 'script.html' %}
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-74924460-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-74924460-1');
-  </script>
-
+  {% block body %}{% endblock body %}
 </body>
 
 </html>

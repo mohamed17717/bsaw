@@ -1,67 +1,54 @@
-{% load static %}
-{% load filters %}
-
-<footer>
-  <div class="auto-container">
-    <div class="upper-footer">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 col-12 footer-right">
-          <a href="https://sanews.pythonanywhere.com/" class=" title-height " style="display: inline;">
-            <img src="{% static '/assets/images/tab.png' %}" alt="السعودية نيوز">
-          </a>
-          <div class="ul-flex hidden-sm hidden-xs">
-            <ul>
-              <li><a href="{% url 'about-us' %}">عن السعودية نيوز</a></li>
-              <li><a href="{% url 'contact-us' %}">اتصل بنا</a></li>
-              <li><a href="{% url 'privacy-policy' %}">سياسة الخصوصية</a></li>
+<footer class="site-footer dark-skin dark-widgetized-area" id="footer">
+  <div class="site-info site-info-layout-2" id="site-info">
+    <div class="container">
+      <div class="tie-row">
+        <div class="tie-col-md-12">
+          <div class="copyright-text copyright-text-first">© حقوق النشر 2021، جميع الحقوق محفوظة   |   تطوير
+            وإدارة <a href="https://mohamedsawah.com">محمد السواح</a></div>
+          <div class="footer-menu">
+            <ul class="menu" id="menu-tielabs-secondry-menu">
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1548" id="menu-item-1548">
+                <a href="https://beautyproffs.com/">خبراء التجميل</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1570" id="menu-item-1570">
+                <a href="https://sawahmedia.com/contact/">اتصل بنا</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1571" id="menu-item-1571">
+                <a href="https://sawahmedia.com/terms/">الشروط والاحكام</a></li>
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1572" id="menu-item-1572">
+                <a href="https://sawahmedia.com/privacy-policy-2/">سياسة الخصوصية</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15148" id="menu-item-15148">
+                <a href="https://sawahhost.com/">سواح هوست</a></li>
+              <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-87581" id="menu-item-87581">
+                <a href="https://karakib.net/">كراكيب</a></li>
             </ul>
           </div>
-        </div>
-        <div class="col-lg-5  col-lg-offset-1 col-md-4  col-sm-6 col-12">
-          <div class="title-height h3" style="line-height: 1.6;">صحيفة السعودية نيوز الإلكترونية</div>
-          <div class="ul-flex">
-            <ul>
-
-              {% for category in footer_categories|slice:":4" %}
-              <li>
-                <a href="{{ category.get_absolute_url }}">
-                  <span style="background-color: {{ category.css_icon_color|operator_or:'#EEE' }};opacity: 0.65;"></span>
-                  {{ category.title }}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-            <ul>
-
-              {% for category in footer_categories|slice:"5:8" %}
-              <li>
-                <a href="{{ category.get_absolute_url }}">
-                  <span style="background-color: {{ category.css_icon_color|operator_or:'#EEE' }};opacity: 0.65;"></span>
-                  {{ category.title }}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
+          <ul class="social-icons">
+            <li class="social-icons-item"><a class="social-link facebook-social-icon"
+                href="https://www.facebook.com/Sawahpress/" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link twitter-social-icon"
+                href="https://twitter.com/sawahpress" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link pinterest-social-icon"
+                href="https://tr.pinterest.com/officialsawahmedia" rel="external noopener nofollow"
+                target="_blank"><span class="tie-social-icon tie-icon-pinterest"></span><span
+                  class="screen-reader-text">بينتيريست</span></a></li>
+            <li class="social-icons-item"><a class="social-link youtube-social-icon"
+                href="https://www.youtube.com/channel/UCk2FMHs8HTTBJJvF08edmLA" rel="external noopener nofollow"
+                target="_blank"><span class="tie-social-icon tie-icon-youtube"></span><span
+                  class="screen-reader-text">يوتيوب</span></a></li>
+            <li class="social-icons-item"><a class="social-link instagram-social-icon"
+                href="https://www.instagram.com/sawah.press/" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link paypal-social-icon"
+                href="https://www.paypal.com/paypalme/sawahmedia" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-paypal"></span><span class="screen-reader-text">‏Paypal</span></a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="lower-footer">
-    <div class="auto-container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <div class="clear-fix">
-            <div class="h5 mt3 mb3 ">
-              جميع الحقوق محفوظة <a href="">لصحيفة السعودية نيوز</a> <span> 2007-2020 ©</span>
-            </div>
-          </div>
-          <br class="clearfix">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
 </footer>

@@ -1,129 +1,284 @@
 {% load static %}
 
-<div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 hidden-xs hidden-sm">
-  <div id="chartbeat">
-    <div class="title-bg">
-      <!-- <span class="icon-Weather-Icons-16"></span>
-      <span class="flaticon-pause-bars"></span> -->
 
-      <img class="icon-Weather-Icons-16" src="{% static '/assets/images/tab.png' %}" alt="">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="header-title red">
-            قراؤنا يتصفحون الآن </div>
-        </div>
-        <!-- <div class="col-md-4 col-sm-4 col-xs-4 select-city">
-        </div> -->
+<aside aria-label="القائمة الجانبية الثانوية"
+  class="side-aside normal-side dark-skin dark-widgetized-area slide-sidebar-desktop appear-from-left"
+  style="visibility: hidden;">
+  <div class="side-aside-wrapper has-custom-scroll" data-height="100%">
+    <a class="close-side-aside remove big-btn light-btn" href="#">
+      <span class="screen-reader-text">إغلاق</span>
+    </a>
+    <div id="mobile-container">
+      <div id="mobile-search">
+        <form action="https://sawahmedia.com/" class="search-form" method="get" role="search">
+          <label>
+            <span class="screen-reader-text">البحث عن:</span>
+            <input class="search-field" name="s" placeholder="بحث …" type="search" value="" />
+          </label>
+          <input class="search-submit" type="submit" value="بحث" />
+        </form>
+      </div>
+      <div class="hide-menu-icons" id="mobile-menu">
+      </div>
+      <div class="social-icons-widget solid-social-icons" id="mobile-social-icons">
+        <ul>
+          <li class="social-icons-item"><a class="social-link facebook-social-icon"
+              href="https://www.facebook.com/Sawahpress/" rel="external noopener nofollow" target="_blank"><span
+                class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a>
+          </li>
+          <li class="social-icons-item"><a class="social-link twitter-social-icon" href="https://twitter.com/sawahpress"
+              rel="external noopener nofollow" target="_blank"><span
+                class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a>
+          </li>
+          <li class="social-icons-item"><a class="social-link pinterest-social-icon"
+              href="https://tr.pinterest.com/officialsawahmedia" rel="external noopener nofollow" target="_blank"><span
+                class="tie-social-icon tie-icon-pinterest"></span><span class="screen-reader-text">بينتيريست</span></a>
+          </li>
+          <li class="social-icons-item"><a class="social-link youtube-social-icon"
+              href="https://www.youtube.com/channel/UCk2FMHs8HTTBJJvF08edmLA" rel="external noopener nofollow"
+              target="_blank"><span class="tie-social-icon tie-icon-youtube"></span><span
+                class="screen-reader-text">يوتيوب</span></a></li>
+          <li class="social-icons-item"><a class="social-link instagram-social-icon"
+              href="https://www.instagram.com/sawah.press/" rel="external noopener nofollow" target="_blank"><span
+                class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a>
+          </li>
+          <li class="social-icons-item"><a class="social-link paypal-social-icon"
+              href="https://www.paypal.com/paypalme/sawahmedia" rel="external noopener nofollow" target="_blank"><span
+                class="tie-social-icon tie-icon-paypal"></span><span class="screen-reader-text">‏Paypal</span></a></li>
+        </ul>
       </div>
     </div>
-
-    <div class="chartbeat-items">
-      <div class="scroll-block">
-        <div class="chartbeat-items scrollbar" id="style-scroll">
-          <div class="force-overflow">
-            <ul class="list-group">
-
-
-              {% for post in most_viewed_posts %}
-              <li class="list-group-item">
-                <span class="label label-default pull-left"></span>
-                <a href="{{ post.get_absolute_url }}" style="color: #0e1131; font-size: 18px;">
-                  {{ post.title }}
-                </a>
-              </li>
-              {% endfor %}
-
-            </ul>
-          </div>
+    <div id="slide-sidebar-widgets">
+      <div class="container-wrapper widget posts-list" id="posts-list-widget-4">
+        <div class="widget-title the-global-title">
+          <div class="the-subtitle">اشهر المقالات<span class="widget-title-icon tie-icon"></span></div>
         </div>
+        <div class="widget-posts-list-container posts-list-big-first has-first-big-post">
+          <ul class="posts-list-items widget-posts-wrapper">
+            <li class="widget-single-post-item widget-post-list">
+              <div class="post-widget-thumbnail">
+                <a aria-label="لخص في نص علمي اليات النمو والتجديد الخلوي" class="post-thumb"
+                  href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/"><span
+                    class="post-cat-wrap"><span class="post-cat tie-cat-48">منوعات</span></span><img alt=""
+                    class="attachment-jannah-image-large size-jannah-image-large" height="220" loading="lazy"
+                    src="{% static 'jpg/سواح-ميديا-390x220.cdc889e0.jpg' %}" width="390" /></a> </div>
+              <div class="post-widget-body">
+                <h3 class="post-title"><a
+                    href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/">لخص
+                    في نص علمي اليات النمو والتجديد الخلوي</a></h3>
+                <div class="post-meta">
+                  <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+              </div>
+            </li>
+            <li class="widget-single-post-item widget-post-list tie-standard">
+              <div class="post-widget-thumbnail">
+                <a aria-label="شاهد الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP"
+                  class="post-thumb"
+                  href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                    alt="الهيبة الرد الحلقة 23"
+                    class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                    height="150" loading="lazy"
+                    src="{% static 'jpg/الحلقة-23-مسلسل-الهيبة-الرد-220x150.3412640e.jpg' %}" width="220" /></a>
+              </div>
+              <div class="post-widget-body">
+                <h3 class="post-title"><a
+                    href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-23-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                    الآن الحلقة 23 مسلسل الهيبة الرد الجزء الرابع جبل شيخ الجبل Shahid VIP</a></h3>
+                <div class="post-meta">
+                  <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+              </div>
+            </li>
+            <li class="widget-single-post-item widget-post-list">
+              <div class="post-widget-thumbnail">
+                <a aria-label="تحضير درس الاسماء المبنية للسنة الثانية ثانوي علمي" class="post-thumb"
+                  href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/"><img
+                    alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image" height="150"
+                    loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}" width="220" /></a> </div>
+              <div class="post-widget-body">
+                <h3 class="post-title"><a
+                    href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d8%af%d8%b1%d8%b3-%d8%a7%d9%84%d8%a7%d8%b3%d9%85%d8%a7%d8%a1-%d8%a7%d9%84%d9%85%d8%a8%d9%86%d9%8a%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86/">تحضير
+                    درس الاسماء المبنية للسنة الثانية ثانوي علمي</a></h3>
+                <div class="post-meta">
+                  <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+              </div>
+            </li>
+            <li class="widget-single-post-item widget-post-list">
+              <div class="post-widget-thumbnail">
+                <a aria-label="تحضير نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي" class="post-thumb"
+                  href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/"><img
+                    alt="" class="attachment-jannah-image-small size-jannah-image-small tie-small-image" height="150"
+                    loading="lazy" src="{% static 'jpg/سواح-ميديا-220x150.55adfe16.jpg' %}" width="220" /></a> </div>
+              <div class="post-widget-body">
+                <h3 class="post-title"><a
+                    href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a8%d9%84%d8%a7%d8%af-%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%84%d8%a7%d8%a8%d9%86-%d8%a8%d8%b7%d9%88%d8%b7%d8%a9-%d9%84%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84/">تحضير
+                    نص بلاد الصين لابن بطوطة للسنة الثانية ثانوي</a></h3>
+                <div class="post-meta">
+                  <span class="date meta-item tie-icon">نوفمبر 29, 2020</span> </div>
+              </div>
+            </li>
+            <li class="widget-single-post-item widget-post-list tie-standard">
+              <div class="post-widget-thumbnail">
+                <a aria-label="شاهد الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP"
+                  class="post-thumb"
+                  href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/"><img
+                    alt="الهيبة الرد الحلقة 25"
+                    class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+                    height="150" loading="lazy" src="{% static 'jpg/الحلقة-25-الهيبة-الرد-220x150.6ab5cf7d.jpg' %}"
+                    width="220" /></a> </div>
+              <div class="post-widget-body">
+                <h3 class="post-title"><a
+                    href="https://sawahmedia.com/tv/%d8%b4%d8%a7%d9%87%d8%af-%d8%a7%d9%84%d8%a2%d9%86-%d8%a7%d9%84%d8%ad%d9%84%d9%82%d8%a9-25-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a7%d9%84%d9%87%d9%8a%d8%a8%d8%a9-%d8%a7%d9%84%d8%b1%d8%af-%d8%a7%d9%84/">شاهد
+                    الآن الحلقة 25 مسلسل الهيبة الرد الموسم الرابع جبل شيخ الجبل 4 Shahid VIP</a></h3>
+                <div class="post-meta">
+                  <span class="date meta-item tie-icon">ديسمبر 1, 2020</span> </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="container-wrapper widget posts-list" id="posts-list-widget-5">
+        <div class="widget-title the-global-title">
+          <div class="the-subtitle">الأكثر تعليقاً<span class="widget-title-icon tie-icon"></span></div>
+        </div>
+        <div class="widget-posts-list-container timeline-widget">
+          <ul class="posts-list-items widget-posts-wrapper">
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/">
+                <span class="date meta-item tie-icon">نوفمبر 24, 2020</span>
+                <h3>وظائف البريد المصري شهر نوفمبر 2020 – اعرف الشروط وأوراق التقديم في وظائف البريد المصري 2020
+                </h3>
+              </a>
+            </li>
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/arts/%d8%a3%d9%86%d8%ba%d8%a7%d9%85-%d9%84%d9%84%d8%ae%d8%b7%d9%8a%d8%a8-%d8%a8%d8%b9%d8%af-%d9%81%d9%88%d8%b2-%d8%a7%d9%84%d8%a3%d9%87%d9%84%d9%8a-%d9%85%d8%a8%d8%b1%d9%88%d9%83-%d9%8a%d8%a7-%d9%85%d8%ad/">
+                <span class="date meta-item tie-icon">نوفمبر 27, 2020</span>
+                <h3>أنغام للخطيب بعد فوز الأهلي: مبروك يا محترم.. ربنا يخليك لمصر</h3>
+              </a>
+            </li>
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a7%d9%84%d8%b5%d8%b1%d8%a7%d8%b9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%82%d8%af%d9%85%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d9%85%d8%ad%d8%af%d8%ab%d9%8a%d9%86/">
+                <span class="date meta-item tie-icon">نوفمبر 29, 2020</span>
+                <h3>تحضير نص الصراع بين القدماء والمحدثين للسنة الثانية ثانوي اداب</h3>
+              </a>
+            </li>
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/sports/%d9%88%d9%81%d9%82%d9%8b%d8%a7-%d9%84%d9%84%d8%a7%d8%a6%d8%ad%d8%a9-%d9%87%d9%84-%d9%8a%d8%ba%d9%8a%d8%a8-%d8%a7%d9%84%d8%b4%d8%ad%d8%a7%d8%aa-%d8%b9%d9%86-%d8%a7%d9%84%d8%a3%d9%87%d9%84%d9%8a/">
+                <span class="date meta-item tie-icon">نوفمبر 27, 2020</span>
+                <h3>وفقًا للائحة.. هل يغيب الشحات عن الأهلي في كأس السوبر الإفريقي؟</h3>
+              </a>
+            </li>
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/arts/%d8%b5%d9%84%d8%a7%d8%ad-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%84%d9%87-%d8%a7%d9%84%d8%a3%d8%ad%d8%b3%d9%86-%d9%83%d8%a7%d9%86-%d8%a7%d9%84%d8%b2%d9%85%d8%a7%d9%84%d9%83-%d9%88%d8%a7%d9%84%d9%84/">
+                <span class="date meta-item tie-icon">نوفمبر 28, 2020</span>
+                <h3>صلاح عبد الله: الأحسن كان الزمالك.. واللي فاز الأهلي</h3>
+              </a>
+            </li>
+            <li class="widget-single-post-item">
+              <a
+                href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/">
+                <span class="date meta-item tie-icon">نوفمبر 29, 2020</span>
+                <h3>لخص في نص علمي اليات النمو والتجديد الخلوي</h3>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="container-wrapper widget recent-comments-widget" id="comments_avatar-widget-1">
+        <div class="widget-title the-global-title">
+          <div class="the-subtitle">اخر التعليقات<span class="widget-title-icon tie-icon"></span></div>
+        </div>
+        <ul>
+          <li>
+            <div class="post-widget-thumbnail" style="width:70px">
+              <a class="author-avatar"
+                href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/#comment-17">
+                <img alt="صورة Ferdi malak" class="avatar avatar-70 photo" height="70" loading="lazy"
+                  src="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=70&amp;d=mm&amp;r=g"
+                  srcset="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=140&amp;d=mm&amp;r=g 2x"
+                  width="70" /> </a>
+            </div>
+            <div class="comment-body">
+              <a class="comment-author"
+                href="https://sawahmedia.com/mix/%d9%84%d8%ae%d8%b5-%d9%81%d9%8a-%d9%86%d8%b5-%d8%b9%d9%84%d9%85%d9%8a-%d8%a7%d9%84%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%85%d9%88-%d9%88%d8%a7%d9%84%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae/#comment-17">
+                Ferdi malak </a>
+              <p>صفحتكم جميلة ومفيدة...</p>
+            </div>
+          </li>
+          <li>
+            <div class="post-widget-thumbnail" style="width:70px">
+              <a class="author-avatar"
+                href="https://sawahmedia.com/sports/%d8%a3%d9%86%d8%a7-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d8%b4%d8%b1%d8%b9%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%af%d9%8a-%d9%85%d8%a7%d8%b0%d8%a7-%d8%b7%d9%84%d8%a8-%d9%85%d8%b1%d8%aa/#comment-16">
+                <img alt="صورة د أحمد المصري" class="avatar avatar-70 photo" height="70" loading="lazy"
+                  src="https://secure.gravatar.com/avatar/232ab9c49eca1e9f8e04d1cc559830b9?s=70&amp;d=mm&amp;r=g"
+                  srcset="https://secure.gravatar.com/avatar/232ab9c49eca1e9f8e04d1cc559830b9?s=140&amp;d=mm&amp;r=g 2x"
+                  width="70" /> </a>
+            </div>
+            <div class="comment-body">
+              <a class="comment-author"
+                href="https://sawahmedia.com/sports/%d8%a3%d9%86%d8%a7-%d8%a7%d9%84%d8%b1%d8%a6%d9%8a%d8%b3-%d8%a7%d9%84%d8%b4%d8%b1%d8%b9%d9%8a-%d9%84%d9%84%d9%86%d8%a7%d8%af%d9%8a-%d9%85%d8%a7%d8%b0%d8%a7-%d8%b7%d9%84%d8%a8-%d9%85%d8%b1%d8%aa/#comment-16">
+                د أحمد المصري </a>
+              <p>تحياتي وتهنئتي بحسن اختيار الموضوع للمناقشة والتعليق! تفضلتم...</p>
+            </div>
+          </li>
+          <li>
+            <div class="post-widget-thumbnail" style="width:70px">
+              <a class="author-avatar"
+                href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-12">
+                <img alt="صورة احمد مصطفى عبدالقادر" class="avatar avatar-70 photo" height="70" loading="lazy"
+                  src="https://secure.gravatar.com/avatar/7ae61e5200822f278abf40300edaf1c0?s=70&amp;d=mm&amp;r=g"
+                  srcset="https://secure.gravatar.com/avatar/7ae61e5200822f278abf40300edaf1c0?s=140&amp;d=mm&amp;r=g 2x"
+                  width="70" /> </a>
+            </div>
+            <div class="comment-body">
+              <a class="comment-author"
+                href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-12">
+                احمد مصطفى عبدالقادر </a>
+              <p>المنيا-بنى مزار-صندفا...</p>
+            </div>
+          </li>
+          <li>
+            <div class="post-widget-thumbnail" style="width:70px">
+              <a class="author-avatar"
+                href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a7%d9%84%d8%b5%d8%b1%d8%a7%d8%b9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%82%d8%af%d9%85%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d9%85%d8%ad%d8%af%d8%ab%d9%8a%d9%86/#comment-11">
+                <img alt="صورة Ayoubbentaleb" class="avatar avatar-70 photo" height="70" loading="lazy"
+                  src="https://secure.gravatar.com/avatar/fbbc18a425db56627c8837c492375f88?s=70&amp;d=mm&amp;r=g"
+                  srcset="https://secure.gravatar.com/avatar/fbbc18a425db56627c8837c492375f88?s=140&amp;d=mm&amp;r=g 2x"
+                  width="70" /> </a>
+            </div>
+            <div class="comment-body">
+              <a class="comment-author"
+                href="https://sawahmedia.com/mix/%d8%aa%d8%ad%d8%b6%d9%8a%d8%b1-%d9%86%d8%b5-%d8%a7%d9%84%d8%b5%d8%b1%d8%a7%d8%b9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%82%d8%af%d9%85%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d9%85%d8%ad%d8%af%d8%ab%d9%8a%d9%86/#comment-11">
+                Ayoubbentaleb </a>
+              <p><a class="__cf_email__" data-cfemail="6507000b1104090007041c0a1007575151250208040c094b060a084b4b4b"
+                  href="/cdn-cgi/l/email-protection">[email protected]</a></p>
+            </div>
+          </li>
+          <li>
+            <div class="post-widget-thumbnail" style="width:70px">
+              <a class="author-avatar"
+                href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-10">
+                <img alt="صورة محدود محمد عبد اللطيف" class="avatar avatar-70 photo" height="70" loading="lazy"
+                  src="https://secure.gravatar.com/avatar/b65f07f6a3ed90b525f989ce90f70e30?s=70&amp;d=mm&amp;r=g"
+                  srcset="https://secure.gravatar.com/avatar/b65f07f6a3ed90b525f989ce90f70e30?s=140&amp;d=mm&amp;r=g 2x"
+                  width="70" /> </a>
+            </div>
+            <div class="comment-body">
+              <a class="comment-author"
+                href="https://sawahmedia.com/news/%d9%88%d8%b8%d8%a7%d8%a6%d9%81-%d8%a7%d9%84%d8%a8%d8%b1%d9%8a%d8%af-%d8%a7%d9%84%d9%85%d8%b5%d8%b1%d9%8a-%d8%b4%d9%87%d8%b1-%d9%86%d9%88%d9%81%d9%85%d8%a8%d8%b1-2020-%d8%a7%d8%b9%d8%b1%d9%81-%d8%a7/#comment-10">
+                محدود محمد عبد اللطيف </a>
+              <p>وظيفه امين مخزن...</p>
+            </div>
+          </li>
+        </ul>
+        <div class="clearfix"></div>
       </div>
     </div>
   </div>
-
-
-  <style>
-    .sidebar-category-icon {
-      position: absolute;
-      top: 11px;
-      right: 12px;
-      color: #fff;
-    }
-
-    .sidebar-category-icon::before {
-      color: white;
-    }
-  </style>
-
-  {% for category in sidebar_categories %}
-  <div id="sports">
-    <div class="title-bg">
-      <span class="icon-Weather-Icons-16"></span>
-      <span class="sidebar-category-icon {{ category.css_icon_class }}"></span>
-
-      <div class="row">
-        <div class="col-md-9 col-sm-9 col-xs-9">
-          <a href="{{ category.get_absolute_url }}" class="header-title orange"> {{ category.title }}</a>
-        </div>
-        <div class="col-md-3 col-sm-3 col-xs-3 select-city" style="margin-top: 5px !important; padding: 0;">
-          <a href="{{ category.get_absolute_url }}" class="more-arrow">
-            المزيد <i class="flaticon-arrows"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="scroll-block">
-      <div class="sport-item scrollbar" id="style-scroll">
-
-        <div class="force-overflow">
-
-
-          {% for post in category.post_category.all|slice:"0:10" %}
-          <div class="sport-block">
-            <div class="sport-image">
-              <a class="icon-white" href="{{ category.get_absolute_url }}">
-                <i class="{{ category.css_icon_class }}"></i>
-              </a>
-
-              <a href="{{ post.get_absolute_url }}">
-                <img src="{{ post.thumbnailURL }}" loading="lazy" alt="{{ post.title }}" pinger-seen="true">
-              </a>
-            </div>
-
-
-            <div class="sport-details">
-              <h2>
-                <a href="{{ post.get_absolute_url }}">
-                  {{ post.title }}
-                </a>
-              </h2>
-            </div>
-
-            <div class="sport-li">
-              <ul class="post-meta ">
-                <li>
-                  <span class="flaticon-clock-circular-outline"></span>
-                  منذ يومين
-                  <!-- {{ post.date }} -->
-                </li>
-                <li>{{ post.seen_count }}<span class="flaticon-view"></span></li>
-              </ul>
-            </div>
-          </div>
-          {% endfor %}
-
-
-        </div>
-
-
-      </div>
-    </div>
-
-
-  </div>
-  {% endfor %}
-
-
-
-</div>
+</aside>

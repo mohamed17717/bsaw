@@ -1,125 +1,318 @@
 {% load static %}
-{% load filters %}
 
-<header class="main-header fixed-header">
-
-  <a class="nav-trigger">
-    Menu <span></span>
-  </a>
+<header
+  class="theme-header header-layout-3 main-nav-dark main-nav-default-dark main-nav-below main-nav-boxed has-stream-item top-nav-active top-nav-light top-nav-default-light top-nav-above has-shadow has-normal-width-logo has-custom-sticky-logo mobile-header-default"
+  id="theme-header">
 
 
-  <div class="header-upper">
-    <div class="auto-container">
-      <div class="flex" style="justify-content: space-between;">
-        <div class="logo-outer ">
-          <div class="logo">
-            <a href="/" style="max-width: 180px;">
-              <img id="logo-img" src="{% static '/assets/images/logo1.png' %}" alt="السعودية نيوز">
-            </a>
+  <nav aria-label="الشريط العلوي" class="has-date-breaking-components top-nav header-nav has-breaking-news"
+    id="top-nav">
+
+
+    <div class="container">
+      <div class="topbar-wrapper">
+        <div class="topbar-today-date tie-icon">
+          الأربعاء, فبراير 10 2021 </div>
+        <div class="tie-alignleft">
+          <div class="breaking controls-is-active">
+            <span class="breaking-title">
+              <span aria-hidden="true" class="tie-icon-bolt breaking-icon"></span>
+              <span class="breaking-title-text">أخبار عاجلة</span>
+            </span>
+            <ul class="breaking-news" data-arrows="true" data-type="reveal" id="breaking-news-in-header">
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d9%81%d8%af-%d8%b9%d9%86-%d9%81%d8%b5%d9%84-10-%d9%85%d9%86-%d8%a3%d8%b9%d8%b6%d8%a7%d8%a1-%d8%a7%d9%84%d8%ad%d8%b2%d8%a8-%d9%86%d8%aa%d8%a7%d8%ac-6-%d8%a3%d8%b4%d9%87/">«الوفد»
+                  عن فصل 10 من أعضاء الحزب: نتاج 6 أشهر من المشاكل الداخلية</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%af%d9%88%d8%b1-%d9%85%d8%b5%d8%b1-%d8%aa%d8%ac%d8%a7%d9%87-%d8%a7%d9%84%d9%82%d8%b6%d9%8a%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a3%d8%a8%d9%88%d9%8a/">دور
+                  مصر تجاه القضية الفلسطينية “أبوي”</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/9-%d9%85%d8%b9%d9%84%d9%88%d9%85%d8%a7%d8%aa-%d8%b9%d9%86-%d9%85%d8%b3%d8%aa%d8%b4%d8%a7%d8%b1-%d8%a7%d9%84%d8%b4%d8%b1%d8%b7%d8%a9-%d8%a7%d9%84%d8%a3%d8%b3%d8%aa%d8%b1%d8%a7%d9%84%d9%8a%d8%a9-%d8%b4/">9
+                  معلومات عن مستشار الشرطة الأسترالية: شاب مصري خريج «حقوق القاهرة»</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%a7%d9%84%d9%88%d8%ad%d8%af%d8%a9-%d8%a7%d9%84%d9%81%d9%84%d8%b3%d8%b7%d9%8a%d9%86%d9%8a%d8%a9-%d8%a8%d8%af%d8%a7%d9%8a%d8%a9-%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa/">الوحدة
+                  الفلسطينية بداية مواجهة الاحتلال الإسرائيلي (فيديو)</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%af%d9%8a%d9%86%d8%a7-%d8%b9%d9%84%d8%a7%d8%a1-%d9%85%d8%b4%d8%b1%d9%81-%d8%a8%d8%b7%d9%84%d8%a9-%d8%aa%d9%86%d8%b3-%d8%a7%d9%84%d8%b7%d8%a7%d9%88%d9%84%d8%a9-%d8%aa%d9%83%d8%b4%d9%81/">«دينا
+                  علاء مشرف» بطلة تنس الطاولة تكشف سبب نجاحها .. فيديو</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84-%d9%88%d8%b7%d9%86-%d9%8a%d9%82%d8%af%d9%85-%d9%82%d8%a7%d9%81%d9%84%d8%a9-%d9%85%d8%b3%d8%a7%d8%b9%d8%af%d8%a7%d8%aa-%d9%84%d8%a3%d9%87%d8%a7%d9%84/">«مستقبل
+                  وطن» يقدم قافلة مساعدات لأهالي عزبة الهجانة</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%aa%d9%88%d8%a7%d8%b2%d9%86-%d8%a7%d9%84%d9%82%d9%88%d9%89-%d9%81%d9%8a-%d8%a7%d9%84%d9%81%d8%b6%d8%a7%d8%a1-%d9%8a%d9%8f%d8%ad%d9%8a%d8%af-%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85-%d8%a7%d9%84/">توازن
+                  القوى في الفضاء يُحيد استخدام الأسلحة (فيديو)</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d9%81%d8%b1%d9%8a%d9%82-%d8%b9%d9%85%d9%84-%d9%85%d8%b3%d9%84%d8%b3%d9%84-%d8%a8%d9%8a%d8%aa-%d8%a7%d9%84%d8%b9%d9%8a%d9%84%d8%a9%d9%8a%d8%b5%d9%88%d8%b1%d9%88%d9%86-%d9%85%d8%b4%d8%a7%d9%87%d8%af/">فريق
+                  عمل مسلسل “بيت العيلة”يصورون مشاهد الجزء الثالث فى فيلا بالحزام الأخضر</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%b1%d8%ac%d9%84-%d8%af%d9%8a%d9%86-%d8%a5%d9%8a%d8%b1%d8%a7%d9%86%d9%8a-%d9%8a%d8%b2%d8%b9%d9%85-%d9%85%d8%aa%d9%84%d9%82%d9%88-%d9%84%d9%82%d8%a7%d8%ad%d8%a7%d8%aa-%d9%83%d9%88%d8%b1%d9%88%d9%86/">رجل
+                  دين إيراني يزعم: متلقو لقاحات كورونا يصابون بالشذوذ الجنسي</a>
+              </li>
+              <li class="news-item">
+                <a
+                  href="https://sawahmedia.com/news/me/%d8%b0%d8%b1%d9%88%d8%a9-%d8%a7%d9%84%d9%85%d9%88%d8%ac%d8%a9-%d8%a7%d9%84%d8%ab%d8%a7%d9%86%d9%8a%d8%a9-%d9%84%d9%81%d9%8a%d8%b1%d9%88%d8%b3-%d9%83%d9%88%d8%b1%d9%88%d9%86%d8%a7-%d8%a7%d9%86%d8%aa/">ذروة
+                  الموجة الثانية لفيروس كورونا انتهت من 3 أسابيع</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="search-block" style="min-width: 400px;">
-          <div class="container-search">
-
-            <div class="search-input" style="width: 100%">
-              <div class="form-container">
-                
-                <form id="search-form" class="dev-search-form">
-                  <div class="form-group">
-                    <input type="search" name="q" value="" placeholder="ابحث هنا" data-rule-minlength="3"
-                      data-rule-maxlength="150">
-                    <button type="submit" class="search-btn"><span class="fas fa-search"></span>
-                    </button>
-                  </div>
-                </form>
-                <script>
-                  const searchForm = document.querySelector('#search-form');
-                  searchForm.addEventListener('submit', e => {
-                    e.preventDefault()
-                    window.location.href = `/search/${e.target.q.value}/`
-                  })
-                  
-                </script>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="error-search">
-          </div> -->
-        </div>
-        <div class=" upper-right clearfix">
-          <ul class="icon-nav mega">
-            <li>
-              <a href="#" class="theme-mode">
-                <i class="flaticon-moon"></i>
+        <div class="tie-alignright">
+          <ul class="components">
+            <li class="side-aside-nav-icon menu-item custom-menu-link">
+              <a href="#">
+                <span aria-hidden="true" class="tie-icon-navicon"></span>
+                <span class="screen-reader-text">إضافة عمود جانبي</span>
               </a>
+            </li>
+            <li class="random-post-icon menu-item custom-menu-link">
+              <a class="random-post"
+                href="/news/gulf/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d9%87%d8%a7%d8%ac%d9%85-%d8%a7%d9%84%d8%aa%d8%b1%d9%88%d9%8a%d8%ac-%d9%84%d9%84%d9%83%d8%b1%d8%a7%d9%87%d9%8a%d8%a9-%d9%81%d9%8a-%d8%aa%d8%b5%d8%b1%d9%8a/?random-post=1"
+                rel="nofollow" title="مقال عشوائي">
+                <span aria-hidden="true" class="tie-icon-random"></span>
+                <span class="screen-reader-text">مقال عشوائي</span>
+              </a>
+            </li>
+            <li class="popup-login-icon menu-item custom-menu-link">
+              <a class="lgoin-btn tie-popup-trigger" href="#">
+                <span aria-hidden="true" class="tie-icon-author"></span>
+                <span class="screen-reader-text">تسجيل الدخول</span> </a>
+            </li>
+            <li class="social-icons-item"><a class="social-link paypal-social-icon"
+                href="https://www.paypal.com/paypalme/sawahmedia" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-paypal"></span><span class="screen-reader-text">‏Paypal</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link instagram-social-icon"
+                href="https://www.instagram.com/sawah.press/" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link youtube-social-icon"
+                href="https://www.youtube.com/channel/UCk2FMHs8HTTBJJvF08edmLA" rel="external noopener nofollow"
+                target="_blank"><span class="tie-social-icon tie-icon-youtube"></span><span
+                  class="screen-reader-text">يوتيوب</span></a></li>
+            <li class="social-icons-item"><a class="social-link pinterest-social-icon"
+                href="https://tr.pinterest.com/officialsawahmedia" rel="external noopener nofollow"
+                target="_blank"><span class="tie-social-icon tie-icon-pinterest"></span><span
+                  class="screen-reader-text">بينتيريست</span></a></li>
+            <li class="social-icons-item"><a class="social-link twitter-social-icon"
+                href="https://twitter.com/sawahpress" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a>
+            </li>
+            <li class="social-icons-item"><a class="social-link facebook-social-icon"
+                href="https://www.facebook.com/Sawahpress/" rel="external noopener nofollow" target="_blank"><span
+                  class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a>
             </li>
           </ul>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="header-lower">
-    <div class="auto-container">
-      <div class="nav-outer clearfix ">
 
-        <nav class="main-menu">
-          <div class="navbar-header">
+  </nav>
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+
+  <div class="container header-container">
+    <div class="tie-row logo-row">
+      <div class="logo-wrapper">
+        <div class="tie-col-md-4 logo-container clearfix">
+          <div class="mobile-header-components" id="mobile-header-components-area_1">
+            <ul class="components">
+              <li class="mobile-component_menu custom-menu-link"><a class="" href="#" id="mobile-menu-icon"><span
+                    class="tie-mobile-menu-icon tie-icon-grid-4"></span><span
+                    class="screen-reader-text">القائمة</span></a></li>
+              <li class="mobile-component_search custom-menu-link">
+                <a class="tie-search-trigger-mobile" href="#">
+                  <span aria-hidden="true" class="tie-icon-search tie-search-icon"></span>
+                  <span class="screen-reader-text">بحث عن</span>
+                </a>
+              </li>
+              <li class="mobile-component_skin custom-menu-link">
+                <a class="change-skin" href="#" title="الوضع المظلم">
+                  <span aria-hidden="true" class="tie-icon-moon change-skin-icon"></span>
+                  <span class="screen-reader-text">الوضع المظلم</span>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="wrapper--big">
-            <div class="navbar-collapse collapse clearfix" id="bs-example-navbar-collapse-1">
-              <div class="resize-drag nav-wrapper priority-nav priority-nav-has-dropdown" instance="0">
-                <ul class="navigation clearfix nav-ul">
-                  <li class="mainCatHOME current"> <a href="/">
-                      <i id="mainCatHOME" class="flaticon-pause-bars main-category-icon"></i>
-                      الصفحة الرئيسية
-                    </a>
-                  </li>
-                  
-                  {% for category in nav_categories %}
-                  <li class="mainCat5bb20db1c581b17f17037954"> 
-                    <style>
-                      a[href="{{ category.get_absolute_url }}"]::before {
-                        background-color: {{ category.css_icon_color|operator_or:"#EEE" }} !important;
-                      }
-                    </style>
-                    <a href="{{ category.get_absolute_url }}">
-                    <i class="{{ category.css_icon_class }} main-category-icon" style="color: {{ category.css_icon_color|operator_or:"#EEE" }}"></i>
-                      {{ category.title }}
-                    </a>
-                  </li>
-                  {% endfor %}
-                    
-                </ul>
-
-              </div>
-            </div>
+          <div class="image-logo" id="logo" style="margin-top: 20px; margin-bottom: 20px;">
+            <a href="https://sawahmedia.com/" title="سواح ميديا">
+              <picture class="tie-logo-default tie-logo-picture" id="tie-logo-default">
+                <source class="tie-logo-source-default tie-logo-source"
+                  srcset="{% static 'png/لوجو-سواح-ميديا-1.fab1d399.png' %}">
+                <img alt="سواح ميديا" class="tie-logo-img-default tie-logo-img" height="141"
+                  src="{% static 'png/لوجو-سواح-ميديا-1.fab1d399.png' %}" style="max-height:141px; width: auto;"
+                  width="577" />
+                </source>
+              </picture>
+              <picture class="tie-logo-inverted tie-logo-picture" id="tie-logo-inverted">
+                <source class="tie-logo-source-inverted tie-logo-source" id="tie-logo-inverted-source"
+                  srcset="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}">
+                <img alt="سواح ميديا" class="tie-logo-img-inverted tie-logo-img" height="141" id="tie-logo-inverted-img"
+                  src="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}" style="max-height:141px; width: auto;"
+                  width="577" />
+                </source>
+              </picture>
+            </a>
           </div>
-        </nav>
+        </div>
       </div>
     </div>
   </div>
 
+
+  <div class="main-nav-wrapper">
+    <nav aria-label="القائمة الرئيسية" class="main-nav header-nav live-search-parent" data-skin="search-in-main-nav"
+      id="main-nav">
+
+
+      <div class="container">
+        <div class="main-menu-wrapper">
+          <div id="menu-components-wrap">
+            <div class="image-logo" id="sticky-logo">
+              <a href="https://sawahmedia.com/" title="سواح ميديا">
+                <picture>
+                  <source srcset="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}">
+                  <img alt="سواح ميديا" src="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}"
+                    style="max-height:49px; width: auto;" />
+                  </source>
+                </picture>
+              </a>
+            </div>
+            <div class="flex-placeholder"></div>
+            <div class="main-menu main-menu-wrap tie-alignleft">
+              <div class="main-menu header-menu" id="main-nav-menu">
+                <ul class="menu" id="menu-tielabs-main-menu" role="menubar">
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1512"
+                    id="menu-item-1512"><a href="https://sawahmedia.com/">الرئيسية</a></li>
+                  <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-4837 mega-menu mega-cat"
+                    data-id="37" id="menu-item-4837"><a href="https://sawahmedia.com/category/news/">الاخبار</a>
+                    <div class="mega-menu-block menu-sub-content">
+                      <div class="mega-menu-content">
+                        <div class="mega-cat-wrapper">
+                          <ul class="mega-cat-sub-categories cats-vertical">
+                            <li class="mega-all-link"><a class="is-active is-loaded mega-sub-cat" data-id="37"
+                                href="https://sawahmedia.com/category/news/">الكل</a></li>
+                            <li><a class="mega-sub-cat" data-id="40"
+                                href="https://sawahmedia.com/category/news/economics/">اخبار الاقتصاد</a></li>
+                            <li><a class="mega-sub-cat" data-id="42"
+                                href="https://sawahmedia.com/category/news/gulf/">اخبار الخليج</a></li>
+                            <li><a class="mega-sub-cat" data-id="39"
+                                href="https://sawahmedia.com/category/news/me/">اخبار الشرق الأوسط</a></li>
+                            <li><a class="mega-sub-cat" data-id="38"
+                                href="https://sawahmedia.com/category/news/world/">اخبار العالم</a></li>
+                            <li><a class="mega-sub-cat" data-id="41"
+                                href="https://sawahmedia.com/category/news/west/">اخبار المغرب العربي</a></li>
+                          </ul>
+                          <div class="mega-cat-content mega-cat-sub-exists vertical-posts">
+                            <div class="mega-ajax-content mega-cat-posts-container clearfix">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- current-menu-item tie-current-menu -->
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4836"
+                    id="menu-item-4836"><a href="https://sawahmedia.com/category/tech/">تكنولوجيا</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4838"
+                    id="menu-item-4838"><a href="https://sawahmedia.com/category/sports/">الرياضة</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4839"
+                    id="menu-item-4839"><a href="https://sawahmedia.com/category/health/">الصحة والجمال</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4840"
+                    id="menu-item-4840"><a href="https://sawahmedia.com/category/lifestyle/">لايف ستايل</a></li>
+                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4841"
+                    id="menu-item-4841"><a href="https://sawahmedia.com/category/articles/">مقالات</a></li>
+                  <li
+                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4842"
+                    id="menu-item-4842"><a href="https://sawahmedia.com/category/mix/">منوعات</a>
+                    <ul class="sub-menu menu-sub-content">
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4843"
+                        id="menu-item-4843"><a href="https://sawahmedia.com/category/tv/">افلام ومسلسلات</a>
+                      </li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4844"
+                        id="menu-item-4844"><a href="https://sawahmedia.com/category/edu/">التعليم</a></li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4845"
+                        id="menu-item-4845"><a href="https://sawahmedia.com/category/arts/">الفن والفنانين</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <ul class="components">
+              <li class="search-compact-icon menu-item custom-menu-link">
+                <a class="tie-search-trigger" href="#">
+                  <span aria-hidden="true" class="tie-icon-search tie-search-icon"></span>
+                  <span class="screen-reader-text">بحث عن</span>
+                </a>
+              </li>
+              <li class="skin-icon menu-item custom-menu-link">
+                <a class="change-skin" href="#" title="الوضع المظلم">
+                  <span aria-hidden="true" class="tie-icon-moon change-skin-icon"></span>
+                  <span class="screen-reader-text">الوضع المظلم</span>
+                </a>
+              </li>
+              <li class="side-aside-nav-icon menu-item custom-menu-link">
+                <a href="#">
+                  <span aria-hidden="true" class="tie-icon-navicon"></span>
+                  <span class="screen-reader-text">إضافة عمود جانبي</span>
+                </a>
+              </li>
+              <li class="random-post-icon menu-item custom-menu-link">
+                <a class="random-post"
+                  href="/news/gulf/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d9%87%d8%a7%d8%ac%d9%85-%d8%a7%d9%84%d8%aa%d8%b1%d9%88%d9%8a%d8%ac-%d9%84%d9%84%d9%83%d8%b1%d8%a7%d9%87%d9%8a%d8%a9-%d9%81%d9%8a-%d8%aa%d8%b5%d8%b1%d9%8a/?random-post=1"
+                  rel="nofollow" title="مقال عشوائي">
+                  <span aria-hidden="true" class="tie-icon-random"></span>
+                  <span class="screen-reader-text">مقال عشوائي</span>
+                </a>
+              </li>
+              <li class="popup-login-icon menu-item custom-menu-link">
+                <a class="lgoin-btn tie-popup-trigger" href="#">
+                  <span aria-hidden="true" class="tie-icon-author"></span>
+                  <span class="screen-reader-text">تسجيل الدخول</span> </a>
+              </li>
+              <li class="weather-menu-item menu-item custom-menu-link">
+                <div class="tie-weather-widget is-animated" title="سماء صافية">
+                  <div class="weather-wrap">
+                    <div class="weather-forecast-day small-weather-icons">
+                      <div class="weather-icon">
+                        <div class="icon-moon"></div>
+                      </div>
+                    </div>
+                    <div class="city-data">
+                      <span>الرياض</span>
+                      <span class="weather-current-temp">
+                        10 <sup>℃</sup>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </nav>
+  </div>
+
 </header>
-
-
-<nav class="nav-container" id="navigation">
-  <ul id="main-menu" class="tendina">
-    
-    {% for category in nav_categories %}
-    <li class="mainCat"> 
-      <a href="{{ category.get_absolute_url }}">
-        {{ category.title }}
-      </a>
-    </li>
-    {% endfor %}
-
-  </ul>
-</nav>

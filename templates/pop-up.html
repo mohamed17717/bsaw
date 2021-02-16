@@ -1,0 +1,69 @@
+<div class="tie-popup tie-popup-search-wrap" id="tie-popup-search-desktop" style="display: none;">
+  <a class="tie-btn-close remove big-btn light-btn" href="#">
+    <span class="screen-reader-text">إغلاق</span>
+  </a>
+  <div class="popup-search-wrap-inner">
+    <div aria-label="بحث" class="live-search-parent pop-up-live-search" data-skin="live-search-popup">
+      <form action="https://sawahmedia.com/" class="tie-popup-search-form" method="get">
+        <input autocomplete="off" class="tie-popup-search-input is-ajax-search" inputmode="search" name="s"
+          placeholder="إكتب كلمة البحث ثم إضغط زر الإدخال" title="بحث عن" type="text" />
+        <button class="tie-popup-search-submit" type="submit">
+          <span aria-hidden="true" class="tie-icon-search tie-search-icon"></span>
+          <span class="screen-reader-text">بحث عن</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="tie-popup tie-popup-search-wrap" id="tie-popup-search-mobile" style="display: none;">
+  <a class="tie-btn-close remove big-btn light-btn" href="#">
+    <span class="screen-reader-text">إغلاق</span>
+  </a>
+  <div class="popup-search-wrap-inner">
+    <div aria-label="بحث" class="live-search-parent pop-up-live-search" data-skin="live-search-popup">
+      <form action="https://sawahmedia.com/" class="tie-popup-search-form" method="get">
+        <input autocomplete="off" class="tie-popup-search-input" inputmode="search" name="s" placeholder="بحث عن"
+          title="بحث عن" type="text" />
+        <button class="tie-popup-search-submit" type="submit">
+          <span aria-hidden="true" class="tie-icon-search tie-search-icon"></span>
+          <span class="screen-reader-text">بحث عن</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="tie-popup" id="tie-popup-login" style="display: none;">
+  <a class="tie-btn-close remove big-btn light-btn" href="#">
+    <span class="screen-reader-text">إغلاق</span>
+  </a>
+  <div class="tie-popup-container">
+    <div class="container-wrapper">
+      <div class="widget login-widget">
+        <div class="widget-title the-global-title">
+          <div class="the-subtitle">تسجيل الدخول <span class="widget-title-icon tie-icon"></span></div>
+        </div>
+        <div class="widget-container">
+          <div class="login-form">
+            <form action="https://sawahmedia.com/wp-login.php" method="post" name="registerform">
+              <input name="log" placeholder="إسم المستخدم" title="إسم المستخدم" type="text" />
+              <div class="pass-container">
+                <input name="pwd" placeholder="كلمة المرور" title="كلمة المرور" type="password" />
+                <a class="forget-text"
+                  href="https://sawahmedia.com/wp-login.php?action=lostpassword&amp;redirect_to=https%3A%2F%2Fsawahmedia.com">نسيت
+                  كلمة المرور؟</a>
+              </div>
+              <input name="redirect_to" type="hidden"
+                value="/news/gulf/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d9%87%d8%a7%d8%ac%d9%85-%d8%a7%d9%84%d8%aa%d8%b1%d9%88%d9%8a%d8%ac-%d9%84%d9%84%d9%83%d8%b1%d8%a7%d9%87%d9%8a%d8%a9-%d9%81%d9%8a-%d8%aa%d8%b5%d8%b1%d9%8a/" />
+              <label class="rememberme" for="rememberme">
+                <input checked="checked" id="rememberme" name="rememberme" type="checkbox" value="forever" /> تذكرني
+              </label>
+              <button class="button fullwidth login-submit" type="submit">تسجيل الدخول</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
