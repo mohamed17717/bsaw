@@ -78,3 +78,25 @@ def html2text(value):
 @register.filter
 def operator_or(value, new):
     return value or new
+
+from django import template
+from django.template.defaulttags import URLNode, url
+
+register = template.Library()
+
+class AbsURLNode(URLNode):
+    def __init__(self, view_name, args, kwargs, asvar):
+        super().__init__(view_name, args, kwargs, asvar)
+
+    def render(self, context):
+        url     = super().render(context)
+        request = context['request']
+
+        return request.build_absolute_uri(url)
+
+
+@register.tag
+def abs_url(parser, token):
+    # use: {% abs_url 'view_name' post.pk %}
+    urlNode = url(parser, token)
+    return AbsURLNode( urlNode.view_name, urlNode.args, urlNode.kwargs, urlNode.asvar  )
