@@ -1,9 +1,6 @@
 {% load static %}
 
-<header
-  class="theme-header header-layout-3 main-nav-dark main-nav-default-dark main-nav-below main-nav-boxed has-stream-item top-nav-active top-nav-light top-nav-default-light top-nav-above has-shadow has-normal-width-logo has-custom-sticky-logo mobile-header-default"
-  id="theme-header">
-
+<header class="theme-header header-layout-3 main-nav-dark main-nav-default-dark main-nav-below main-nav-boxed has-stream-item top-nav-active top-nav-light top-nav-default-light top-nav-above has-shadow has-normal-width-logo has-custom-sticky-logo mobile-header-default" id="theme-header">
 
   <nav aria-label="الشريط العلوي" class="has-date-breaking-components top-nav header-nav has-breaking-news"
     id="top-nav">
@@ -81,7 +78,6 @@
 
   </nav>
 
-
   <div class="container header-container">
     <div class="tie-row logo-row">
       <div class="logo-wrapper">
@@ -129,7 +125,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="main-nav-wrapper">
     <nav aria-label="القائمة الرئيسية" class="main-nav header-nav live-search-parent" data-skin="search-in-main-nav"
@@ -225,6 +220,39 @@
                   <span class="screen-reader-text">الوضع المظلم</span>
                 </a>
               </li>
+              <script>
+                function toggleLocalStorage(name){
+                  if (localStorage.getItem(name))
+                    localStorage.setItem(name, undefined)
+                  else
+                    localStorage.setItem(name, true)
+                }
+
+                function setDarkMode(){
+                  console.log('dark mode event triggered')
+
+                  let toggleClasses = {
+                    'html': ['tie-skin-inverted', 'dark-skin'], 'header': ['top-nav-dark']
+                  }
+
+                  for(let selector in toggleClasses){
+                    let elm = document.querySelector(selector)
+                    toggleClasses[selector].forEach(cls => elm.classList.toggle(cls))
+                  }
+
+                  toggleLocalStorage('dm')
+                }
+
+                function setDarkModeEvent(){
+                  console.log('dark mode event set')
+                  // let darkModeBtn = document.querySelector('a[title="الوضع المظلم"]')
+                  let darkModeBtn = document.querySelector('li.skin-icon.menu-item.custom-menu-link')
+                  console.log(darkModeBtn)
+                  darkModeBtn.addEventListener('click', setDarkMode)
+                }
+
+                setTimeout(setDarkModeEvent, 3000)
+              </script>
               <li class="side-aside-nav-icon menu-item custom-menu-link">
                 <a href="#">
                   <span aria-hidden="true" class="tie-icon-navicon"></span>
