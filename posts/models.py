@@ -1,16 +1,36 @@
 from django.db import models
-from django.db.models import Subquery, Count, Sum, F
+from django.db.models import Subquery, Count, Sum, F, Max
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+
+from django.shortcuts import get_object_or_404
 
 from tinymce import HTMLField
 
 from datetime import datetime, timedelta
 import random
 
+import jsonfield
+
 User = get_user_model()
 
 
+def post_default_seen_count():
+    return random.randint(100, 500)
+
+
+def get_random_obj(myModel=None, qs=None):
+    assert qs != None or myModel != None
+
+    if not qs:
+        qs = myModel.objects.all()
+
+    max_id = qs.aggregate(max_id=Max("id"))['max_id']
+    while True:
+        pk = random.randint(1, max_id)
+        obj = qs.filter(pk=pk).first()
+        if obj:
+            return obj
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -22,11 +42,7 @@ class Author(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=20)
-    css_icon_class = models.CharField(max_length=64, blank=True, null=True)
-    css_icon_color = models.CharField(max_length=32, blank=True, null=True)
-
-    is_nav = models.BooleanField(default=False)
-    is_home_sidebar = models.BooleanField(default=False)
+    main_category = models.ForeignKey("self", related_name='sub_categories', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -35,15 +51,14 @@ class Category(models.Model):
         return reverse('category-filter', kwargs={'title': self.title})
 
     def get_posts(self):
-        return self.post_category.all()
+        return self.category_posts.all()
 
-    @staticmethod
-    def get_nav_categories(count=5):
-        return Category.objects.filter(is_nav=True)[:count]
+    def get_static_blog_category_path(self):
+        category_path = ['الرئيسية']
+        if self.main_category: category_path.append(self.main_category)
+        category_path.append(self.title)
 
-    @staticmethod
-    def get_sidebar_categories(count=3):
-        return Category.objects.filter(is_home_sidebar=True)[:count]
+        return '/'.join(category_path)
 
     @staticmethod
     def get_category_by_name(name, forced=False):
@@ -114,52 +129,73 @@ class Post(models.Model):
     url = models.URLField(max_length=200)
     title = models.CharField(max_length=100)
     thumbnailURL = models.URLField(max_length=200)
+    thumbnailURL_large = models.URLField(max_length=200, blank=True, null=True)
     content = HTMLField('Content')
 
     # relational fields
-    categories = models.ManyToManyField(Category, related_name='post_category')
-    tags = models.ManyToManyField(Tag, related_name='post_tag')
+    # categories = models.ManyToManyField(Category, related_name='post_category')
+    category = models.ForeignKey(Category, related_name='category_posts', on_delete=models.SET_NULL, blank=True, null=True)
+    sub_category = models.ForeignKey(Category, related_name='sub_category_posts', on_delete=models.SET_NULL, blank=True, null=True)
+    tags = models.ManyToManyField(Tag, related_name='tag_posts')
+
+    related_posts = jsonfield.JSONField(blank=True, null=True) # array of posts
 
     # extras || calculated
     date = models.CharField(max_length=256, blank=True, null=True)
     small_summery = models.CharField(max_length=256, blank=True, null=True)
     overview = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    source = models.CharField(max_length=256, blank=True, null=True)
 
     # use cron job to convert url into an image
     thumbnail = models.ImageField(blank=True, null=True)
 
     # default fields
     created = models.DateTimeField(auto_now_add=True)
-    seen_count = models.IntegerField(default=0)
-    fake_seen_count = models.IntegerField(default=0)
+    seen_count = models.IntegerField(default=post_default_seen_count)
     featured = models.BooleanField(default=False)
 
     # not used now
-    author = models.ForeignKey(
-        Author, on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, blank=True)
 
-    creator = models.CharField(max_length=16, default='admin')
+    creator = models.CharField(max_length=16, default='admin') # admin or bot
 
     def __str__(self):
-        return self.title
-
-    def save(self, *args, **kwargs):
-        if not self.pk: # created
-            if not self.seen_count:
-                fake_seens = random.randint(100, 500)
-                self.seen_count = fake_seens
-                self.fake_seen_count = fake_seens
-
-        return super(Post, self).save(*args, **kwargs) 
+        return f'{self.id} | {self.title}'
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'id': self.id})
+        return reverse('post-detail', kwargs={'pk': self.pk})
 
     def set_categories(self, categories):
         self.categories.set(categories)
 
     def set_tags(self, tags):
         self.tags.set(tags)
+
+    def serialize_as_related_post(self):
+        return {
+            'thumbnailURL': self.thumbnailURL,
+            'title': self.title,
+            'url': self.get_absolute_url(),
+            'date': self.date
+        }
+    
+    def serialize_as_fast_news(self):
+        return {
+            'title': self.title,
+            'url': self.get_absolute_url(),
+        }
+
+    def get_static_blog_category_path(self):
+        category_path = ['الرئيسية']
+        if self.category: category_path.append(self.category)
+        if self.sub_category: category_path.append(self.sub_category)
+        category_path.append(self.title)
+
+        return '/'.join(category_path)
+
+    def get_category(self):
+        return self.sub_category or self.category
 
     @staticmethod
     def get_latest_posts(count=20):
@@ -187,3 +223,31 @@ class Post(models.Model):
             more_qs = Post.get_most_viewed_posts_in_last_days(3, count-got_posts)
 
         return [*qs, *more_qs]
+
+    @staticmethod
+    def get_by_pk(pk):
+        post = get_object_or_404(Post, pk=pk)
+
+        if not post.related_posts:
+            category = post.category or post.sub_category
+            if category:
+                related_posts = category.category_posts.all()
+            else:
+                related_posts = Post.objects.all()
+
+            random_related_posts = [
+                get_random_obj(qs=related_posts).serialize_as_related_post()
+                for _ in range(2)
+            ]
+
+            post.related_posts = random_related_posts
+
+        post.seen_count += 1
+
+        post.save()
+
+        return post
+
+    @staticmethod
+    def get_random_post():
+        return get_random_obj(myModel=Post)
