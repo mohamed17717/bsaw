@@ -14,40 +14,67 @@ from decorators import require_http_methods, require_fields, allow_fields, check
 
 from pprint import pprint
 
-def get_defualt_context():
+def get_defualt_context(request=None):
     return {
-        'nav_categories': Category.get_nav_categories(5),
-        'sidebar_categories': Category.get_sidebar_categories(),
-        'footer_categories': Category.get_top_categories(10),
-        'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
+        # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
+        'popular_posts': Post.get_most_viewed_posts_in_last_days(1000, 5),
+        'latest_posts': Post.get_latest_posts(5),
+        'random_post': Post.get_random_post(),
+        'random_posts': [Post.get_random_post() for _ in range(15)],
+
+        'current_url': request.build_absolute_uri() if request else '', # {% abs_url 'post-detail' post.pk %}
+        'site_name': 'سواح ميديا',
+        # 'current_tab': 'news'
     }
 
 
 @require_http_methods(['GET'])
 def index(request):
-    context = {
-        **get_defualt_context(),
-
-        'featured_posts': Post.get_featured_posts(6, force_count=True),
-        'popular_tags': Tag.get_popular_tags(),
-        'latest_posts': Post.get_latest_posts(8),
+    context = { 
+        **get_defualt_context(), 
+        'home_latest_posts': Post.objects.all().order_by('-pk')[:10],
+        'site_categories': filter(lambda item: item['count'] > 0, [
+                { 'title': cat.title, 'count': cat.get_posts().count(), 'url': cat.get_absolute_url } 
+                for cat in Category.objects.all()
+        ])
     }
 
+    categories = [
+        (6, 'cat_news', 'الاخبار'),
+        (5, 'cat_sport', 'الرياضة'),
+        (3, 'cat_lifestyle', 'لايف ستايل'),
+        (3, 'cat_health', 'الصحة والجمال'),
+        (9, 'cat_mix', 'منوعات'),
+        (4, 'cat_article', 'مقالات'),
+    ]
+
+    for count, context_name, category_name in categories:
+        category = Category.get_category_by_name(category_name)
+        if not category: continue
+
+        context[context_name] = {
+            'url': category.get_absolute_url(),
+            'title': category.title,
+            'posts': category.get_posts().order_by('-pk')[:count]
+        }
+
+    
     return render(request, 'home.html', context)
 
 
-def post(request, id):
-    post = get_object_or_404(Post, id=id)
-
-    post.seen_count += 1
-    post.save()
+def post(request, pk):
+    # post = get_object_or_404(Post, pk=pk)
 
     context = {
         **get_defualt_context(),
-        'post': post,
-        'next_post': Post.objects.filter(id=id+1).first(),
-        'previous_post': Post.objects.filter(id=id-1).first(),
+        'post': Post.get_by_pk(pk),
+        # 'next_post': Post.objects.filter(id=id+1).first(),
+        # 'previous_post': Post.objects.filter(id=id-1).first(),
     }
+
+    print('\n\n')
+    pprint(context)
+    print('\n\n')
 
     return render(request, 'post.html', context)
 
@@ -60,7 +87,7 @@ def paginatePosts(qs, page):
     except:
         posts = []
 
-    return posts
+    return {'list': posts, 'pg': paginator}
 
 def listPosts(view_name):
     views = {
@@ -84,7 +111,7 @@ def listPosts(view_name):
 
         'search_posts': {
             'qs': lambda query,  *args, **kwargs: Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__title__icontains=query) | Q(categories__title__icontains=query),).distinct(),
-            'dir_name': lambda query, *args, **kwargs: query,
+            'dir_name': lambda query, *args, **kwargs: f'البحث عن: {query}',
             'dir_url': lambda query, *args, **kwargs: reverse('search', kwargs={'query':query}),
         },
     }
@@ -102,10 +129,8 @@ def listPosts(view_name):
             **get_defualt_context(),
 
             'posts': paginatePosts(posts_qs, page),
-            'dir_name': view_obj['dir_name'](*args, **kwargs),
+            'list_title': view_obj['dir_name'](*args, **kwargs),
             'dir_url': view_obj['dir_url'](*args, **kwargs),
-            # 'posts_length': posts_qs.count,
-            'next_page': page + 1,
         }
 
         return render(request, 'list.html', context)
