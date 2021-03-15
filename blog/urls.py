@@ -27,7 +27,7 @@ urlpatterns = [
     # home
     path('', index, name='home'),
     # post detail
-    path('post/<int:id>/', post, name="post-detail"),
+    path('post/<int:pk>/', post, name="post-detail"),
     # lists
     path('search/<str:query>/', listPosts('search_posts'), name='search'),
     path('category/<str:title>/', listPosts('category_posts'), name='category-filter'),
@@ -43,19 +43,13 @@ urlpatterns = [
     path('create/post/', create_post, name='create-post'),
 
     # third party
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('jJYDbuc44KAYpqiasHvI2HaPrut7B9/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
-
     # SEO
-    path(
-        "robots.txt",
-        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
-    ),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL,
-                          document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
