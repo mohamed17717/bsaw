@@ -100,3 +100,13 @@ def abs_url(parser, token):
     # use: {% abs_url 'view_name' post.pk %}
     urlNode = url(parser, token)
     return AbsURLNode( urlNode.view_name, urlNode.args, urlNode.kwargs, urlNode.asvar  )
+
+@register.filter
+def sumition(value, arg):
+    result =  int(value) + int(arg)
+    return result
+
+@register.filter
+def subtract(value, arg):
+    result =  int(value) - int(arg)
+    return result
