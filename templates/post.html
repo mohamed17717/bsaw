@@ -4,7 +4,7 @@
 
 
 {% block head %}
-<title>إ{{ post.title }} | سواح ميديا</title>
+<title>{{ post.title }} | {{ site_name }}</title>
 
 
 <link href="{{ post.get_absolute_url }}" rel="canonical" />
@@ -46,10 +46,7 @@ hide_inline_related_posts
         <header class="entry-header-outer">
           <nav id="breadcrumb">
             <a href="/">
-              <span aria-hidden="true" class="tie-icon-home">
-
-              </span>
-              الرئيسية
+              <span aria-hidden="true" class="tie-icon-home"></span>الرئيسية
             </a>
 
             {% if post.category %}
@@ -382,159 +379,7 @@ hide_inline_related_posts
       </div>
     </div>
 
-    <aside aria-label="القائمة الجانبية الرئيسية" class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky">
-      <div class="theiaStickySidebar">
-
-        <div class="container-wrapper widget posts-list" id="posts-list-widget-3">
-
-          <div class="widget-title the-global-title">
-            <div class="the-subtitle">اخر المقالات
-              <span class="widget-title-icon tie-icon"></span>
-            </div>
-          </div>
-
-          <div class="widget-posts-list-container posts-list-counter">
-            <ul class="posts-list-items widget-posts-wrapper">
-              {% for p in random_posts|slice:5 %}
-              <li class="widget-single-post-item widget-post-list tie-standard">
-                <div class="post-widget-thumbnail">
-                  <a aria-label="{{ p.title }}" class="post-thumb" href="{{ p.get_absolute_url }}">
-                    <img alt="{{ p.title }}"
-                      class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                      height="150" loading="lazy" src="{{ p.thumbnailURL }}" width="220" />
-                  </a>
-                </div>
-                <div class="post-widget-body">
-                  <h3 class="post-title">
-                    <a href="{{ p.get_absolute_url }}">{{ p.title }}</a>
-                  </h3>
-                  <div class="post-meta">
-                    <span class="date meta-item tie-icon">{{ p.date }}</span>
-                  </div>
-                </div>
-              </li>
-              {% endfor %}
-            </ul>
-
-          </div>
-
-          <!-- <div class="widget-pagination-wrapper">
-            <ul class="slider-arrow-nav">
-              <li>
-                <a class="widget-pagination prev-posts pagination-disabled" href="#">
-                  <span aria-hidden="true" class="tie-icon-angle-left">
-
-                  </span>
-                  <span class="screen-reader-text">الصفحة السابقة</span>
-                </a>
-              </li>
-
-              <li>
-                <a class="widget-pagination next-posts" href="#">
-                  <span aria-hidden="true" class="tie-icon-angle-right">
-
-                  </span>
-                  <span class="screen-reader-text">الصفحة التالية</span>
-                </a>
-              </li>
-            </ul>
-          </div> -->
-          <div class="clearfix"></div>
-        </div>
-
-        <div class="container-wrapper tabs-container-wrapper tabs-container-4">
-          <div class="widget tabs-widget">
-            <div class="widget-container">
-              <div class="tabs-widget">
-                <div class="tabs-wrapper">
-                  <ul class="tabs">
-                    <li>
-                      <a href="#widget_tabs-1-popular">الأشهر</a>
-                    </li>
-                    <li>
-                      <a href="#widget_tabs-1-recent">الأخيرة</a>
-                    </li>
-                    <li>
-                      <a href="#widget_tabs-1-comments">تعليقات</a>
-                    </li>
-                  </ul>
-
-                  <div class="tab-content tab-content-popular" id="widget_tabs-1-popular">
-                    <ul class="tab-content-elements">
-
-                      {% for p in popular_posts %}
-                      <li class="widget-single-post-item widget-post-list tie-standard">
-                        <div class="post-widget-thumbnail">
-                          <a aria-label="{{ p.title }}" class="post-thumb" href="{{ p.get_absolute_url }}">
-                            <img alt="{{ p.title }}"
-                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                              height="150" loading="lazy" src="{{ p.thumbnailURL }}" width="220" />
-                          </a>
-                        </div>
-                        <div class="post-widget-body">
-                          <h3 class="post-title">
-                            <a href="{{ p.get_absolute_url }}">{{ p.title }}</a>
-                          </h3>
-                          <div class="post-meta">
-                            <span class="date meta-item tie-icon">{{ p.date }}</span>
-                          </div>
-                        </div>
-                      </li>
-                      {% endfor %}
-
-                    </ul>
-                  </div>
-
-                  <div class="tab-content tab-content-recent" id="widget_tabs-1-recent">
-                    <ul class="tab-content-elements">
-                      {% for p in latest_posts %}
-                      <li class="widget-single-post-item widget-post-list tie-standard">
-                        <div class="post-widget-thumbnail">
-                          <a aria-label="{{ p.title }}" class="post-thumb" href="{{ p.get_absolute_url }}">
-                            <img alt="{{ p.title }}"
-                              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                              height="150" loading="lazy" src="{{ p.thumbnailURL }}" width="220" />
-                          </a>
-                        </div>
-                        <div class="post-widget-body">
-                          <h3 class="post-title">
-                            <a href="{{ p.get_absolute_url }}">{{ p.title }}</a>
-                          </h3>
-                          <div class="post-meta">
-                            <span class="date meta-item tie-icon">{{ p.date }}</span>
-                          </div>
-                        </div>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-
-                  <div class="tab-content tab-content-comments" id="widget_tabs-1-comments">
-                    <ul class="tab-content-elements">
-                      <li>
-                        <div class="post-widget-thumbnail" style="width:70px">
-                          <a class="author-avatar" href="#">
-                            <img alt="صورة Ferdi malak" class="avatar avatar-70 photo" height="70" loading="lazy"
-                              src="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=70&amp;d=mm&amp;r=g"
-                              srcset="https://secure.gravatar.com/avatar/e35cc0e99ab88d863fc9ec8a1a94c34f?s=140&amp;d=mm&amp;r=g 2x"
-                              width="70" />
-                          </a>
-                        </div>
-                        <div class="comment-body">
-                          <a class="comment-author" href="#"> Ferdi malak </a>
-                          <p>صفحتكم جميلة ومفيدة...</p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </aside>
+    {% include 'aside.html' %} 
   </div>
 </div>
 

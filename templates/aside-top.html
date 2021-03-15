@@ -1,0 +1,36 @@
+<div class="container-wrapper widget posts-list" id="posts-list-widget-3">
+
+  <div class="widget-title the-global-title">
+    <div class="the-subtitle">اخر المقالات
+      <span class="widget-title-icon tie-icon"></span>
+    </div>
+  </div>
+
+  <div class="widget-posts-list-container posts-list-counter">
+    <ul class="posts-list-items widget-posts-wrapper">
+      {% for p in random_posts|slice:5 %}
+      <li class="widget-single-post-item widget-post-list tie-standard">
+        <div class="post-widget-thumbnail">
+          <a aria-label="{{ p.title }}" class="post-thumb" href="{{ p.get_absolute_url }}">
+            <img alt="{{ p.title }}"
+              class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
+              height="150" loading="lazy" src="{{ p.thumbnailURL }}" width="220" />
+          </a>
+        </div>
+        <div class="post-widget-body">
+          <h3 class="post-title">
+            <a href="{{ p.get_absolute_url }}">{{ p.title }}</a>
+          </h3>
+          <div class="post-meta">
+            <span class="date meta-item tie-icon">{{ p.date }}</span>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+
+
+  <div class="clearfix"></div>
+</div>
