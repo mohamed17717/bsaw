@@ -8,8 +8,7 @@
 
     <div class="container">
       <div class="topbar-wrapper">
-        <div class="topbar-today-date tie-icon">
-          الأربعاء, فبراير 10 2021 </div>
+        <div class="topbar-today-date tie-icon">{{ today_date }}</div>
         <div class="tie-alignleft">
           <div class="breaking controls-is-active">
             <span class="breaking-title">
@@ -41,33 +40,28 @@
                 <span class="screen-reader-text">مقال عشوائي</span>
               </a>
             </li>
-            <li class="popup-login-icon menu-item custom-menu-link">
-              <a class="lgoin-btn tie-popup-trigger" href="#">
-                <span aria-hidden="true" class="tie-icon-author"></span>
-                <span class="screen-reader-text">تسجيل الدخول</span> </a>
-            </li>
             <li class="social-icons-item"><a class="social-link paypal-social-icon"
-                href="https://www.paypal.com/paypalme/sawahmedia" rel="external noopener nofollow" target="_blank"><span
+                href="{{ social.paypal }}" rel="external noopener nofollow" target="_blank"><span
                   class="tie-social-icon tie-icon-paypal"></span><span class="screen-reader-text">‏Paypal</span></a>
             </li>
             <li class="social-icons-item"><a class="social-link instagram-social-icon"
-                href="https://www.instagram.com/sawah.press/" rel="external noopener nofollow" target="_blank"><span
+                href="{{ social.instagram }}" rel="external noopener nofollow" target="_blank"><span
                   class="tie-social-icon tie-icon-instagram"></span><span class="screen-reader-text">انستقرام</span></a>
             </li>
             <li class="social-icons-item"><a class="social-link youtube-social-icon"
-                href="https://www.youtube.com/channel/UCk2FMHs8HTTBJJvF08edmLA" rel="external noopener nofollow"
+                href="{{ social.youtube }}" rel="external noopener nofollow"
                 target="_blank"><span class="tie-social-icon tie-icon-youtube"></span><span
                   class="screen-reader-text">يوتيوب</span></a></li>
             <li class="social-icons-item"><a class="social-link pinterest-social-icon"
-                href="https://tr.pinterest.com/officialsawahmedia" rel="external noopener nofollow"
+                href="{{ social.pinterest }}" rel="external noopener nofollow"
                 target="_blank"><span class="tie-social-icon tie-icon-pinterest"></span><span
                   class="screen-reader-text">بينتيريست</span></a></li>
             <li class="social-icons-item"><a class="social-link twitter-social-icon"
-                href="https://twitter.com/sawahpress" rel="external noopener nofollow" target="_blank"><span
+                href="{{ social.twitter }}" rel="external noopener nofollow" target="_blank"><span
                   class="tie-social-icon tie-icon-twitter"></span><span class="screen-reader-text">تويتر</span></a>
             </li>
             <li class="social-icons-item"><a class="social-link facebook-social-icon"
-                href="https://www.facebook.com/Sawahpress/" rel="external noopener nofollow" target="_blank"><span
+                href="{{ social.facebook }}" rel="external noopener nofollow" target="_blank"><span
                   class="tie-social-icon tie-icon-facebook"></span><span class="screen-reader-text">فيسبوك</span></a>
             </li>
           </ul>
@@ -102,11 +96,11 @@
             </ul>
           </div>
           <div class="image-logo" id="logo" style="margin-top: 20px; margin-bottom: 20px;">
-            <a href="/" title="سواح ميديا">
+            <a href="{% url 'home' %}" title="{{ site_name }}">
               <picture class="tie-logo-default tie-logo-picture" id="tie-logo-default">
                 <source class="tie-logo-source-default tie-logo-source"
                   srcset="{% static 'png/لوجو-سواح-ميديا-1.fab1d399.png' %}">
-                <img alt="سواح ميديا" class="tie-logo-img-default tie-logo-img" height="141"
+                <img alt="{{ site_name }}" class="tie-logo-img-default tie-logo-img" height="141"
                   src="{% static 'png/لوجو-سواح-ميديا-1.fab1d399.png' %}" style="max-height:141px; width: auto;"
                   width="577" />
                 </source>
@@ -114,7 +108,7 @@
               <picture class="tie-logo-inverted tie-logo-picture" id="tie-logo-inverted">
                 <source class="tie-logo-source-inverted tie-logo-source" id="tie-logo-inverted-source"
                   srcset="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}">
-                <img alt="سواح ميديا" class="tie-logo-img-inverted tie-logo-img" height="141" id="tie-logo-inverted-img"
+                <img alt="{{ site_name }}" class="tie-logo-img-inverted tie-logo-img" height="141" id="tie-logo-inverted-img"
                   src="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}" style="max-height:141px; width: auto;"
                   width="577" />
                 </source>
@@ -130,45 +124,51 @@
     <nav aria-label="القائمة الرئيسية" class="main-nav header-nav live-search-parent" data-skin="search-in-main-nav"
       id="main-nav">
 
-
       <div class="container">
         <div class="main-menu-wrapper">
           <div id="menu-components-wrap">
+            
             <div class="image-logo" id="sticky-logo">
-              <a href="/" title="سواح ميديا">
+              <a href="{% url 'home' %}" title="{{ site_name }}">
                 <picture>
                   <source srcset="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}">
-                  <img alt="سواح ميديا" src="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}"
+                  <img alt="{{ site_name }}" src="{% static 'png/سواح-ميديا-ابيض-1.23d986a6.png' %}"
                     style="max-height:49px; width: auto;" />
                   </source>
                 </picture>
               </a>
             </div>
+            
+            
             <div class="flex-placeholder"></div>
+            
+            
             <div class="main-menu main-menu-wrap tie-alignleft">
               <div class="main-menu header-menu" id="main-nav-menu">
                 <ul class="menu" id="menu-tielabs-main-menu" role="menubar">
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1512"
-                    id="menu-item-1512"><a href="/">الرئيسية</a></li>
-                  <li
-                    class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-4837 mega-menu mega-cat"
-                    data-id="37" id="menu-item-4837"><a href="/category/news/">الاخبار</a>
+                  <li class="
+                  {% if current_tab == 'الرئيسية' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1512" id="menu-item-1512"><a href="{% url 'home' %}">الرئيسية</a>
+                  </li>
+
+                  <li class="
+                  {% if current_tab == 'الاخبار' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-4837 mega-menu mega-cat"
+                    data-id="37" id="menu-item-4837"><a href="{% url 'category-filter' 'الاخبار' %}">الاخبار</a>
                     <div class="mega-menu-block menu-sub-content">
                       <div class="mega-menu-content">
                         <div class="mega-cat-wrapper">
                           <ul class="mega-cat-sub-categories cats-vertical">
-                            <li class="mega-all-link"><a class="is-active is-loaded mega-sub-cat" data-id="37"
-                                href="/category/news/">الكل</a></li>
-                            <li><a class="mega-sub-cat" data-id="40"
-                                href="/category/news/economics/">اخبار الاقتصاد</a></li>
-                            <li><a class="mega-sub-cat" data-id="42"
-                                href="/category/news/gulf/">اخبار الخليج</a></li>
-                            <li><a class="mega-sub-cat" data-id="39"
-                                href="/category/news/me/">اخبار الشرق الأوسط</a></li>
-                            <li><a class="mega-sub-cat" data-id="38"
-                                href="/category/news/world/">اخبار العالم</a></li>
-                            <li><a class="mega-sub-cat" data-id="41"
-                                href="/category/news/west/">اخبار المغرب العربي</a></li>
+                            <li class="mega-all-link"><a class="is-active is-loaded mega-sub-cat" data-id="37" href="{% url 'category-filter' 'الاخبار' %}">الكل</a></li>
+                            <li><a class="mega-sub-cat" data-id="40"href="{% url 'category-filter' 'اخبار الاقتصاد' %}">اخبار الاقتصاد</a></li>
+                            <li><a class="mega-sub-cat" data-id="42"href="{% url 'category-filter' 'اخبار الخليج' %}">اخبار الخليج</a></li>
+                            <li><a class="mega-sub-cat" data-id="39"href="{% url 'category-filter' 'اخبار الشرق الأوسط' %}">اخبار الشرق الأوسط</a></li>
+                            <li><a class="mega-sub-cat" data-id="38"href="{% url 'category-filter' 'اخبار العالم' %}">اخبار العالم</a></li>
+                            <li><a class="mega-sub-cat" data-id="41"href="{% url 'category-filter' 'اخبار المغرب العربي' %}">اخبار المغرب العربي</a></li>
                           </ul>
                           <div class="mega-cat-content mega-cat-sub-exists vertical-posts">
                             <div class="mega-ajax-content mega-cat-posts-container clearfix">
@@ -179,34 +179,46 @@
                     </div>
                   </li>
 
-                  <!-- current-menu-item tie-current-menu -->
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4836"
-                    id="menu-item-4836"><a href="/category/tech/">تكنولوجيا</a></li>
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4838"
-                    id="menu-item-4838"><a href="/category/sports/">الرياضة</a></li>
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4839"
-                    id="menu-item-4839"><a href="/category/health/">الصحة والجمال</a></li>
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4840"
-                    id="menu-item-4840"><a href="/category/lifestyle/">لايف ستايل</a></li>
-                  <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4841"
-                    id="menu-item-4841"><a href="/category/articles/">مقالات</a></li>
-                  <li
-                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4842"
-                    id="menu-item-4842"><a href="/category/mix/">منوعات</a>
+                  <li class="
+                  {% if current_tab == 'تكنولوجيا' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4836" id="menu-item-4836"><a href="{% url 'category-filter' 'تكنولوجيا' %}">تكنولوجيا</a></li>
+                  <li class="
+                  {% if current_tab == 'الرياضة' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4838" id="menu-item-4838"><a href="{% url 'category-filter' 'الرياضة' %}">الرياضة</a></li>
+                  <li class="
+                  {% if current_tab == 'الصحة والجمال' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4839" id="menu-item-4839"><a href="{% url 'category-filter' 'الصحة والجمال' %}">الصحة والجمال</a></li>
+                  <li class="
+                  {% if current_tab == 'لايف ستايل' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4840" id="menu-item-4840"><a href="{% url 'category-filter' 'لايف ستايل' %}">لايف ستايل</a></li>
+                  <li class="
+                  {% if current_tab == 'مقالات' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4841" id="menu-item-4841"><a href="{% url 'category-filter' 'مقالات' %}">مقالات</a></li>
+                  <li class="
+                  {% if current_tab == 'منوعات' %}
+                    {{ current_tab_class }}
+                  {% endif %}
+                    menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4842" id="menu-item-4842"><a href="{% url 'category-filter' 'منوعات' %}">منوعات</a>
                     <ul class="sub-menu menu-sub-content">
-                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4843"
-                        id="menu-item-4843"><a href="/category/tv/">افلام ومسلسلات</a>
-                      </li>
-                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4844"
-                        id="menu-item-4844"><a href="/category/edu/">التعليم</a></li>
-                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4845"
-                        id="menu-item-4845"><a href="/category/arts/">الفن والفنانين</a>
-                      </li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4843"  id="menu-item-4843"><a href="{% url 'category-filter' 'افلام ومسلسلات' %}"> افلام ومسلسلات</a></li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4844"  id="menu-item-4844"><a href="{% url 'category-filter' 'التعليم' %}">التعليم</a></li>
+                      <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4845"  id="menu-item-4845"><a href="{% url 'category-filter' 'الفن والفنانين' %}">الفن والفنانين</a></li>
                     </ul>
                   </li>
                 </ul>
               </div>
             </div>
+
             <ul class="components">
               <li class="search-compact-icon menu-item custom-menu-link">
                 <a class="tie-search-trigger" href="#">
@@ -264,28 +276,6 @@
                   <span aria-hidden="true" class="tie-icon-random"></span>
                   <span class="screen-reader-text">مقال عشوائي</span>
                 </a>
-              </li>
-              <li class="popup-login-icon menu-item custom-menu-link">
-                <a class="lgoin-btn tie-popup-trigger" href="#">
-                  <span aria-hidden="true" class="tie-icon-author"></span>
-                  <span class="screen-reader-text">تسجيل الدخول</span> </a>
-              </li>
-              <li class="weather-menu-item menu-item custom-menu-link">
-                <div class="tie-weather-widget is-animated" title="سماء صافية">
-                  <div class="weather-wrap">
-                    <div class="weather-forecast-day small-weather-icons">
-                      <div class="weather-icon">
-                        <div class="icon-moon"></div>
-                      </div>
-                    </div>
-                    <div class="city-data">
-                      <span>الرياض</span>
-                      <span class="weather-current-temp">
-                        10 <sup>℃</sup>
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </li>
             </ul>
           </div>
