@@ -98,3 +98,25 @@ def validateToken():
 
 # field alias
 # content => article => articleHTML
+
+from django.core.cache import cache
+
+# cace decorator
+def cache_request(view_format, timeout=60*60*24, identifier=None):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if identifier: view_name = view_format.format(**{identifier: kwargs[identifier]})
+            else: view_name = view_format
+
+            print('\n\n cached data: \n\n')
+            output = cache.get(view_name)
+            if not output:
+                print('output is caclulated')
+                output = func(*args, **kwargs)
+                cache.set(view_name, output, timeout=timeout)
+
+            print('done')
+            print('\n\n')
+            return output
+        return wrapper
+    return decorator
