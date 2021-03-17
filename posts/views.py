@@ -194,24 +194,25 @@ def static_template(templateName):
 
 
 @require_http_methods(['POST'])
-@require_fields(['url', 'title', 'thumbnailURL', 'content'])
-@allow_fields(['url', 'title', 'thumbnailURL', 'content', 'categories', 'tags', 'date', 'small_summery', 'overview', 'creator'])
+@require_fields(['url', 'title', 'thumbnailURL', 'content', 'category'])
+@allow_fields(['url', 'title', 'thumbnailURL', 'thumbnailURL_large', 'content', 'category', 'sub_category', 'tags', 'date', 'small_summery', 'overview', 'description', 'source', 'creator',])
 @check_unique_fields(Post, ['url'])
 def create_post(request):
     data = json.loads(request.body.decode('utf-8'))  # .dict()
-    # print(data)
-    categories = data.pop('categories', [])
+
+    category = data.pop('category', None)
+    sub_category = data.pop('sub_category', None)
     tags = data.pop('tags', [])
 
-    categoriesObjects = [Category.get_category_by_name(
-        category, forced=True) for category in categories]
-    tagsObjects = [Tag.get_tag_by_name(
-        tag, forced=True) for tag in tags]
+    tagsObjects = [Tag.get_tag_by_name(tag, forced=True) for tag in tags]
 
     post = Post.objects.create(**data)
-    # print('\n\n POST: ', post.title, '\n\n')
 
-    post.set_categories(categoriesObjects)
+    categoryObject = Category.get_category_by_name(category, forced=True)
+    post.category = categoryObject
+    if sub_category:
+        subCategoryObject = Category.get_category_by_name(sub_category, forced=True)
+        post.sub_category = sub_category
     post.set_tags(tagsObjects)
 
     return HttpResponse(status=200)
