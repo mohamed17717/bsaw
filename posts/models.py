@@ -51,7 +51,7 @@ class Category(models.Model):
         return reverse('category-filter', kwargs={'title': self.title})
 
     def get_posts(self):
-        return self.category_posts.all()
+        return self.category_posts.all() or self.sub_category_posts.all()
 
     def get_static_blog_category_path(self):
         category_path = ['الرئيسية']
@@ -126,17 +126,17 @@ class Tag(models.Model):
 
 class Post(models.Model):
     # data must be from any blog
-    url = models.URLField(max_length=200)
+    url = models.URLField(max_length=300)
     title = models.CharField(max_length=100)
-    thumbnailURL = models.URLField(max_length=200)
-    thumbnailURL_large = models.URLField(max_length=200, blank=True, null=True)
+    thumbnailURL = models.URLField(max_length=300)
+    thumbnailURL_large = models.URLField(max_length=300, blank=True, null=True)
     content = HTMLField('Content')
 
     # relational fields
     # categories = models.ManyToManyField(Category, related_name='post_category')
     category = models.ForeignKey(Category, related_name='category_posts', on_delete=models.SET_NULL, blank=True, null=True)
     sub_category = models.ForeignKey(Category, related_name='sub_category_posts', on_delete=models.SET_NULL, blank=True, null=True)
-    tags = models.ManyToManyField(Tag, related_name='tag_posts')
+    tags = models.ManyToManyField(Tag, related_name='tag_posts', blank=True)
 
     related_posts = jsonfield.JSONField(blank=True, null=True) # array of posts
 
