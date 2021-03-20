@@ -830,7 +830,7 @@ hide_inline_related_posts
                       href="{{ post.get_absolute_url }}"><img
                         alt="{{ post.title }}"
                         class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" src="{{ post.get_thumbnailURL }}"
+                        height="150" loading="lazy" src="{{ post.thumbnailURL }}"
                         width="220" /></a>
                     <div class="post-details">
                       <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
@@ -1268,7 +1268,7 @@ hide_inline_related_posts
                 </ul>
                 <div class="clearfix"></div>
               </div>
-              <a href="{% url 'latest-posts' %}" class="block-pagination next-posts show-more-button load-more-button" >تحميل المزيد</a>
+              <a href="{% url 'latest-posts' %}" class="show-more-button load-more-button" >تحميل المزيد</a>
             </div>
           </div>
         </div>

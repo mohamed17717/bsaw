@@ -4,6 +4,28 @@
 
 
 {% block head %}
+
+<style>
+  a[rel="tag"] {
+    background-color: #EEE;
+    border: 1px solid #ccc;
+    color: #333 !important;
+    padding: 8px 15px;
+    margin-left: 6px;
+    font-weight: bold;
+    font-size: .8rem;
+    border-radius: 12px;
+  }
+
+  a[rel="tag"]::before {
+    content: "#";
+  }
+
+  a[rel="tag"]:hover {
+    background-color: #cccc;
+  }
+</style>
+
 <title>{{ post.title }} | {{ site_name }}</title>
 
 
@@ -187,7 +209,9 @@ hide_inline_related_posts
           <br>
           <br>
 
+
           <div class="post-bottom-meta post-bottom-source">
+            {% if post.source %}
             <div class="post-bottom-meta-title">
               <span aria-hidden="true" class="tie-icon-link">
 
@@ -196,11 +220,18 @@ hide_inline_related_posts
             <span class="tagcloud">
               <a>{{ post.source }}</a>
             </span>
+
+            {% elif post.tags %}
+            <span class="tagcloud">
+
+              {% for tag in post.tags.all %}
+              <a href="{{ tag.get_absolute_url }}" rel="tag">{{ tag.title }}</a>
+              {% endfor %}
+
+            </span>
+            {% endif %}
           </div>
-
-          <p>
-
-          </p>
+          <p></p>
 
           <div class="mag-box mini-posts-box content-only" id="inline-related-post">
             <div class="container-wrapper">
@@ -379,7 +410,7 @@ hide_inline_related_posts
       </div>
     </div>
 
-    {% include 'aside.html' %} 
+    {% include 'aside.html' %}
   </div>
 </div>
 

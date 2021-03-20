@@ -10,13 +10,27 @@
     </a>
     <div id="mobile-container">
       <div id="mobile-search">
-        <form action="https://sawahmedia.com/" class="search-form" method="get" role="search">
+        <form class="search-form" role="search">
           <label>
             <span class="screen-reader-text">البحث عن:</span>
             <input class="search-field" name="s" placeholder="بحث …" type="search" value="" />
           </label>
           <input class="search-submit" type="submit" value="بحث" />
         </form>
+
+        <script>
+          function setSearchFormEvent(){
+            const form = document.querySelector('form[role="search"]')
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+
+              const query = form.s.value
+              const url = `/search/${query}/`
+              window.location.href = url
+            })
+          }
+          setSearchFormEvent()
+        </script>
       </div>
       <div class="hide-menu-icons" id="mobile-menu">
       </div>

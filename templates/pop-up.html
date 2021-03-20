@@ -4,7 +4,7 @@
   </a>
   <div class="popup-search-wrap-inner">
     <div aria-label="بحث" class="live-search-parent pop-up-live-search" data-skin="live-search-popup">
-      <form action="https://sawahmedia.com/" class="tie-popup-search-form" method="get">
+      <form class="tie-popup-search-form" id="search-form-1">
         <input autocomplete="off" class="tie-popup-search-input is-ajax-search" inputmode="search" name="s"
           placeholder="إكتب كلمة البحث ثم إضغط زر الإدخال" title="بحث عن" type="text" />
         <button class="tie-popup-search-submit" type="submit">
@@ -22,7 +22,7 @@
   </a>
   <div class="popup-search-wrap-inner">
     <div aria-label="بحث" class="live-search-parent pop-up-live-search" data-skin="live-search-popup">
-      <form action="https://sawahmedia.com/" class="tie-popup-search-form" method="get">
+      <form class="tie-popup-search-form" id="search-form-2">
         <input autocomplete="off" class="tie-popup-search-input" inputmode="search" name="s" placeholder="بحث عن"
           title="بحث عن" type="text" />
         <button class="tie-popup-search-submit" type="submit">
@@ -33,6 +33,21 @@
     </div>
   </div>
 </div>
+
+<script>
+  function setSearchFormEvent(formSelector){
+    const form = document.querySelector(formSelector)
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+
+      const query = form.s.value
+      const url = `/search/${query}/`
+      window.location.href = url
+    })
+  }
+  setSearchFormEvent('#search-form-1')
+  setSearchFormEvent('#search-form-2')
+</script>
 
 <div class="tie-popup" id="tie-popup-login" style="display: none;">
   <a class="tie-btn-close remove big-btn light-btn" href="#">
