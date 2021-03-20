@@ -43,7 +43,7 @@ urlpatterns = [
     path('create/post/', create_post, name='create-post'),
 
     # third party
-    path('jJYDbuc44KAYpqiasHvI2HaPrut7B9/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     # SEO
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),

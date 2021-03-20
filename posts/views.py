@@ -110,7 +110,6 @@ def index(request):
             'posts': category.get_posts().order_by('-pk')[:count]
         }
 
-    
     return render(request, 'home.html', context)
 
 
@@ -152,13 +151,13 @@ def listPosts(view_name):
         },
 
         'category_posts': {
-            'qs': lambda title,  *args, **kwargs: Post.objects.filter(categories__title=title).order_by('-created'),
+            'qs': lambda title,  *args, **kwargs: Category.get_category_by_name(title).get_posts().order_by('-created'),
             'dir_name': lambda title, *args, **kwargs: title,
             'dir_url': lambda title, *args, **kwargs: reverse('category-filter', kwargs={'title':title}),
         },
 
         'search_posts': {
-            'qs': lambda query,  *args, **kwargs: Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__title__icontains=query) | Q(categories__title__icontains=query),).distinct(),
+            'qs': lambda query,  *args, **kwargs: Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__title__icontains=query) | Q(category__title__icontains=query) | Q(sub_category__title__icontains=query),).distinct().order_by('-created'),
             'dir_name': lambda query, *args, **kwargs: f'البحث عن: {query}',
             'dir_url': lambda query, *args, **kwargs: reverse('search', kwargs={'query':query}),
         },
@@ -212,7 +211,8 @@ def create_post(request):
     post.category = categoryObject
     if sub_category:
         subCategoryObject = Category.get_category_by_name(sub_category, forced=True)
-        post.sub_category = sub_category
+        post.sub_category = subCategoryObject
+    post.save()
     post.set_tags(tagsObjects)
 
     return HttpResponse(status=200)
