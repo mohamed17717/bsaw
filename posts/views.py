@@ -61,7 +61,7 @@ def get_defualt_context(request=None):
         'random_posts': [Post.get_random_post() for _ in range(15)],
 
         'current_url': request.build_absolute_uri() if request else '',
-        'site_name': 'سواح ميديا',
+        'site_name': 'مكساوي',
 
         'today_date': get_today_date(),
         'current_tab_class': 'current-menu-item current_page_item tie-current-menu',
