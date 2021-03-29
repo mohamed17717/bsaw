@@ -14,7 +14,8 @@ SECRET_KEY = 'ne4gbfo#1w5(&!jxh)vqb7n@(b767dfq%d3xx+@y-#@x2=!go+'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'bsaw.pythonanywhere.com',
+    # 'bsaw.pythonanywhere.com',
+    'mxawi.com'
     # '127.0.0.1'
 ]
 
