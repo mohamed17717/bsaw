@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     # 'bsaw.pythonanywhere.com',
-    'mxawi.com'
+    'www.mxawi.com',
     # '127.0.0.1'
 ]
 
