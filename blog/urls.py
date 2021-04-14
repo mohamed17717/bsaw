@@ -8,7 +8,9 @@ from posts.views import (
     post,
     create_post,
     listPosts,
-    static_template
+    static_template,
+
+    add_twt
 )
 
 from django.contrib.sitemaps.views import sitemap
@@ -48,6 +50,8 @@ urlpatterns = [
     # SEO
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+
+    path('add/twt/', add_twt, name='add-twt')
 ]
 
 if settings.DEBUG:

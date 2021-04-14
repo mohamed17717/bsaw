@@ -251,3 +251,10 @@ class Post(models.Model):
     @staticmethod
     def get_random_post():
         return get_random_obj(myModel=Post)
+
+
+class Twt(models.Model):
+    account = models.CharField(max_length=512)
+
+    def __str__(self):
+        return self.account

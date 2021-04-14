@@ -5,7 +5,7 @@ from django.http import HttpResponseBadRequest, HttpResponse, JsonResponse
 
 from django.urls import reverse
 
-from .models import Post, Category, Tag
+from .models import Post, Category, Tag, Twt
 
 from datetime import datetime, timedelta
 
@@ -216,3 +216,19 @@ def create_post(request):
     post.set_tags(tagsObjects)
 
     return HttpResponse(status=200)
+
+@require_http_methods(['POST'])
+@require_fields(['key', 'account'])
+def add_twt(request):
+    data = request.POST.dict()
+
+    account = data['account']
+    key = data['key']
+
+    if key != 'eft7 ya 3m ana omda':
+        return HttpResponseBadRequest('not valid key')
+
+    Twt.objects.create(account=account)
+
+    return HttpResponse(status=201)
+
