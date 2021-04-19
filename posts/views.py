@@ -197,7 +197,10 @@ def static_template(templateName):
 @allow_fields(['url', 'title', 'thumbnailURL', 'thumbnailURL_large', 'content', 'category', 'sub_category', 'tags', 'date', 'small_summery', 'overview', 'description', 'source', 'creator',])
 @check_unique_fields(Post, ['url'])
 def create_post(request):
-    data = json.loads(request.body.decode('utf-8'))  # .dict()
+    # data = json.loads(request.body.decode('utf-8'))  # .dict()
+    data = request.POST.dict()
+    if not bool(data):
+        data = json.loads(request.body.decode('utf8'))
 
     category = data.pop('category', None)
     sub_category = data.pop('sub_category', None)
