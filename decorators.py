@@ -100,7 +100,8 @@ def validateToken():
 # content => article => articleHTML
 
 from django.core.cache import cache
-
+from time import time
+from threading import Thread
 # cace decorator
 def cache_request(view_format, timeout=60*60*24, identifier=None):
     def decorator(func):
@@ -111,7 +112,17 @@ def cache_request(view_format, timeout=60*60*24, identifier=None):
             output = cache.get(view_name)
             if not output:
                 output = func(*args, **kwargs)
-                cache.set(view_name, output, timeout=timeout)
+                cache.set(view_name, output)
+                cache.set(f'{view_name}_timeout', time() + timeout)
+            else:
+                output_timeout = cache.get(f'{view_name}_timeout')
+                if time() > output_timeout:
+                    def xxx():
+                        output = func(*args, **kwargs)
+                        cache.set(view_name, output)
+                        cache.set(f'{view_name}_timeout', time() + timeout)
+                    thread = Thread(target=xxx)
+                    thread.start()
 
             return output
         return wrapper
