@@ -67,12 +67,12 @@ def get_defualt_context(request=None):
         'current_tab_class': 'current-menu-item current_page_item tie-current-menu',
 
         'social': {
-            'facebook': '',
-            'twitter': '',
-            'pinterest': '',
-            'youtube': '',
-            'instagram': '',
-            'paypal': '',
+            'facebook': 'https://www.facebook.com/Mxawi1',
+            'twitter': 'https://twitter.com/mxawi1',
+            'pinterest': 'https://www.pinterest.com/mxawinews/',
+            # 'youtube': '',
+            # 'instagram': '',
+            # 'paypal': '',
         }
     }
 
