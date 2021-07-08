@@ -117,11 +117,12 @@ def cache_request(view_format, timeout=60*60*24, identifier=None):
             else:
                 output_timeout = cache.get(f'{view_name}_timeout')
                 if time() > output_timeout:
-                    def xxx():
+                    def xxx(args, kwargs, view_name, timeout):
                         output = func(*args, **kwargs)
                         cache.set(view_name, output)
                         cache.set(f'{view_name}_timeout', time() + timeout)
-                    thread = Thread(target=xxx)
+
+                    thread = Thread(target=xxx, args=(args, kwargs, view_name, timeout))
                     thread.start()
 
             return output

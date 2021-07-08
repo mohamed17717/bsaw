@@ -2,6 +2,7 @@ from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseBadRequest, HttpResponse, JsonResponse
+from django.core.cache import cache
 
 from django.urls import reverse
 
@@ -51,11 +52,11 @@ def get_today_date():
     return date.replace(datetime.today().strftime("%A, %m"), day_month_ar)
 
 
-@cache_request('default_context', timeout=60*60*12)
+@cache_request('default_context')
 def get_defualt_context(request=None):
     return {
         # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
-        'popular_posts': Post.get_most_viewed_posts_in_last_days(1000, 5),
+        'popular_posts': Post.get_most_viewed_posts_in_last_days(10, 5),
         'latest_posts': Post.get_latest_posts(5),
         'random_post': Post.get_random_post(),
         'random_posts': [Post.get_random_post() for _ in range(15)],
@@ -113,7 +114,7 @@ def index(request):
     return render(request, 'home.html', context)
 
 
-@cache_request('post_{pk}', timeout=60*60*3, identifier='pk')
+@cache_request('post_{pk}', identifier='pk')
 def post(request, pk):
     post = Post.get_by_pk(pk)
     context = {
@@ -142,24 +143,32 @@ def listPosts(view_name):
             'qs': lambda *args, **kwargs: Post.objects.all().order_by('-created'),
             'dir_name': lambda *args, **kwargs: 'اّخر الأخبار',
             'dir_url': lambda *args, **kwargs: '/latest/posts/',
+            'cache_name': 'latest-posts',
+            'cache_id': ''
         },
 
         'tag_posts': {
             'qs': lambda title,  *args, **kwargs: Post.objects.filter(tags__title=title).order_by('-created'),
             'dir_name': lambda title, *args, **kwargs: title,
             'dir_url': lambda title, *args, **kwargs: reverse('tag-filter', kwargs={'title':title}),
+            'cache_name': 'tag-{title}',
+            'cache_id': 'title'
         },
 
         'category_posts': {
             'qs': lambda title,  *args, **kwargs: Category.get_category_by_name(title).get_posts().order_by('-created'),
             'dir_name': lambda title, *args, **kwargs: title,
             'dir_url': lambda title, *args, **kwargs: reverse('category-filter', kwargs={'title':title}),
+            'cache_name': 'category-{title}',
+            'cache_id': 'title'
         },
 
         'search_posts': {
             'qs': lambda query,  *args, **kwargs: Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query) | Q(tags__title__icontains=query) | Q(category__title__icontains=query) | Q(sub_category__title__icontains=query),).distinct().order_by('-created'),
             'dir_name': lambda query, *args, **kwargs: f'البحث عن: {query}',
             'dir_url': lambda query, *args, **kwargs: reverse('search', kwargs={'query':query}),
+            'cache_name': 'search-{query}',
+            'cache_id': 'query'
         },
     }
 
@@ -170,7 +179,15 @@ def listPosts(view_name):
 
         view_obj = views.get(view_name)
 
-        posts_qs = view_obj['qs'](*args, **kwargs)
+        # posts_qs = view_obj['qs'](*args, **kwargs)
+        cache_id = view_obj['cache_id']
+        cache_name = view_obj['cache_name']
+
+        @cache_request(cache_name, identifier=cache_id)
+        def caching_function(qs_func, *args, **kwargs):
+            return qs_func(*args, **kwargs)
+
+        posts_qs = caching_function(view_obj['qs'], *args, **kwargs)
 
         context = {
             **get_defualt_context(),
