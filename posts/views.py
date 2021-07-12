@@ -56,7 +56,7 @@ def get_today_date():
 def get_defualt_context(request=None):
     return {
         # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
-        'popular_posts': Post.get_most_viewed_posts_in_last_days(10, 5),
+        'popular_posts': Post.get_most_viewed_posts_in_last_days(200, 5),
         'latest_posts': Post.get_latest_posts(5),
         'random_post': Post.get_random_post(),
         'random_posts': [Post.get_random_post() for _ in range(15)],

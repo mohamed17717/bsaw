@@ -211,9 +211,7 @@ class Post(models.Model):
     def get_most_viewed_posts_in_last_days(days=3, count=10):
         # qs = Post.get_posts_in_last_days(days).annotate(visits=F('seen_count') - F('fake_seen_count')).order_by('-visits')
         qs = Post.get_posts_in_last_days(days).order_by('-seen_count')
-        if count:
-            qs = qs[:count]
-        return qs
+        return qs[:count]
 
     @staticmethod
     def get_featured_posts(count, force_count=False):
