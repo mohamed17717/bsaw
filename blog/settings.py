@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ne4gbfo#1w5(&!jxh)vqb7n@(b767dfq%d3xx+@y-#@x2=!go+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     # 'bsaw.pythonanywhere.com',
@@ -165,6 +165,4 @@ TINYMCE_DEFAULT_CONFIG = {
 
 INTERNAL_IPS = [
     '127.0.0.1',
-    'www.mxawi.com',
-    'mxawi.com',
 ]
