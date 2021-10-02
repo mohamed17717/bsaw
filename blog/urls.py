@@ -19,6 +19,8 @@ from posts.sitemaps import Post_Sitemap
 
 from django.views.generic.base import TemplateView
 
+import debug_toolbar
+
 
 sitemaps = {
     'article': Post_Sitemap(),
@@ -51,7 +53,9 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 
-    path('add/twt/', add_twt, name='add-twt')
+    path('add/twt/', add_twt, name='add-twt'),
+
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
 
 if settings.DEBUG:

@@ -52,14 +52,14 @@ def get_today_date():
     return date.replace(datetime.today().strftime("%A, %m"), day_month_ar)
 
 
-@cache_request('default_context')
+# @cache_request('default_context')
 def get_defualt_context(request=None):
     return {
         # 'most_viewed_posts': Post.get_most_viewed_posts_in_last_days(2, 20),
         'popular_posts': Post.get_most_viewed_posts_in_last_days(200, 5),
         'latest_posts': Post.get_latest_posts(5),
         'random_post': Post.get_random_post(),
-        'random_posts': [Post.get_random_post() for _ in range(15)],
+        'random_posts': Post.get_random_post(count=15),
 
         'current_url': request.build_absolute_uri() if request else '',
         'site_name': 'مكساوي',
@@ -79,7 +79,7 @@ def get_defualt_context(request=None):
 
 
 @require_http_methods(['GET'])
-@cache_request('home_page')
+# @cache_request('home_page')
 def index(request):
     context = { 
         **get_defualt_context(), 
@@ -88,7 +88,7 @@ def index(request):
         'home_latest_posts': Post.objects.all().order_by('-pk')[:10],
         'site_categories': filter(lambda item: item['count'] > 0, [
                 { 'title': cat.title, 'count': cat.get_posts().count(), 'url': cat.get_absolute_url } 
-                for cat in Category.objects.all()
+                for cat in Category.objects.prefetch_related('category_posts', 'sub_category_posts').all()
         ])
     }
 
@@ -101,14 +101,13 @@ def index(request):
         (4, 'cat_article', 'مقالات'),
     ]
 
-    for count, context_name, category_name in categories:
-        category = Category.get_category_by_name(category_name)
-        if not category: continue
-
+    cats = Category.objects.filter(title__in=[i[-1] for i in categories])
+    for cat in cats:
+        count, context_name, _ = list(filter(lambda i: i[-1] == cat.title, categories)).pop()
         context[context_name] = {
-            'url': category.get_absolute_url(),
-            'title': category.title,
-            'posts': category.get_posts().order_by('-pk')[:count]
+            'url': cat.get_absolute_url(),
+            'title': cat.title,
+            'posts': list(cat.get_posts().order_by('-pk')[:count])
         }
 
     return render(request, 'home.html', context)

@@ -1,7 +1,9 @@
+from os import name
 from django.db import models
-from django.db.models import Subquery, Count, Sum, F, Max
+from django.db.models import Subquery, Count, Sum, F, Max, indexes
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.db.models import Q
 
 from django.shortcuts import get_object_or_404
 
@@ -19,18 +21,18 @@ def post_default_seen_count():
     return random.randint(100, 500)
 
 
-def get_random_obj(myModel=None, qs=None):
+def get_random_obj(myModel=None, qs=None, count=1):
     assert qs != None or myModel != None
 
     if not qs:
-        qs = myModel.objects.all()
+        qs_limit = 10 if count == 1 else count*2
+        qs = myModel.objects.all()[:random.randint(5, qs_limit)]
 
-    max_id = qs.aggregate(max_id=Max("id"))['max_id']
-    while True:
-        pk = random.randint(1, max_id)
-        obj = qs.filter(pk=pk).first()
-        if obj:
-            return obj
+    qs = list(qs)
+    if count == 1:
+        return random.choice(qs)
+    else:
+        return random.choices(qs, k=count)
 
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -160,6 +162,11 @@ class Post(models.Model):
 
     creator = models.CharField(max_length=16, default='admin') # admin or bot
 
+    class Meta:
+        indexes = [
+            models.Index(fields=['created'], name='created_idx')
+        ]
+
     def __str__(self):
         return f'{self.id} | {self.title}'
 
@@ -199,7 +206,7 @@ class Post(models.Model):
 
     @staticmethod
     def get_latest_posts(count=20):
-        return Post.objects.all().order_by('-created')[:count]
+        return list(Post.objects.all().order_by('-created')[:count])
 
     @staticmethod
     def get_posts_in_last_days(days=3):
@@ -226,6 +233,7 @@ class Post(models.Model):
     def get_by_pk(pk):
         post = get_object_or_404(Post, pk=pk)
 
+
         if not post.related_posts:
             category = post.category or post.sub_category
             if category:
@@ -234,21 +242,21 @@ class Post(models.Model):
                 related_posts = Post.objects.all()
 
             random_related_posts = [
-                get_random_obj(qs=related_posts).serialize_as_related_post()
-                for _ in range(2)
+                p.serialize_as_related_post()
+                for p in get_random_obj(qs=related_posts, count=2)
             ]
 
             post.related_posts = random_related_posts
+            post.save()
 
-        post.seen_count += 1
-
-        post.save()
+        # post.seen_count += 1
+        # post.save()
 
         return post
 
     @staticmethod
-    def get_random_post():
-        return get_random_obj(myModel=Post)
+    def get_random_post(count=1):
+        return get_random_obj(myModel=Post, count=count)
 
 
 class Twt(models.Model):

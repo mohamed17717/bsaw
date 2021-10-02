@@ -1,7 +1,9 @@
 Django==2.2
+django-debug-toolbar==3.2.2
 django-jsonfield==1.4.1
 django-tinymce4-lite==1.8.0
 html2text==2020.1.16
+IP2Location==8.5.1
 jsmin==2.2.2
 Pillow==8.1.0
 pytz==2020.1
