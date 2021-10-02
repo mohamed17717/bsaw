@@ -1,18 +1,25 @@
-{% extends 'base.html' %}
-{% load static %}
-{% load filters %}
-
-
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% load filters %} {% block head %}
 <title>{{ site_name }} | اخر الاخبار والترند العربي والعالمي</title>
 
-<meta content="موقع {{ site_name }} هو الموسوعة العربية لآخر الأخبار وتريندات الوطن العربي والشرق الاوسط والعالم باكمله، تابعوا معنا اخر الاخبار في {{ site_name }}" name="description" />
-<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots" />
+<meta
+  content="موقع {{ site_name }} هو الموسوعة العربية لآخر الأخبار وتريندات الوطن العربي والشرق الاوسط والعالم باكمله، تابعوا معنا اخر الاخبار في {{ site_name }}"
+  name="description"
+/>
+<meta
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  name="robots"
+/>
 <link href="https://www.mxawi.com/" rel="canonical" />
 <meta content="ar_AR" property="og:locale" />
 <meta content="website" property="og:type" />
-<meta content="{{ site_name }} | اخر الاخبار والترند العربي والعالمي" property="og:title" />
-<meta content="موقع {{ site_name }} هو الموسوعة العربية لآخر الأخبار وتريندات الوطن العربي والشرق الاوسط والعالم باكمله، تابعوا معنا اخر الاخبار في {{ site_name }}" property="og:description" />
+<meta
+  content="{{ site_name }} | اخر الاخبار والترند العربي والعالمي"
+  property="og:title"
+/>
+<meta
+  content="موقع {{ site_name }} هو الموسوعة العربية لآخر الأخبار وتريندات الوطن العربي والشرق الاوسط والعالم باكمله، تابعوا معنا اخر الاخبار في {{ site_name }}"
+  property="og:description"
+/>
 <meta content="{{ current_url }}" property="og:url" />
 <meta content="{{ site_name }}" property="og:site_name" />
 <meta content="{% static 'png/مكساوى-لوجو-عربى.png' %}" property="og:image" />
@@ -20,14 +27,13 @@
 <meta content="577" property="og:image:height" />
 <meta content="summary_large_image" name="twitter:card" />
 
-
-<link data-minify="1" href="{% static 'css/56ab2433da3c92248e21ed5adbbdfd7a.de4c16a2.css' %}" media="all"
-  rel="stylesheet" />
-{% endblock head %}
-
-
-
-{% block headAfter %}
+<link
+  data-minify="1"
+  href="{% static 'css/56ab2433da3c92248e21ed5adbbdfd7a.de4c16a2.css' %}"
+  media="all"
+  rel="stylesheet"
+/>
+{% endblock head %} {% block headAfter %}
 <style id="taqyeem-styles-inline-css" type="text/css">
   #story-index.is-compact .story-index-content {
     background-color: #c71f1f;
@@ -35,7 +41,7 @@
 
   #story-index.is-compact .story-index-content a,
   #story-index.is-compact .story-index-content .is-current {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-body .mag-box-title h3 a,
@@ -62,9 +68,9 @@
   }
 
   #tie-block_3151 .mag-box-filter-links a.active,
-  #tie-block_3151 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_3151 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_3151 .stars-rating-active,
-  #tie-block_3151 .tabs.tabs .active>a,
+  #tie-block_3151 .tabs.tabs .active > a,
   #tie-block_3151 .spinner-circle:after,
   #tie-block_3151 .video-play-icon,
   #tie-block_3151 .pages-nav li a:hover,
@@ -79,7 +85,7 @@
     color: #d7574e;
   }
 
-  #tie-block_3151 .spinner>div,
+  #tie-block_3151 .spinner > div,
   #tie-block_3151 .tie-slick-dots li.slick-active button,
   #tie-block_3151 li.current span,
   #tie-block_3151 .tie-slick-dots li.slick-active button,
@@ -94,20 +100,20 @@
   #tie-block_3151 .breaking-title:before,
   #tie-block_3151 .breaking-news-nav li:hover,
   #tie-block_3151 .post-cat,
-  #tie-block_3151 .tie-slider-nav li>span:hover,
+  #tie-block_3151 .tie-slider-nav li > span:hover,
   #tie-block_3151 .button {
     background-color: #f5756c;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_3151 a.post-cat:hover,
   #tie-block_3151 .button:hover {
     background-color: #d7574e;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_3151 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_3151 .circle_bar {
@@ -143,9 +149,9 @@
   }
 
   #tie-block_1160 .mag-box-filter-links a.active,
-  #tie-block_1160 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_1160 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_1160 .stars-rating-active,
-  #tie-block_1160 .tabs.tabs .active>a,
+  #tie-block_1160 .tabs.tabs .active > a,
   #tie-block_1160 .spinner-circle:after,
   #tie-block_1160 .video-play-icon,
   #tie-block_1160 .pages-nav li a:hover,
@@ -160,7 +166,7 @@
     color: #009692;
   }
 
-  #tie-block_1160 .spinner>div,
+  #tie-block_1160 .spinner > div,
   #tie-block_1160 .tie-slick-dots li.slick-active button,
   #tie-block_1160 li.current span,
   #tie-block_1160 .tie-slick-dots li.slick-active button,
@@ -175,20 +181,20 @@
   #tie-block_1160 .breaking-title:before,
   #tie-block_1160 .breaking-news-nav li:hover,
   #tie-block_1160 .post-cat,
-  #tie-block_1160 .tie-slider-nav li>span:hover,
+  #tie-block_1160 .tie-slider-nav li > span:hover,
   #tie-block_1160 .button {
     background-color: #0db4b0;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1160 a.post-cat:hover,
   #tie-block_1160 .button:hover {
     background-color: #009692;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1160 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1160 .circle_bar {
@@ -229,7 +235,9 @@
 
   #tie-block_1160 .container-wrapper,
   #tie-block_1160 .flexMenu-popup,
-  #tie-block_1160.full-overlay-title li:not(.no-post-thumb) .block-title-overlay {
+  #tie-block_1160.full-overlay-title
+    li:not(.no-post-thumb)
+    .block-title-overlay {
     background-color: #e4f7f6;
   }
 
@@ -262,9 +270,9 @@
   }
 
   #tie-block_1810 .mag-box-filter-links a.active,
-  #tie-block_1810 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_1810 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_1810 .stars-rating-active,
-  #tie-block_1810 .tabs.tabs .active>a,
+  #tie-block_1810 .tabs.tabs .active > a,
   #tie-block_1810 .spinner-circle:after,
   #tie-block_1810 .video-play-icon,
   #tie-block_1810 .pages-nav li a:hover,
@@ -279,7 +287,7 @@
     color: #7c5147;
   }
 
-  #tie-block_1810 .spinner>div,
+  #tie-block_1810 .spinner > div,
   #tie-block_1810 .tie-slick-dots li.slick-active button,
   #tie-block_1810 li.current span,
   #tie-block_1810 .tie-slick-dots li.slick-active button,
@@ -294,20 +302,20 @@
   #tie-block_1810 .breaking-title:before,
   #tie-block_1810 .breaking-news-nav li:hover,
   #tie-block_1810 .post-cat,
-  #tie-block_1810 .tie-slider-nav li>span:hover,
+  #tie-block_1810 .tie-slider-nav li > span:hover,
   #tie-block_1810 .button {
     background-color: #9a6f65;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1810 a.post-cat:hover,
   #tie-block_1810 .button:hover {
     background-color: #7c5147;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1810 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1810 .circle_bar {
@@ -343,9 +351,9 @@
   }
 
   #tie-block_304 .mag-box-filter-links a.active,
-  #tie-block_304 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_304 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_304 .stars-rating-active,
-  #tie-block_304 .tabs.tabs .active>a,
+  #tie-block_304 .tabs.tabs .active > a,
   #tie-block_304 .spinner-circle:after,
   #tie-block_304 .video-play-icon,
   #tie-block_304 .pages-nav li a:hover,
@@ -360,7 +368,7 @@
     color: #0091ba;
   }
 
-  #tie-block_304 .spinner>div,
+  #tie-block_304 .spinner > div,
   #tie-block_304 .tie-slick-dots li.slick-active button,
   #tie-block_304 li.current span,
   #tie-block_304 .tie-slick-dots li.slick-active button,
@@ -375,20 +383,20 @@
   #tie-block_304 .breaking-title:before,
   #tie-block_304 .breaking-news-nav li:hover,
   #tie-block_304 .post-cat,
-  #tie-block_304 .tie-slider-nav li>span:hover,
+  #tie-block_304 .tie-slider-nav li > span:hover,
   #tie-block_304 .button {
     background-color: #00afd8;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_304 a.post-cat:hover,
   #tie-block_304 .button:hover {
     background-color: #0091ba;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_304 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_304 .circle_bar {
@@ -424,9 +432,9 @@
   }
 
   #tie-block_611 .mag-box-filter-links a.active,
-  #tie-block_611 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_611 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_611 .stars-rating-active,
-  #tie-block_611 .tabs.tabs .active>a,
+  #tie-block_611 .tabs.tabs .active > a,
   #tie-block_611 .spinner-circle:after,
   #tie-block_611 .video-play-icon,
   #tie-block_611 .pages-nav li a:hover,
@@ -441,7 +449,7 @@
     color: #c437da;
   }
 
-  #tie-block_611 .spinner>div,
+  #tie-block_611 .spinner > div,
   #tie-block_611 .tie-slick-dots li.slick-active button,
   #tie-block_611 li.current span,
   #tie-block_611 .tie-slick-dots li.slick-active button,
@@ -456,20 +464,20 @@
   #tie-block_611 .breaking-title:before,
   #tie-block_611 .breaking-news-nav li:hover,
   #tie-block_611 .post-cat,
-  #tie-block_611 .tie-slider-nav li>span:hover,
+  #tie-block_611 .tie-slider-nav li > span:hover,
   #tie-block_611 .button {
     background-color: #e255f8;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_611 a.post-cat:hover,
   #tie-block_611 .button:hover {
     background-color: #c437da;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_611 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_611 .circle_bar {
@@ -505,9 +513,9 @@
   }
 
   #tie-block_1837 .mag-box-filter-links a.active,
-  #tie-block_1837 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-block_1837 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-block_1837 .stars-rating-active,
-  #tie-block_1837 .tabs.tabs .active>a,
+  #tie-block_1837 .tabs.tabs .active > a,
   #tie-block_1837 .spinner-circle:after,
   #tie-block_1837 .video-play-icon,
   #tie-block_1837 .pages-nav li a:hover,
@@ -522,7 +530,7 @@
     color: #6c6cad;
   }
 
-  #tie-block_1837 .spinner>div,
+  #tie-block_1837 .spinner > div,
   #tie-block_1837 .tie-slick-dots li.slick-active button,
   #tie-block_1837 li.current span,
   #tie-block_1837 .tie-slick-dots li.slick-active button,
@@ -537,20 +545,20 @@
   #tie-block_1837 .breaking-title:before,
   #tie-block_1837 .breaking-news-nav li:hover,
   #tie-block_1837 .post-cat,
-  #tie-block_1837 .tie-slider-nav li>span:hover,
+  #tie-block_1837 .tie-slider-nav li > span:hover,
   #tie-block_1837 .button {
     background-color: #8a8acb;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1837 a.post-cat:hover,
   #tie-block_1837 .button:hover {
     background-color: #6c6cad;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1837 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-block_1837 .circle_bar {
@@ -586,9 +594,9 @@
   }
 
   #tie-s_1441 .mag-box-filter-links a.active,
-  #tie-s_1441 .mag-box-filter-links .flexMenu-viewMore:hover>a,
+  #tie-s_1441 .mag-box-filter-links .flexMenu-viewMore:hover > a,
   #tie-s_1441 .stars-rating-active,
-  #tie-s_1441 .tabs.tabs .active>a,
+  #tie-s_1441 .tabs.tabs .active > a,
   #tie-s_1441 .spinner-circle:after,
   #tie-s_1441 .video-play-icon,
   #tie-s_1441 .pages-nav li a:hover,
@@ -603,7 +611,7 @@
     color: #bf1515;
   }
 
-  #tie-s_1441 .spinner>div,
+  #tie-s_1441 .spinner > div,
   #tie-s_1441 .tie-slick-dots li.slick-active button,
   #tie-s_1441 li.current span,
   #tie-s_1441 .tie-slick-dots li.slick-active button,
@@ -618,20 +626,20 @@
   #tie-s_1441 .breaking-title:before,
   #tie-s_1441 .breaking-news-nav li:hover,
   #tie-s_1441 .post-cat,
-  #tie-s_1441 .tie-slider-nav li>span:hover,
+  #tie-s_1441 .tie-slider-nav li > span:hover,
   #tie-s_1441 .button {
     background-color: #dd3333;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-s_1441 a.post-cat:hover,
   #tie-s_1441 .button:hover {
     background-color: #bf1515;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-s_1441 .entry a.button {
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   #tie-s_1441 .circle_bar {
@@ -666,19 +674,16 @@
     background-color: #dd3333;
   }
 </style>
-{% endblock headAfter %}
-
-
-{% block bodyClasses %}
-rtl home page-template-default page page-id-1554 tie-no-js cookies-not-set wrapper-has-shadow block-head-1 magazine3
-magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-3 has-header-ad has-builder hide_breaking_news
-hide_footer hide_post_newsletter hide_read_next hide_post_authorbio hide_post_nav hide_back_top_button
-hide_inline_related_posts
-{% endblock bodyClasses %}
-
-
-{% block content %}
-<div class="section-wrapper container-full without-background" id="tiepost-1554-section-3286">
+{% endblock headAfter %} {% block bodyClasses %} rtl home page-template-default
+page page-id-1554 tie-no-js cookies-not-set wrapper-has-shadow block-head-1
+magazine3 magazine1 is-thumb-overlay-disabled is-desktop is-header-layout-3
+has-header-ad has-builder hide_breaking_news hide_footer hide_post_newsletter
+hide_read_next hide_post_authorbio hide_post_nav hide_back_top_button
+hide_inline_related_posts {% endblock bodyClasses %} {% block content %}
+<div
+  class="section-wrapper container-full without-background"
+  id="tiepost-1554-section-3286"
+>
   <div class="section-item is-first-section full-width">
     <div class="container">
       <div class="tie-row main-content-row">
@@ -686,35 +691,59 @@ hide_inline_related_posts
           <section class="slider-area mag-box" id="tie-block_1354">
             <div class="slider-area-inner">
               <div
-                class="tie-main-slider main-slider grid-3-slides boxed-slider grid-slider-wrapper grid-3-slides-half-first tie-slick-slider-wrapper"
-                data-slider-id="17" data-speed="3000" id="tie-main-slider-17-block_1354">
+                class="
+                  tie-main-slider
+                  main-slider
+                  grid-3-slides
+                  boxed-slider
+                  grid-slider-wrapper grid-3-slides-half-first
+                  tie-slick-slider-wrapper
+                "
+                data-slider-id="17"
+                data-speed="3000"
+                id="tie-main-slider-17-block_1354"
+              >
                 <div class="main-slider-inner">
                   <div class="containerblock_1354">
                     <div class="tie-slick-slider">
                       <ul class="tie-slider-nav"></ul>
                       <div class="slide">
-
                         {% for post in latest_posts %}
-                        <div class="grid-item slide-id-103776 tie-slide-1" style="background-image: url({{ post.thumbnailURL }})">
-                          <a aria-label="{{ post.title }}" class="all-over-thumb-link" href="{{ post.get_absolute_url }}"></a>
+                        <div
+                          class="grid-item slide-id-103776 tie-slide-1"
+                          style="background-image: url({{ post.thumbnailURL }})"
+                        >
+                          <a
+                            aria-label="{{ post.title }}"
+                            class="all-over-thumb-link"
+                            href="{{ post.get_absolute_url }}"
+                          ></a>
                           <div class="thumb-overlay">
                             <span class="post-cat-wrap">
-                              <a class="post-cat tie-cat-39" href="{{ post.category.ge_absolute_url }}">{{ post.category }}</a>
+                              <a
+                                class="post-cat tie-cat-39"
+                                href="{{ post.category.ge_absolute_url }}"
+                                >{{ post.category }}</a
+                              >
                             </span>
                             <div class="thumb-content">
                               <div class="thumb-meta">
-                                <span class="date meta-item tie-icon">{{ post.date }}</span></div>
+                                <span class="date meta-item tie-icon"
+                                  >{{ post.date }}</span
+                                >
+                              </div>
                               <h2 class="thumb-title">
                                 <a href="{{ post.get_absolute_url }}">
                                   {{ post.title }}
                                 </a>
                               </h2>
-                              <div class="thumb-desc">{{ post.description }}</div>
+                              <div class="thumb-desc">
+                                {{ post.description }}
+                              </div>
                             </div>
                           </div>
                         </div>
                         {% endfor %}
-
                       </div>
                     </div>
                   </div>
@@ -728,15 +757,27 @@ hide_inline_related_posts
   </div>
 </div>
 
-<div class="section-wrapper container normal-width without-background" id="tiepost-1554-section-749">
+<div
+  class="section-wrapper container normal-width without-background"
+  id="tiepost-1554-section-749"
+>
   <div class="section-item sidebar-left has-sidebar">
     <div class="container-normal">
       <div class="tie-row main-content-row">
         <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
-          <div class="mag-box big-post-left-box big-thumb-left-box first-post-gradient has-custom-color" data-current="1" id="tie-block_3151">
+          <div
+            class="
+              mag-box
+              big-post-left-box big-thumb-left-box
+              first-post-gradient
+              has-custom-color
+            "
+            data-current="1"
+            id="tie-block_3151"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> الاخبار </h3>
+                <h3>الاخبار</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
                     <a class="show-more" href="{{ cat_news.url }}">المزيد</a>
@@ -746,22 +787,49 @@ hide_inline_related_posts
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <div class="big-thumb-left-box-inner"
-                      style="background-image: url({{ cat_news.posts.first.thumbnailURL }})">
-                      <a aria-label="{{ cat_news.posts.first.title }}" class="post-thumb"
-                        href="{{ cat_news.posts.first.get_absolute_url }}"></a>
+                    <div
+                      class="big-thumb-left-box-inner"
+                      style="background-image: url({{ cat_news.posts.0.thumbnailURL }})"
+                    >
+                      <a
+                        aria-label="{{ cat_news.posts.0.title }}"
+                        class="post-thumb"
+                        href="{{ cat_news.posts.0.get_absolute_url }}"
+                      ></a>
                       <div class="post-overlay">
                         <div class="post-content">
-                          <a class="post-cat tie-cat-39" href="{{ cat_news.posts.first.get_category.get_absolute_url }}">{{ cat_news.posts.first.get_category.title }}</a>
-                          <h2 class="post-title"><a
-                              href="{{ cat_news.posts.first.get_absolute_url }}">{{ cat_news.posts.first.title }}</a></h2>
+                          <a
+                            class="post-cat tie-cat-39"
+                            href="{{ cat_news.posts.0.get_category.get_absolute_url }}"
+                            >{{ cat_news.posts.0.get_category.title }}</a
+                          >
+                          <h2 class="post-title">
+                            <a href="{{ cat_news.posts.0.get_absolute_url }}"
+                              >{{ cat_news.posts.0.title }}</a
+                            >
+                          </h2>
                           <div class="thumb-meta">
                             <div class="post-meta clearfix">
-                              <span class="date meta-item tie-icon">{{ cat_news.posts.first.date }}</span>
-                              <div class="tie-alignright"><span
-                                  class="meta-comment tie-icon meta-item fa-before">0</span><span
-                                  class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                                  {{ cat_news.posts.first.seen_count }} </span></div>
+                              <span class="date meta-item tie-icon"
+                                >{{ cat_news.posts.0.date }}</span
+                              >
+                              <div class="tie-alignright">
+                                <span
+                                  class="
+                                    meta-comment
+                                    tie-icon
+                                    meta-item
+                                    fa-before
+                                  "
+                                  >0</span
+                                ><span class="meta-views meta-item"
+                                  ><span
+                                    aria-hidden="true"
+                                    class="tie-icon-fire"
+                                  ></span>
+                                  {{ cat_news.posts.0.seen_count }}
+                                </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -771,27 +839,59 @@ hide_inline_related_posts
 
                   {% for post in cat_news.posts|slice:"1:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb" href="{{ post.get_absolute_url }}">
-                      <img alt="{{ post.title }}"
-                        class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" src="{{ post.thumbnailURL }}" width="220" /></a>
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                    >
+                      <img
+                        alt="{{ post.title }}"
+                        class="
+                          attachment-jannah-image-small
+                          size-jannah-image-small
+                          tie-small-image
+                          wp-post-image
+                        "
+                        height="150"
+                        loading="lazy"
+                        src="{{ post.thumbnailURL }}"
+                        width="220"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
-                      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                      </div>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                     </div>
                   </li>
                   {% endfor %}
-
                 </ul>
                 <div class="clearfix"></div>
               </div>
             </div>
           </div>
 
-          <div class="mag-box big-post-top-box has-first-big-post box-dark-skin dark-skin has-custom-color has-custom-bg-color" data-current="1" id="tie-block_1160">
+          <div
+            class="
+              mag-box
+              big-post-top-box
+              has-first-big-post
+              box-dark-skin
+              dark-skin
+              has-custom-color has-custom-bg-color
+            "
+            data-current="1"
+            id="tie-block_1160"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> الرياضة </h3>
+                <h3>الرياضة</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
                     <a class="show-more" href="{{ cat_sport.url }}">المزيد</a>
@@ -801,41 +901,90 @@ hide_inline_related_posts
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <a aria-label="{{ cat_sport.posts.first.title }}" class="post-thumb"
-                      href="{{ cat_sport.posts.first.get_absolute_url }}"><span
-                        class="post-cat-wrap"><span class="post-cat tie-cat-43">{{ cat_sport.posts.first.get_category.title }}</span></span><img alt=""
-                        class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" src="{{ cat_sport.posts.first.thumbnailURL }}"
-                        width="390" /></a>
+                    <a
+                      aria-label="{{ cat_sport.posts.0.title }}"
+                      class="post-thumb"
+                      href="{{ cat_sport.posts.0.get_absolute_url }}"
+                      ><span class="post-cat-wrap"
+                        ><span class="post-cat tie-cat-43"
+                          >{{ cat_sport.posts.0.get_category.title }}</span
+                        ></span
+                      ><img
+                        alt=""
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        src="{{ cat_sport.posts.0.thumbnailURL }}"
+                        width="390"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span
-                          class="date meta-item tie-icon">{{ cat_sport.posts.first.date }}</span>
-                        <div class="tie-alignright"><span
-                            class="meta-comment tie-icon meta-item fa-before">0</span><span
-                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                            {{ cat_sport.posts.first.seen_count}} </span></div>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ cat_sport.posts.0.date }}</span
+                        >
+                        <div class="tie-alignright">
+                          <span
+                            class="meta-comment tie-icon meta-item fa-before"
+                            >0</span
+                          ><span class="meta-views meta-item"
+                            ><span
+                              aria-hidden="true"
+                              class="tie-icon-fire"
+                            ></span>
+                            {{ cat_sport.posts.0.seen_count}}
+                          </span>
+                        </div>
                       </div>
-                      <h2 class="post-title"><a
-                          href="{{ cat_sport.posts.first.get_absolute_url }}">{{ cat_sport.posts.first.title }}</a></h2>
-                      <p class="post-excerpt">{{ cat_sport.posts.first.description }}</p>
-                      <a class="more-link button"
-                        href="{{ cat_sport.posts.first.get_absolute_url }}">أكمل
-                        القراءة »</a>
+                      <h2 class="post-title">
+                        <a href="{{ cat_sport.posts.0.get_absolute_url }}"
+                          >{{ cat_sport.posts.0.title }}</a
+                        >
+                      </h2>
+                      <p class="post-excerpt">
+                        {{ cat_sport.posts.0.description }}
+                      </p>
+                      <a
+                        class="more-link button"
+                        href="{{ cat_sport.posts.0.get_absolute_url }}"
+                        >أكمل القراءة »</a
+                      >
                     </div>
                   </li>
 
                   {% for post in cat_sport.posts|slice:"1:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb"
-                      href="{{ post.get_absolute_url }}"><img
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                      ><img
                         alt="{{ post.title }}"
-                        class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" src="{{ post.thumbnailURL }}"
-                        width="220" /></a>
+                        class="
+                          attachment-jannah-image-small
+                          size-jannah-image-small
+                          tie-small-image
+                          wp-post-image
+                        "
+                        height="150"
+                        loading="lazy"
+                        src="{{ post.thumbnailURL }}"
+                        width="220"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
-                      <h2 class="post-title"><a
-                          href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                      </div>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                     </div>
                   </li>
                   {% endfor %}
@@ -844,52 +993,116 @@ hide_inline_related_posts
               </div>
             </div>
           </div>
-          
-          <div class="mag-box tie-col-sm-6 half-box has-first-big-post has-custom-color first-half-box" data-current="1" id="tie-block_1810">
+
+          <div
+            class="
+              mag-box
+              tie-col-sm-6
+              half-box
+              has-first-big-post has-custom-color
+              first-half-box
+            "
+            data-current="1"
+            id="tie-block_1810"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> لايف ستايل </h3>
+                <h3>لايف ستايل</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
-                    <a class="show-more" href="{{ cat_lifestyle.url }}">المزيد</a>
+                    <a class="show-more" href="{{ cat_lifestyle.url }}"
+                      >المزيد</a
+                    >
                   </div>
                 </div>
               </div>
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <a aria-label="{{ cat_lifestyle.posts.first.title }}" class="post-thumb"
-                      href="{{ cat_lifestyle.posts.first.get_absolute_url }}"><span
-                        class="post-cat-wrap"><span class="post-cat tie-cat-45">{{ cat_lifestyle.posts.first.get_category.title }}</span></span><img alt="{{ cat_lifestyle.posts.first.title}}"
-                        class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" src="{{ cat_lifestyle.posts.first.thumbnailURL }}" width="390" /></a>
+                    <a
+                      aria-label="{{ cat_lifestyle.posts.0.title }}"
+                      class="post-thumb"
+                      href="{{ cat_lifestyle.posts.0.get_absolute_url }}"
+                      ><span class="post-cat-wrap"
+                        ><span class="post-cat tie-cat-45"
+                          >{{ cat_lifestyle.posts.0.get_category.title }}</span
+                        ></span
+                      ><img
+                        alt="{{ cat_lifestyle.posts.0.title}}"
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        src="{{ cat_lifestyle.posts.0.thumbnailURL }}"
+                        width="390"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span
-                          class="date meta-item tie-icon">{{ cat_lifestyle.posts.first.date }}</span>
-                        <div class="tie-alignright"><span
-                            class="meta-comment tie-icon meta-item fa-before">0</span><span
-                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                            {{ cat_lifestyle.posts.first.seen_count }} </span></div>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ cat_lifestyle.posts.0.date }}</span
+                        >
+                        <div class="tie-alignright">
+                          <span
+                            class="meta-comment tie-icon meta-item fa-before"
+                            >0</span
+                          ><span class="meta-views meta-item"
+                            ><span
+                              aria-hidden="true"
+                              class="tie-icon-fire"
+                            ></span>
+                            {{ cat_lifestyle.posts.0.seen_count }}
+                          </span>
+                        </div>
                       </div>
-                      <h2 class="post-title"><a
-                          href="{{ cat_lifestyle.posts.first.get_absolute_url }}">{{ cat_lifestyle.posts.first.title }}</a></h2>
-                      <p class="post-excerpt">{{ cat_lifestyle.posts.first.description }}</p>
-                      <a class="more-link button"
-                        href="{{ cat_lifestyle.posts.first.get_absolute_url }}">أكمل
-                        القراءة »</a>
+                      <h2 class="post-title">
+                        <a href="{{ cat_lifestyle.posts.0.get_absolute_url }}"
+                          >{{ cat_lifestyle.posts.0.title }}</a
+                        >
+                      </h2>
+                      <p class="post-excerpt">
+                        {{ cat_lifestyle.posts.0.description }}
+                      </p>
+                      <a
+                        class="more-link button"
+                        href="{{ cat_lifestyle.posts.0.get_absolute_url }}"
+                        >أكمل القراءة »</a
+                      >
                     </div>
                   </li>
                   {% for post in cat_lifestyle.posts|slice:"1:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb" href="{{ post.get_absolute_url }}">
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                    >
                       <img
                         alt="{{ post.title }}"
-                        class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" src="{{ post.thumbnailURL }}"
-                        width="220" /></a>
+                        class="
+                          attachment-jannah-image-small
+                          size-jannah-image-small
+                          tie-small-image
+                          wp-post-image
+                        "
+                        height="150"
+                        loading="lazy"
+                        src="{{ post.thumbnailURL }}"
+                        width="220"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
-                      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                      </div>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                     </div>
                   </li>
                   {% endfor %}
@@ -898,11 +1111,21 @@ hide_inline_related_posts
               </div>
             </div>
           </div>
-          
-          <div class="mag-box tie-col-sm-6 half-box has-first-big-post has-custom-color second-half-box" data-current="1" id="tie-block_304">
+
+          <div
+            class="
+              mag-box
+              tie-col-sm-6
+              half-box
+              has-first-big-post has-custom-color
+              second-half-box
+            "
+            data-current="1"
+            id="tie-block_304"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> الصحة والجمال </h3>
+                <h3>الصحة والجمال</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
                     <a class="show-more" href="{{ cat_health.url }}">المزيد</a>
@@ -912,40 +1135,90 @@ hide_inline_related_posts
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <a aria-label="cat_health.posts.first.title" class="post-thumb"
-                      href="{{ cat_health.posts.first.get_absolute_url }}"><span
-                        class="post-cat-wrap"><span class="post-cat tie-cat-46">{{ cat_health.posts.first.get_category.title }}</span></span><img alt="{{ cat_health.posts.first.title }}"
-                        class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" src="{{ cat_health.posts.first.thumbnailURL }}"
-                        width="390" /></a>
+                    <a
+                      aria-label="cat_health.posts.0.title"
+                      class="post-thumb"
+                      href="{{ cat_health.posts.0.get_absolute_url }}"
+                      ><span class="post-cat-wrap"
+                        ><span class="post-cat tie-cat-46"
+                          >{{ cat_health.posts.0.get_category.title }}</span
+                        ></span
+                      ><img
+                        alt="{{ cat_health.posts.0.title }}"
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        src="{{ cat_health.posts.0.thumbnailURL }}"
+                        width="390"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span
-                          class="date meta-item tie-icon">{{ cat_health.posts.first.date }}</span>
-                        <div class="tie-alignright"><span
-                            class="meta-comment tie-icon meta-item fa-before">0</span><span
-                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                            {{ cat_health.posts.first.seen_count }} </span></div>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ cat_health.posts.0.date }}</span
+                        >
+                        <div class="tie-alignright">
+                          <span
+                            class="meta-comment tie-icon meta-item fa-before"
+                            >0</span
+                          ><span class="meta-views meta-item"
+                            ><span
+                              aria-hidden="true"
+                              class="tie-icon-fire"
+                            ></span>
+                            {{ cat_health.posts.0.seen_count }}
+                          </span>
+                        </div>
                       </div>
-                      <h2 class="post-title"><a
-                          href="{{ cat_health.posts.first.get_absolute_url }}">{{ cat_health.posts.first.title }}</a></h2>
-                      <p class="post-excerpt">{{ cat_health.posts.first.description }}</p>
-                      <a class="more-link button"
-                        href="{{ cat_health.posts.first.get_absolute_url }}">أكمل
-                        القراءة »</a>
+                      <h2 class="post-title">
+                        <a href="{{ cat_health.posts.0.get_absolute_url }}"
+                          >{{ cat_health.posts.0.title }}</a
+                        >
+                      </h2>
+                      <p class="post-excerpt">
+                        {{ cat_health.posts.0.description }}
+                      </p>
+                      <a
+                        class="more-link button"
+                        href="{{ cat_health.posts.0.get_absolute_url }}"
+                        >أكمل القراءة »</a
+                      >
                     </div>
                   </li>
 
                   {% for post in cat_health.posts|slice:"1:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb"
-                      href="{{ post.get_absolute_url }}"><img
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                      ><img
                         alt="{{ post.title }}"
-                        class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" src="{{ post.thumbnailURL }}"
-                        width="220" /></a>
+                        class="
+                          attachment-jannah-image-small
+                          size-jannah-image-small
+                          tie-small-image
+                          wp-post-image
+                        "
+                        height="150"
+                        loading="lazy"
+                        src="{{ post.thumbnailURL }}"
+                        width="220"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
-                      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                      </div>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                     </div>
                   </li>
                   {% endfor %}
@@ -954,11 +1227,14 @@ hide_inline_related_posts
               </div>
             </div>
           </div>
-          
+
           <div class="clearfix half-box-clearfix"></div>
         </div>
 
-        <aside aria-label="القائمة الجانبية الرئيسية" class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky">
+        <aside
+          aria-label="القائمة الجانبية الرئيسية"
+          class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky"
+        >
           <div class="theiaStickySidebar">
             <!--
             <div class="widget tie-weather-widget" id="tie-weather-widget-2">
@@ -1048,47 +1324,76 @@ hide_inline_related_posts
   </div>
 </div>
 
-<div class="section-wrapper container-full without-background" id="tiepost-1554-section-8509">
+<div
+  class="section-wrapper container-full without-background"
+  id="tiepost-1554-section-8509"
+>
   <div class="section-item full-width">
     <div class="container">
       <div class="tie-row main-content-row">
         <div class="main-content tie-col-md-12">
-          <section class="slider-area mag-box media-overlay" id="tie-block_3032">
+          <section
+            class="slider-area mag-box media-overlay"
+            id="tie-block_3032"
+          >
             <div class="slider-area-inner">
-              <div class="tie-main-slider main-slider boxed-four-taller-slider boxed-slider tie-slick-slider-wrapper"
-                data-slider-id="7" data-speed="3000" id="tie-main-slider-7-block_3032">
+              <div
+                class="
+                  tie-main-slider
+                  main-slider
+                  boxed-four-taller-slider boxed-slider
+                  tie-slick-slider-wrapper
+                "
+                data-slider-id="7"
+                data-speed="3000"
+                id="tie-main-slider-7-block_3032"
+              >
                 <div class="loader-overlay">
                   <div class="spinner">
                     <div class="bounce1"></div>
                     <div class="bounce2"></div>
-                    <div class="bounce3"> </div>
+                    <div class="bounce3"></div>
                   </div>
                 </div>
                 <div class="main-slider-inner">
                   <ul class="tie-slider-nav"></ul>
                   <div class="containerblock_3032">
                     <div class="tie-slick-slider">
-
                       {% for post in cat_mix.posts|slice:"1:5" %}
-                      <div class="slide slide-id-103617 tie-slide-1"
-                        style="background-image: url({{ post.thumbnailURL }})">
-                        <a aria-label="{{ post.title }}" class="all-over-thumb-link"
-                          href="{{ post.get_absolute_url }}"></a>
+                      <div
+                        class="slide slide-id-103617 tie-slide-1"
+                        style="background-image: url({{ post.thumbnailURL }})"
+                      >
+                        <a
+                          aria-label="{{ post.title }}"
+                          class="all-over-thumb-link"
+                          href="{{ post.get_absolute_url }}"
+                        ></a>
                         <div class="thumb-overlay">
                           <span class="tie-icon tie-media-icon"></span>
-                          <span class="post-cat-wrap"><a class="post-cat tie-cat-48"
-                              href="{{ post.get_category.get_absolute_url }}">{{ post.get_category.title }}</a></span>
+                          <span class="post-cat-wrap"
+                            ><a
+                              class="post-cat tie-cat-48"
+                              href="{{ post.get_category.get_absolute_url }}"
+                              >{{ post.get_category.title }}</a
+                            ></span
+                          >
                           <div class="thumb-content">
-                            <div class="thumb-meta"><span class="date meta-item tie-icon">{{ post.date }}</span>
+                            <div class="thumb-meta">
+                              <span class="date meta-item tie-icon"
+                                >{{ post.date }}</span
+                              >
                             </div>
-                            <h2 class="thumb-title"><a
-                                href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                            <h2 class="thumb-title">
+                              <a href="{{ post.get_absolute_url }}"
+                                >{{ post.title }}</a
+                              >
+                            </h2>
                             <div class="thumb-desc">{{ post.description }}</div>
                           </div>
                         </div>
                       </div>
                       {% endfor %}
-
                     </div>
                   </div>
                 </div>
@@ -1101,15 +1406,26 @@ hide_inline_related_posts
   </div>
 </div>
 
-<div class="section-wrapper container normal-width without-background" id="tiepost-1554-section-6559">
+<div
+  class="section-wrapper container normal-width without-background"
+  id="tiepost-1554-section-6559"
+>
   <div class="section-item sidebar-left has-sidebar">
     <div class="container-normal">
       <div class="tie-row main-content-row">
         <div class="main-content tie-col-md-8 tie-col-xs-12" role="main">
-          <div class="mag-box big-post-left-box has-first-big-post has-custom-color" data-current="1" id="tie-block_611">
+          <div
+            class="
+              mag-box
+              big-post-left-box
+              has-first-big-post has-custom-color
+            "
+            data-current="1"
+            id="tie-block_611"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> منوعات </h3>
+                <h3>منوعات</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
                     <a class="show-more" href="{{ cat_mix.url }}">المزيد</a>
@@ -1119,58 +1435,115 @@ hide_inline_related_posts
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <a aria-label="{{ cat_mix.posts.first.title }}"
+                    <a
+                      aria-label="{{ cat_mix.posts.0.title }}"
                       class="post-thumb"
-                      href="{{ cat_mix.posts.first.get_absolute_url }}"><span
-                        class="post-cat-wrap"><span class="post-cat tie-cat-48">{{ cat_mix.posts.first.get_category.title }}</span></span><img alt="{{ cat_mix.posts.first.title }}"
-                        class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" src="{{ cat_mix.posts.first.thumbnailURL }}"
-                        width="390" /></a>
+                      href="{{ cat_mix.posts.0.get_absolute_url }}"
+                      ><span class="post-cat-wrap"
+                        ><span class="post-cat tie-cat-48"
+                          >{{ cat_mix.posts.0.get_category.title }}</span
+                        ></span
+                      ><img
+                        alt="{{ cat_mix.posts.0.title }}"
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        src="{{ cat_mix.posts.0.thumbnailURL }}"
+                        width="390"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span
-                          class="date meta-item tie-icon">{{ cat_mix.posts.first.date }}</span>
-                        <div class="tie-alignright"><span
-                            class="meta-comment tie-icon meta-item fa-before">0</span><span
-                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                            {{ cat_mix.posts.first.seen_count }} </span></div>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ cat_mix.posts.0.date }}</span
+                        >
+                        <div class="tie-alignright">
+                          <span
+                            class="meta-comment tie-icon meta-item fa-before"
+                            >0</span
+                          ><span class="meta-views meta-item"
+                            ><span
+                              aria-hidden="true"
+                              class="tie-icon-fire"
+                            ></span>
+                            {{ cat_mix.posts.0.seen_count }}
+                          </span>
+                        </div>
                       </div>
-                      <h2 class="post-title"><a
-                          href="{{ cat_mix.posts.first.get_absolute_url }}">{{ cat_mix.posts.first.title }}</a></h2>
-                      <p class="post-excerpt">{{ cat_mix.posts.first.description }}</p>
-                      <a class="more-link button"
-                        href="{{ cat_mix.posts.first.get_absolute_url }}">أكمل
-                        القراءة »</a>
+                      <h2 class="post-title">
+                        <a href="{{ cat_mix.posts.0.get_absolute_url }}"
+                          >{{ cat_mix.posts.0.title }}</a
+                        >
+                      </h2>
+                      <p class="post-excerpt">
+                        {{ cat_mix.posts.0.description }}
+                      </p>
+                      <a
+                        class="more-link button"
+                        href="{{ cat_mix.posts.0.get_absolute_url }}"
+                        >أكمل القراءة »</a
+                      >
                     </div>
                   </li>
 
-                  
                   {% for post in cat_mix.posts|slice:"5:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb"
-                      href="{{ post.get_absolute_url }}"><img
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                      ><img
                         alt="{{ post.title }}"
-                        class="attachment-jannah-image-small size-jannah-image-small tie-small-image wp-post-image"
-                        height="150" loading="lazy" sizes="(max-width: 220px) 100vw, 220px"
+                        class="
+                          attachment-jannah-image-small
+                          size-jannah-image-small
+                          tie-small-image
+                          wp-post-image
+                        "
+                        height="150"
+                        loading="lazy"
+                        sizes="(max-width: 220px) 100vw, 220px"
                         src="{{ post.thumbnailURL }}"
-                        width="220" /></a>
+                        width="220"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span></div>
-                      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                      </div>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                     </div>
                   </li>
                   {% endfor %}
-
                 </ul>
                 <div class="clearfix"></div>
               </div>
             </div>
           </div>
 
-
-          <div class="mag-box miscellaneous-box first-post-gradient has-first-big-post media-overlay has-custom-color" data-current="1" id="tie-block_1837">
+          <div
+            class="
+              mag-box
+              miscellaneous-box
+              first-post-gradient
+              has-first-big-post
+              media-overlay
+              has-custom-color
+            "
+            data-current="1"
+            id="tie-block_1837"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> مقالات </h3>
+                <h3>مقالات</h3>
                 <div class="tie-alignright">
                   <div class="mag-box-options">
                     <a class="show-more" href="{{ cat_article.url }}">المزيد</a>
@@ -1180,24 +1553,57 @@ hide_inline_related_posts
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
                   <li class="post-item">
-                    <a aria-label="{{ cat_article.posts.first.title }}"
+                    <a
+                      aria-label="{{ cat_article.posts.0.title }}"
                       class="post-thumb"
-                      href="{{ cat_article.posts.first.get_absolute_url }}"><img
-                        alt="{{ cat_article.posts.first.title }}" class="attachment-jannah-image-post size-jannah-image-post wp-post-image" height="1"
-                        loading="lazy" src="{{ cat_article.posts.first.thumbnailURL }}" width="1" /></a>
+                      href="{{ cat_article.posts.0.get_absolute_url }}"
+                      ><img
+                        alt="{{ cat_article.posts.0.title }}"
+                        class="
+                          attachment-jannah-image-post
+                          size-jannah-image-post
+                          wp-post-image
+                        "
+                        height="1"
+                        loading="lazy"
+                        src="{{ cat_article.posts.0.thumbnailURL }}"
+                        width="1"
+                    /></a>
                     <div class="clearfix"></div>
                     <div class="post-overlay">
                       <div class="post-content">
-                        <a class="post-cat tie-cat-47" href="{{ cat_article.posts.first.get_category.get_absolute_url }}">{{ cat_article.posts.first.get_category.title }}</a>
-                        <h2 class="post-title"><a
-                            href="{{ cat_article.posts.first.get_absolute_url }}">{{ cat_article.posts.first.title }}</a></h2>
+                        <a
+                          class="post-cat tie-cat-47"
+                          href="{{ cat_article.posts.0.get_category.get_absolute_url }}"
+                          >{{ cat_article.posts.0.get_category.title }}</a
+                        >
+                        <h2 class="post-title">
+                          <a href="{{ cat_article.posts.0.get_absolute_url }}"
+                            >{{ cat_article.posts.0.title }}</a
+                          >
+                        </h2>
                         <div class="thumb-meta">
-                          <div class="post-meta clearfix"><span
-                              class="date meta-item tie-icon">{{ cat_article.posts.first.date }}</span>
-                            <div class="tie-alignright"><span
-                                class="meta-comment tie-icon meta-item fa-before">0</span><span
-                                class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                                {{ cat_article.posts.first.seen_count }} </span></div>
+                          <div class="post-meta clearfix">
+                            <span class="date meta-item tie-icon"
+                              >{{ cat_article.posts.0.date }}</span
+                            >
+                            <div class="tie-alignright">
+                              <span
+                                class="
+                                  meta-comment
+                                  tie-icon
+                                  meta-item
+                                  fa-before
+                                "
+                                >0</span
+                              ><span class="meta-views meta-item"
+                                ><span
+                                  aria-hidden="true"
+                                  class="tie-icon-fire"
+                                ></span>
+                                {{ cat_article.posts.0.seen_count }}
+                              </span>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -1206,111 +1612,212 @@ hide_inline_related_posts
 
                   {% for post in cat_article.posts|slice:"1:" %}
                   <li class="post-item">
-                    <a aria-label="{{ post.title }}" class="post-thumb"
-                      href="{{ post.get_absolute_url }}"><img
-                        alt="{{ post.title }}" class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                      ><img
+                        alt="{{ post.title }}"
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        sizes="(max-width: 390px) 100vw, 390px"
                         src="{{ post.thumbnailURL }}"
-                        width="390" /></a>
+                        width="390"
+                    /></a>
                     <div class="clearfix"></div>
                     <div class="post-overlay">
                       <div class="post-content">
-                        <div class="post-meta clearfix"><span class="date meta-item tie-icon">{{ post.date }}</span>
-                          <div class="tie-alignright"><span class="meta-comment tie-icon meta-item fa-before">0</span>
+                        <div class="post-meta clearfix">
+                          <span class="date meta-item tie-icon"
+                            >{{ post.date }}</span
+                          >
+                          <div class="tie-alignright">
+                            <span
+                              class="meta-comment tie-icon meta-item fa-before"
+                              >0</span
+                            >
                           </div>
                         </div>
-                        <h2 class="post-title"><a
-                            href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                        <h2 class="post-title">
+                          <a href="{{ post.get_absolute_url }}"
+                            >{{ post.title }}</a
+                          >
+                        </h2>
                         <div class="post-meta"></div>
                       </div>
                     </div>
                   </li>
                   {% endfor %}
-                    
-
                 </ul>
                 <div class="clearfix"></div>
               </div>
             </div>
           </div>
 
-
-          <div class="mag-box big-posts-box has-custom-color" data-current="1" id="tie-s_1441">
+          <div
+            class="mag-box big-posts-box has-custom-color"
+            data-current="1"
+            id="tie-s_1441"
+          >
             <div class="container-wrapper">
               <div class="mag-box-title the-global-title">
-                <h3> جميع المقالات </h3>
+                <h3>جميع المقالات</h3>
               </div>
               <div class="mag-box-container clearfix">
                 <ul class="posts-items posts-list-container">
-                  
                   {% for post in home_latest_posts %}
-                  <li class="post-item post-103755 post type-post status-publish format-standard has-post-thumbnail category-me tag-4882 tag-4881 tag-82 tag-69">
-                    <a aria-label="{{ post.title }}" class="post-thumb"
-                      href="{{ post.get_absolute_url }}"><span
-                        class="post-cat-wrap"><span class="post-cat tie-cat-39">{{ post.get_caegory.title }}</span></span><img alt="{{ post.title }}"
-                        class="attachment-jannah-image-large size-jannah-image-large wp-post-image" height="220"
-                        loading="lazy" sizes="(max-width: 390px) 100vw, 390px"
-                        src="{{ post.thumbnailURL }}" width="390" /></a>
+                  <li
+                    class="
+                      post-item post-103755 post
+                      type-post
+                      status-publish
+                      format-standard
+                      has-post-thumbnail
+                      category-me
+                      tag-4882 tag-4881 tag-82 tag-69
+                    "
+                  >
+                    <a
+                      aria-label="{{ post.title }}"
+                      class="post-thumb"
+                      href="{{ post.get_absolute_url }}"
+                      ><span class="post-cat-wrap"
+                        ><span class="post-cat tie-cat-39"
+                          >{{ post.get_caegory.title }}</span
+                        ></span
+                      ><img
+                        alt="{{ post.title }}"
+                        class="
+                          attachment-jannah-image-large
+                          size-jannah-image-large
+                          wp-post-image
+                        "
+                        height="220"
+                        loading="lazy"
+                        sizes="(max-width: 390px) 100vw, 390px"
+                        src="{{ post.thumbnailURL }}"
+                        width="390"
+                    /></a>
                     <div class="post-details">
-                      <div class="post-meta clearfix"><span
-                          class="date meta-item tie-icon">{{ post.date }}</span>
-                        <div class="tie-alignright"><span
-                            class="meta-comment tie-icon meta-item fa-before">0</span><span
-                            class="meta-views meta-item"><span aria-hidden="true" class="tie-icon-fire"></span>
-                            {{ post.seen_count }} </span></div>
+                      <div class="post-meta clearfix">
+                        <span class="date meta-item tie-icon"
+                          >{{ post.date }}</span
+                        >
+                        <div class="tie-alignright">
+                          <span
+                            class="meta-comment tie-icon meta-item fa-before"
+                            >0</span
+                          ><span class="meta-views meta-item"
+                            ><span
+                              aria-hidden="true"
+                              class="tie-icon-fire"
+                            ></span>
+                            {{ post.seen_count }}
+                          </span>
+                        </div>
                       </div>
-                      <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                      <h2 class="post-title">
+                        <a href="{{ post.get_absolute_url }}"
+                          >{{ post.title }}</a
+                        >
+                      </h2>
                       <p class="post-excerpt">{{ post.description }}</p>
                     </div>
                   </li>
                   {% endfor %}
-                    
                 </ul>
                 <div class="clearfix"></div>
               </div>
-              <a href="{% url 'latest-posts' %}" class="show-more-button load-more-button" >تحميل المزيد</a>
+              <a
+                href="{% url 'latest-posts' %}"
+                class="show-more-button load-more-button"
+                >تحميل المزيد</a
+              >
             </div>
           </div>
         </div>
-        <aside aria-label="القائمة الجانبية الرئيسية" class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky">
+        <aside
+          aria-label="القائمة الجانبية الرئيسية"
+          class="sidebar tie-col-md-4 tie-col-xs-12 normal-side is-sticky"
+        >
           <div class="theiaStickySidebar">
             {% include 'aside-top.html' %}
 
-            <div class="container-wrapper widget subscribe-widget" id="tie-newsletter-2">
+            <div
+              class="container-wrapper widget subscribe-widget"
+              id="tie-newsletter-2"
+            >
               <div class="widget-inner-wrap">
-                <span aria-hidden="true" class="tie-icon-envelope newsletter-icon"></span>
+                <span
+                  aria-hidden="true"
+                  class="tie-icon-envelope newsletter-icon"
+                ></span>
                 <div class="subscribe-widget-content">
                   <h4>النشرة البريدية المجانية</h4>
                   <h3>اشترك معنا في خدمة الإشعارات البريدية ليصلك كل جديد!</h3>
                   <p>لا تقلق لن نرسل لك اي بريد مزعج.</p>
                 </div>
                 <div id="mc_embed_signup-tie-newsletter-2">
-                  <form action="#" class="subscribe-form validate" id="mc-embedded-subscribe-form-tie-newsletter-2"
-                    method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+                  <form
+                    action="#"
+                    class="subscribe-form validate"
+                    id="mc-embedded-subscribe-form-tie-newsletter-2"
+                    method="post"
+                    name="mc-embedded-subscribe-form"
+                    novalidate=""
+                    target="_blank"
+                  >
                     <div class="mc-field-group">
-                      <label class="screen-reader-text" for="mce-EMAIL-tie-newsletter-2">أدخل بريدك
-                        الإلكتروني</label>
-                      <input class="subscribe-input required email" id="mce-EMAIL-tie-newsletter-2" name="EMAIL"
-                        placeholder="أدخل بريدك الإلكتروني" type="email" value="" />
+                      <label
+                        class="screen-reader-text"
+                        for="mce-EMAIL-tie-newsletter-2"
+                        >أدخل بريدك الإلكتروني</label
+                      >
+                      <input
+                        class="subscribe-input required email"
+                        id="mce-EMAIL-tie-newsletter-2"
+                        name="EMAIL"
+                        placeholder="أدخل بريدك الإلكتروني"
+                        type="email"
+                        value=""
+                      />
                     </div>
-                    <input class="button subscribe-submit" name="subscribe" type="submit" value="إشترك" />
+                    <input
+                      class="button subscribe-submit"
+                      name="subscribe"
+                      type="submit"
+                      value="إشترك"
+                    />
                   </form>
                 </div>
               </div>
               <div class="clearfix"></div>
             </div>
-            <div class="container-wrapper widget widget_categories tie-widget-categories" id="tie-widget-categories-1">
+            <div
+              class="
+                container-wrapper
+                widget widget_categories
+                tie-widget-categories
+              "
+              id="tie-widget-categories-1"
+            >
               <div class="widget-title the-global-title">
-                <div class="the-subtitle">اقسام الموقع<span class="widget-title-icon tie-icon"></span></div>
+                <div class="the-subtitle">
+                  اقسام الموقع<span class="widget-title-icon tie-icon"></span>
+                </div>
               </div>
               <ul>
-
                 {% for cat in site_categories %}
-                <li class="cat-item cat-counter tie-cat-item-43"><a
-                    href="{{ cat.url }}">{{ cat.title }}</a> <span>{{ cat.count }}</span>
+                <li class="cat-item cat-counter tie-cat-item-43">
+                  <a href="{{ cat.url }}">{{ cat.title }}</a>
+                  <span>{{ cat.count }}</span>
                 </li>
                 {% endfor %}
-
               </ul>
               <div class="clearfix"></div>
             </div>
@@ -1320,9 +1827,10 @@ hide_inline_related_posts
     </div>
   </div>
 </div>
-{% endblock content %}
-
-
-{% block body %}
-<script data-minify="1" defer="" src="{% static 'js/1e9069b56c0cef23db482f391b6fa383.8e05778a.js' %}"></script>
+{% endblock content %} {% block body %}
+<script
+  data-minify="1"
+  defer=""
+  src="{% static 'js/1e9069b56c0cef23db482f391b6fa383.8e05778a.js' %}"
+></script>
 {% endblock body %}
